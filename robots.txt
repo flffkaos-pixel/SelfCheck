@@ -23,4 +23,4 @@ Allow: /
 User-agent: Baiduspider
 Allow: /
 
-Sitemap: https://example.com/self-diagnosis/sitemap.xml
+Sitemap: https://symptomcheck.pages.dev/sitemap.xml

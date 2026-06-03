@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HealSense 건강 정보</title>
-    <link>https://flffkaos-pixel.github.io/SelfCheck/</link>
+    <link>https://symptomcheck.pages.dev/</link>
     <description>증상 기반 자가진단 및 건강 정보 제공 서비스</description>
     <language>ko</language>
     <lastBuildDate>Wed, 03 Jun 2026 00:00:00 +0900</lastBuildDate>
-    <atom:link href="https://flffkaos-pixel.github.io/SelfCheck/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://symptomcheck.pages.dev/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>자가진단 서비스 이용 가이드</title>
-      <link>https://flffkaos-pixel.github.io/SelfCheck/</link>
+      <link>https://symptomcheck.pages.dev/</link>
       <description>100여 가지 질환에 대한 증상 매칭 진단 도구 사용 방법</description>
       <pubDate>Wed, 03 Jun 2026 00:00:00 +0900</pubDate>
     </item>
