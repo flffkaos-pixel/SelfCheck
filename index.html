@@ -159,6 +159,9 @@
   .result-card:hover { box-shadow: 0 8px 24px rgba(13, 91, 188, 0.12); }
   .result-card .result-body { display: none; }
   .result-card.expanded .result-body { display: block; }
+  .rotate-180 { transform: rotate(180deg); }
+  [data-encyc].expanded { max-height: 3000px !important; }
+  @keyframes pulse-warning { 0%,100%{opacity:1} 50%{opacity:.5} }
   ::-webkit-scrollbar { width: 8px; height: 8px; }
   ::-webkit-scrollbar-track { background: #f5f2ff; }
   ::-webkit-scrollbar-thumb { background: #adc7ff; border-radius: 8px; }
@@ -767,6 +770,401 @@
     <button onclick="App.startWithCategory('musculoskeletal')" class="text-primary font-label-sm font-label-sm flex items-center gap-1 hover:underline">자가진단 <span class="material-symbols-outlined text-[16px]">arrow_forward</span></button>
   </div>
 </div>
+</div>
+</section>
+
+<!-- Health Encyclopedia (건강 백서) -->
+<section id="encyclopedia" class="py-12 md:py-20 bg-surface-container">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+  <div class="mb-12 text-center">
+    <span class="text-label-md font-label-md text-primary uppercase tracking-wider">Health Encyclopedia</span>
+    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-2">건강 백서</h2>
+    <p class="text-body-md font-body-md text-on-surface-variant mt-3 max-w-2xl mx-auto">질환별 상세 정보, 증상, 위험 요인, 예방법 및 치료 옵션을 제공합니다.</p>
+  </div>
+
+  <div class="space-y-4" id="encyclopediaContent">
+    <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden">
+      <button class="w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer hover:bg-primary/5 transition-colors" onclick="this.parentElement.querySelector('[data-encyc]')?.classList.toggle('expanded');this.querySelector('.expand-icon').classList.toggle('rotate-180')">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary">pulmonology</span>
+          <div>
+            <h3 class="font-label-md text-label-md text-on-surface">호흡기 질환</h3>
+            <p class="text-label-sm font-label-sm text-on-surface-variant">감기, 독감, 폐렴, 천식, COPD, 폐암</p>
+          </div>
+        </div>
+        <span class="expand-icon material-symbols-outlined text-outline transition-transform">expand_more</span>
+      </button>
+      <div class="max-h-0 overflow-hidden transition-all duration-300" data-encyc>
+        <div class="px-5 md:px-6 pb-6 space-y-6">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-primary mb-2">감기 (급성상기도감염)</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">가장 흔한 바이러스 감염. 코막힘, 콧물, 인후통, 기침, 발열이 주 증상.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 면역력 저하, 환절기, 밀집된 공간</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 손 씻기, 마스크 착용, 충분한 수면</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 대증치료, 휴식, 수분 섭취</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-primary mb-2">독감 (인플루엔자)</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">인플루엔자 바이러스에 의한 감염. 고열, 오한, 근육통이 심함.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 노약자, 만성질환자, 임산부</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 독감 백신 접종 (매년)</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 항바이러스제 (48시간 내), 대증치료</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-primary mb-2">폐렴</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">폐에 염증. 발열, 기침, 호흡곤란, 객혈. 세균/바이러스/곰팡이 원인.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 노인, 흡연, 면역저하, 만성질환</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 폐렴구균 백신, 금연</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 항생제, 산소치료, 입원치료</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-primary mb-2">천식</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">기관지 과민 반응. 기침, 천명, 호흡곤란 반복. 만성 질환.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 알레르기, 가족력, 흡연, 비만</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 알레르겐 회피, 흡입기 관리</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 흡입 스테로이드, 기관지확장제</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-primary mb-2">만성폐쇄성폐질환 (COPD)</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">흡연이 주원인. 만성 기침, 가래, 호흡곤란. 기류 제한 지속.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 흡연 (90% 이상), 대기오염, 직업적 분진</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 금연 (가장 중요)</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 흡입제, 산소치료, 폐재활</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-primary mb-2">폐암</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">폐에 발생하는 악성 종양. 기침, 객혈, 호흡곤란, 체중감소.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 흡연 (1위), 간접흡연, 석면, 라돈</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 금연, 저선량 CT 검진 (고위험군)</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 수술, 항암치료, 표적치료, 면역치료</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden">
+      <button class="w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer hover:bg-primary/5 transition-colors" onclick="this.parentElement.querySelector('[data-encyc]')?.classList.toggle('expanded');this.querySelector('.expand-icon').classList.toggle('rotate-180')">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-tertiary">lunch_dining</span>
+          <div>
+            <h3 class="font-label-md text-label-md text-on-surface">소화기 질환</h3>
+            <p class="text-label-sm font-label-sm text-on-surface-variant">위장염, 위궤양, 위암, 대장암, 간염, 간암, 췌장암</p>
+          </div>
+        </div>
+        <span class="expand-icon material-symbols-outlined text-outline transition-transform">expand_more</span>
+      </button>
+      <div class="max-h-0 overflow-hidden transition-all duration-300" data-encyc>
+        <div class="px-5 md:px-6 pb-6 space-y-6">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-tertiary mb-2">급성위장염</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">바이러스/세균성 위장관 염증. 구토, 설사, 복통, 발열.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 오염된 음식, 면역저하</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 손 씻기, 음식 위생</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 수분 보충 (1순위), 전해질</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-tertiary mb-2">위식도역류질환 (GERD)</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">위산 역류로 속쓰림, 역류. 만성 질환.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 비만, 흡연, 음주, 기름진 음식</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 소량 식사, 취침 전 금식</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 제산제, PPI, 식습관 개선</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-tertiary mb-2">위궤양/십이지장궤양</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">위 점막 손상. 복통, 속쓰림. 헬리코박터 감염 원인.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 헬리코박터 감염, NSAIDs, 스트레스</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 정기 위내시경, 약물 주의</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 항생제 (제균), 제산제</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-tertiary mb-2">위암</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">위에 발생하는 악성 종양. 초기 증상 거의 없음. 정기 검진 중요.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 헬리코박터, 염장/훈제 식품, 흡연, 가족력</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 정기 위내시경 (40세 이상, 2년 주기)</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 수술, 항암치료, 표적치료</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-tertiary mb-2">대장암</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">대장 악성 종양. 배변습관 변화, 혈변, 체중감소.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 고지방/저섬유 식단, 비만, 흡연, 가족력</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 대장내시경 (50세 이상, 5년 주기)</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 수술, 항암치료, 방사선치료</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-tertiary mb-2">간염 / 간암</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">B형/C형 간염 바이러스가 주원인. 만성화 시 간경변→간암 진행.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 바이러스 보유, 알코올, 비알콜성 지방간</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> B형 간염 백신, 음주 제한, 정기 초음파</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 항바이러스제, 간이식, 항암치료</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden">
+      <button class="w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer hover:bg-primary/5 transition-colors" onclick="this.parentElement.querySelector('[data-encyc]')?.classList.toggle('expanded');this.querySelector('.expand-icon').classList.toggle('rotate-180')">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-status-error">favorite</span>
+          <div>
+            <h3 class="font-label-md text-label-md text-on-surface">심혈관 질환</h3>
+            <p class="text-label-sm font-label-sm text-on-surface-variant">고혈압, 협심증, 심근경색, 부정맥, 심부전, 뇌졸중</p>
+          </div>
+        </div>
+        <span class="expand-icon material-symbols-outlined text-outline transition-transform">expand_more</span>
+      </button>
+      <div class="max-h-0 overflow-hidden transition-all duration-300" data-encyc>
+        <div class="px-5 md:px-6 pb-6 space-y-6">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-error mb-2">고혈압</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">지속적 혈압 상승. '소리 없는 살인자'. 증상 거의 없음.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 나이, 가족력, 비만, 염분, 운동 부족</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 저염식, 규칙적 운동, 체중 조절</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 약물 (평생), 생활습관 개선</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-error mb-2">협심증 / 심근경색</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">심장 혈관 협착/폐색. 흉통, 호흡곤란. 응급 질환.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 고혈압, 당뇨, 고지혈증, 흡연, 비만</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 심혈관 검진, 건강한 식단</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 응급 PCI (스텐트), 약물</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-error mb-2">뇌졸중 (중풍)</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">뇌혈관 폐색/출혈. 편측마비, 언어장애, 안면비대칭.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 고혈압 (1위), 당뇨, 흡연, 심방세동</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 혈압 관리, 금연, 항응고제</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 골든타임 3시간 내 혈전용해</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-error mb-2">부정맥 / 심부전</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">심장 박동 이상/펌프 기능 저하. 두근거림, 호흡곤란.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 고혈압, 관상동맥질환, 심근병증</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 정기 심전도, 생활습관 개선</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 항부정맥제, 인공심장박동기</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden">
+      <button class="w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer hover:bg-primary/5 transition-colors" onclick="this.parentElement.querySelector('[data-encyc]')?.classList.toggle('expanded');this.querySelector('.expand-icon').classList.toggle('rotate-180')">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary">psychology</span>
+          <div>
+            <h3 class="font-label-md text-label-md text-on-surface">신경계 질환 / 정신건강</h3>
+            <p class="text-label-sm font-label-sm text-on-surface-variant">두통, 편두통, 치매, 파킨슨병, 뇌종양, 우울증, 불안장애</p>
+          </div>
+        </div>
+        <span class="expand-icon material-symbols-outlined text-outline transition-transform">expand_more</span>
+      </button>
+      <div class="max-h-0 overflow-hidden transition-all duration-300" data-encyc>
+        <div class="px-5 md:px-6 pb-6 space-y-6">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-primary mb-2">두통 / 편두통</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">긴장성두통(가장흔함), 편두통(박동성, 구토동반), 군발두통.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 스트레스, 수면부족, 특정 음식, 호르몬</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 규칙적 수면, 스트레스 관리, 식이 조절</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 진통제, 트립탄 (편두통)</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-primary mb-2">치매 (알츠하이머)</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">기억력 감퇴, 인지기능 저하. 퇴행성 뇌질환.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 나이, 가족력, 심혈관 위험인자</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 두뇌 활동, 사회적 교류, 운동</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 약물(진행 속도 늦춤), 인지치료</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-primary mb-2">파킨슨병</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">도파민 신경세포 소멸. 떨림, 경직, 보행장애, 자세 불안정.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 나이 (60세↑), 가족력, 환경 독소</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 규칙적 운동, 항산화 식단</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 레보도파, 재활치료</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-primary mb-2">우울증 / 불안장애</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">지속적 우울감, 불안. 수면장애, 식욕변화, 무기력 동반.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 유전, 뇌화학 불균형, 트라우마, 스트레스</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 정신건강 관리, 사회적 지지</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 상담치료, 항우울제, 인지행동치료</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden">
+      <button class="w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer hover:bg-primary/5 transition-colors" onclick="this.parentElement.querySelector('[data-encyc]')?.classList.toggle('expanded');this.querySelector('.expand-icon').classList.toggle('rotate-180')">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-status-success">accessibility_new</span>
+          <div>
+            <h3 class="font-label-md text-label-md text-on-surface">근골격계 질환</h3>
+            <p class="text-label-sm font-label-sm text-on-surface-variant">요통, 디스크, 골관절염, 류마티스관절염, 골다공증</p>
+          </div>
+        </div>
+        <span class="expand-icon material-symbols-outlined text-outline transition-transform">expand_more</span>
+      </button>
+      <div class="max-h-0 overflow-hidden transition-all duration-300" data-encyc>
+        <div class="px-5 md:px-6 pb-6 space-y-6">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-success mb-2">요통 / 디스크</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">허리 통증. 디스크는 신경 압박으로 하지 방사통 유발.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 잘못된 자세, 비만, 노화, 좌식생활</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 바른 자세, 코어 근육 운동</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 물리치료, 수술 (심한 경우)</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-success mb-2">골관절염 / 류마티스관절염</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">관절염. 골관절염=퇴행성, 류마티스=자가면역.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 나이, 비만, 유전, 자가면역</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 체중 조절, 적절한 운동</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 소염진통제, 인공관절</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-success mb-2">골다공증</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">뼈 밀도 감소. 골절 위험 증가. 폐경기 여성多发.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 여성, 폐경, 저칼슘, 비타민D 부족</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 칼슘·비타민D 섭취, 운동, 골밀도 검사</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 골다공증 약물, 영양 보충</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden">
+      <button class="w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer hover:bg-primary/5 transition-colors" onclick="this.parentElement.querySelector('[data-encyc]')?.classList.toggle('expanded');this.querySelector('.expand-icon').classList.toggle('rotate-180')">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-status-error">biotech</span>
+          <div>
+            <h3 class="font-label-md text-label-md text-on-surface">주요 암 정보</h3>
+            <p class="text-label-sm font-label-sm text-on-surface-variant">위암, 폐암, 대장암, 간암, 유방암, 자궁경부암, 갑상선암, 췌장암</p>
+          </div>
+        </div>
+        <span class="expand-icon material-symbols-outlined text-outline transition-transform">expand_more</span>
+      </button>
+      <div class="max-h-0 overflow-hidden transition-all duration-300" data-encyc>
+        <div class="px-5 md:px-6 pb-6 space-y-6">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-error mb-2">유방암</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">여성암 1위. 유방 멍울, 함몰, 피부 변화. 자가검진 중요.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 여성, 나이, 가족력, 늦은 출산, 비만</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 자가검진 (매월), 유방촬영 (40세↑, 2년)</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-error mb-2">자궁경부암</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">HPV 감염 주원인. 정기 검진으로 예방 가능한 암.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> HPV 감염, 조기 성경험, 흡연</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> HPV 백신, 자궁경부 세포검사</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-error mb-2">갑상선암</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">비교적 예후 좋은 암. 목 멍울, 쉰 목소리. 초음파 진단.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 방사선 노출, 가족력, 여성</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 수술 (갑상선 절제), 방사성요오드</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-error mb-2">췌장암</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">예후 가장 나쁜 암. 조기 발견 어려움. 복통, 체중감소.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 흡연, 당뇨, 만성 췌장염, 가족력, 비만</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 금연, 건강한 식단, 정기 검진</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden">
+      <button class="w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer hover:bg-primary/5 transition-colors" onclick="this.parentElement.querySelector('[data-encyc]')?.classList.toggle('expanded');this.querySelector('.expand-icon').classList.toggle('rotate-180')">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-status-info">water_drop</span>
+          <div>
+            <h3 class="font-label-md text-label-md text-on-surface">내분비 · 비뇨기 · 피부 질환</h3>
+            <p class="text-label-sm font-label-sm text-on-surface-variant">당뇨병, 갑상선 질환, 요로감염, 아토피, 피부암</p>
+          </div>
+        </div>
+        <span class="expand-icon material-symbols-outlined text-outline transition-transform">expand_more</span>
+      </button>
+      <div class="max-h-0 overflow-hidden transition-all duration-300" data-encyc>
+        <div class="px-5 md:px-6 pb-6 space-y-6">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-info mb-2">당뇨병</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">혈당 조절 이상. 갈증, 다뇨, 체중감소. 합병증 위험.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 비만, 가족력, 운동 부족, 고탄수화물 식단</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 체중 조절, 운동, 혈당 검진</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 경구약, 인슐린, 식이요법, 운동</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-info mb-2">갑상선 기능 이상</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">항진증(빈맥, 체중감소, 더위) / 저하증(피로, 체중증가, 추위)</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 자가면역, 여성, 가족력</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 갑상선 기능 검진</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 항갑상선제/갑상선호르몬제</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-info mb-2">요로감염 (방광염)</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">세균 감염. 배뇨통, 빈뇨, 혈뇨. 여성에게 흔함.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 여성, 성생활, 면역 저하</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 수분 섭취, 배뇨 위생</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 항생제, 수분 섭취</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-info mb-2">아토피피부염 / 피부암</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">아토피=만성 알레르기. 피부암=자외선 노출 주요 원인.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 알레르기, 유전 / 자외선, 피부 타입</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> 보습, 알레르겐 회피 / 자외선 차단</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 스테로이드, 면역조절제 / 수술</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden">
+      <button class="w-full flex items-center justify-between p-5 md:p-6 text-left cursor-pointer hover:bg-primary/5 transition-colors" onclick="this.parentElement.querySelector('[data-encyc]')?.classList.toggle('expanded');this.querySelector('.expand-icon').classList.toggle('rotate-180')">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-status-error">coronavirus</span>
+          <div>
+            <h3 class="font-label-md text-label-md text-on-surface">감염성 질환</h3>
+            <p class="text-label-sm font-label-sm text-on-surface-variant">결핵, HIV/AIDS, 패혈증, 수막염</p>
+          </div>
+        </div>
+        <span class="expand-icon material-symbols-outlined text-outline transition-transform">expand_more</span>
+      </button>
+      <div class="max-h-0 overflow-hidden transition-all duration-300" data-encyc>
+        <div class="px-5 md:px-6 pb-6 space-y-6">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-error mb-2">결핵</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">결핵균 감염. 기침, 가래, 발열, 체중감소. 호흡기 전염.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 면역저하, 영양불량, 밀집 시설</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>예방:</strong> BCG 백신 (한국 필수)</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 항결핵제 (6개월 이상 복용)</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-4">
+              <h4 class="font-label-md text-label-md text-status-error mb-2">패혈증</h4>
+              <p class="text-body-md font-body-md text-on-surface-variant mb-2">감염에 의한 전신 염증. 생명 위협. 급속 진행.</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>위험 요인:</strong> 노인, 만성질환, 면역저하</p>
+              <p class="text-label-sm font-label-sm text-on-surface-variant"><strong>치료:</strong> 즉시 항생제, 집중치료 (응급)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6 text-center text-label-sm font-label-sm text-on-surface-variant">
+      <p>본 건강 백서는 교육적 참고 자료입니다. 정확한 진단을 위해 의료 전문가와 상담하세요.</p>
+    </div>
+  </div>
 </div>
 </section>
 
@@ -1512,10 +1910,10 @@ const App = {
     this.updateStepIndicator(step);
 
     const fab = document.getElementById('fab');
-    if (step > 0 && step < 4) {
+    if (step === 1 || step === 2 || step === 3) {
       fab.classList.add('hidden');
-    } else if (step === 0) {
-      fab.classList.add('hidden');
+    } else {
+      fab.classList.remove('hidden');
     }
 
     if (step === 2) {
@@ -1535,6 +1933,7 @@ const App = {
   },
 
   diagnose() {
+    this.goToStep(4);
     const loading = document.getElementById('loadingArea');
     const results = document.getElementById('resultsArea');
     const summary = document.getElementById('resultSummary');
