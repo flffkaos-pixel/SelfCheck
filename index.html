@@ -278,7 +278,7 @@
 <span class="text-headline-md font-headline-md text-primary cursor-pointer" onclick="App.goToStep(0)">HealSense</span>
 <nav class="hidden md:flex gap-6">
 <a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 cursor-pointer transition-all duration-200" href="#checker">자가진단</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="#library">건강 백과</a>
+    <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="#encyclopedia">건강 백과</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="#chronic">만성질환 관리</a>
 <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="#faq">FAQ</a>
 </nav>
@@ -296,7 +296,7 @@
 <div id="mobileMenu" class="hidden md:hidden border-t border-outline-variant bg-surface">
 <nav class="flex flex-col px-margin-mobile py-4 gap-3">
 <a class="font-body-md text-body-md text-primary font-bold cursor-pointer" href="#checker">자가진단</a>
-<a class="font-body-md text-body-md text-on-surface-variant cursor-pointer" href="#library">건강 백과</a>
+    <a class="font-body-md text-body-md text-on-surface-variant cursor-pointer" href="#encyclopedia">건강 백과</a>
 <a class="font-body-md text-body-md text-on-surface-variant cursor-pointer" href="#chronic">만성질환 관리</a>
 <a class="font-body-md text-body-md text-on-surface-variant cursor-pointer" href="#faq">FAQ</a>
 </nav>
@@ -320,7 +320,7 @@
   증상 체크 시작하기
   <span class="material-symbols-outlined">arrow_forward</span>
 </button>
-<button onclick="document.getElementById('library').scrollIntoView({behavior:'smooth'})" class="bg-surface-container-lowest text-primary border border-primary px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-primary-fixed-dim transition-all active:scale-95">
+<button onclick="document.getElementById('encyclopedia').scrollIntoView({behavior:'smooth'})" class="bg-surface-container-lowest text-primary border border-primary px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-primary-fixed-dim transition-all active:scale-95">
   건강 백과 보기
 </button>
 </div>
@@ -615,6 +615,17 @@
       </ul>
     </div>
   </div>
+</div>
+</div>
+
+<!-- Legal Modal -->
+<div id="legalModal" class="hidden fixed inset-0 z-[100] bg-black/50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="legalTitle">
+<div class="bg-surface-container-lowest rounded-2xl max-w-2xl w-full p-6 md:p-8 max-h-[90vh] overflow-y-auto">
+  <div class="flex items-start justify-between mb-6 sticky top-0 bg-surface-container-lowest pb-4 border-b border-outline-variant">
+    <h3 id="legalTitle" class="font-headline-md text-headline-md text-on-surface"></h3>
+    <button onclick="App.closeLegal()" class="material-symbols-outlined text-on-surface-variant hover:text-on-surface p-1">close</button>
+  </div>
+  <div id="legalContent" class="text-body-md font-body-md text-on-surface space-y-4 leading-relaxed"></div>
 </div>
 </div>
 
@@ -1266,16 +1277,16 @@
     <div>
       <h5 class="font-bold text-on-surface mb-4">정보</h5>
       <ul class="flex flex-col gap-2">
-        <li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#library">건강 백과</a></li>
+        <li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#encyclopedia">건강 백과</a></li>
         <li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#chronic">만성질환</a></li>
       </ul>
     </div>
     <div>
       <h5 class="font-bold text-on-surface mb-4">법적 고지</h5>
       <ul class="flex flex-col gap-2">
-        <li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer">개인정보처리방침</a></li>
-        <li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer">이용약관</a></li>
-        <li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer underline">의료 면책</a></li>
+        <li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" onclick="App.showLegal('privacy')">개인정보처리방침</a></li>
+        <li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" onclick="App.showLegal('terms')">이용약관</a></li>
+        <li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer underline" onclick="App.showLegal('disclaimer')">의료 면책</a></li>
       </ul>
     </div>
   </div>
@@ -2298,9 +2309,127 @@ const App = {
       });
     }
 
+    const legalModal = document.getElementById('legalModal');
+    if (legalModal) {
+      legalModal.addEventListener('click', (e) => {
+        if (e.target === legalModal) this.closeLegal();
+      });
+    }
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') this.closeEmergency();
+      if (e.key === 'Escape') {
+        this.closeEmergency();
+        this.closeLegal();
+      }
     });
+  },
+
+  legalData: {
+    privacy: {
+      title: '개인정보처리방침',
+      content: `<h4 class="font-label-md text-label-md text-primary mb-2">1. 수집하는 개인정보 항목</h4>
+<p>HealSense(이하 "서비스")는 회원가입 없이 서비스를 제공합니다. 사용자가 입력하는 증상 정보는 서버로 전송되지 않으며, 모든 처리는 사용자의 브라우저(로컬)에서만 이루어집니다. 따라서 별도의 개인정보를 수집·저장하지 않습니다.</p>
+
+<h4 class="font-label-md text-label-md text-primary mt-6 mb-2">2. 개인정보의 수집 및 이용 목적</h4>
+<p>본 서비스는 개인정보를 수집하지 않습니다. 모든 증상 데이터는 사용자의 기기 내에서만 처리되며, 외부 서버로 전송되거나 저장되지 않습니다.</p>
+
+<h4 class="font-label-md text-label-md text-primary mt-6 mb-2">3. 쿠키(cookie) 사용</h4>
+<p>본 서비스는 쿠키를 사용하지 않습니다. 다만, 외부 CDN(Tailwind CSS, Google Fonts, Material Symbols) 사용 시 해당 서비스의 쿠키 정책이 적용될 수 있습니다.</p>
+
+<h4 class="font-label-md text-label-md text-primary mt-6 mb-2">4. 개인정보의 제3자 제공</h4>
+<p>수집하는 개인정보가 없으므로 제3자에게 제공하는 정보가 없습니다.</p>
+
+<h4 class="font-label-md text-label-md text-primary mt-6 mb-2">5. 개인정보의 보유 및 파기</h4>
+<p>수집하는 개인정보가 없으므로 보유 또는 파기할 정보가 없습니다.</p>
+
+<h4 class="font-label-md text-label-md text-primary mt-6 mb-2">6. 사용자의 권리</h4>
+<p>사용자는 언제든지 브라우저의 캐시를 삭제하여 로컬에 저장된 데이터를 파기할 수 있습니다.</p>
+
+<h4 class="font-label-md text-label-md text-primary mt-6 mb-2">7. 문의사항</h4>
+<p>개인정보 관련 문의사항은 GitHub 저장소의 Issues를 통해 문의해 주세요.</p>
+
+<h4 class="font-label-md text-label-md text-primary mt-6 mb-2">8. 개인정보처리방침 변경</h4>
+<p>본 방침은 법률 변경이나 서비스 변경 시 사전 공지 후 변경될 수 있습니다.</p>
+
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-6">시행일: 2026년 1월 1일 | 최종 업데이트: 2026년 6월 3일</p>`
+    },
+    terms: {
+      title: '이용약관',
+      content: `<h4 class="font-label-md text-label-md text-primary mb-2">제1조 (목적)</h4>
+<p>본 약관은 HealSense(이하 "서비스")의 이용 조건 및 절차, 권리와 의무를 규정합니다.</p>
+
+<h4 class="font-label-md text-label-md text-primary mt-6 mb-2">제2조 (서비스의 성격)</h4>
+<p>① 본 서비스는 증상 기반 질환 자가진단 도구로, 의학적 진단을 대체하지 않습니다.<br>
+② 모든 결과는 참고용이며, 정확한 진단을 위해 반드시 의료 전문가와 상담하셔야 합니다.<br>
+③ 응급 상황(심한 흉통, 호흡곤란, 의식 저하 등)이 의심되면 즉시 119에 연락하세요.</p>
+
+<h4 class="font-label-md text-label-md text-primary mt-6 mb-2">제3조 (이용자의 의무)</h4>
+<p>① 사용자는 서비스를 의학적 진단의 유일한 근거로 삼지 않아야 합니다.<br>
+② 사용자는 자신의 증상을 정확하게 입력할 책임이 있습니다.<br>
+③ 서비스를 통해 얻은 정보를 불법적인 목적으로 사용해서는 안 됩니다.</p>
+
+<h4 class="font-label-md text-label-md text-primary mt-6 mb-2">제4조 (면책 조항)</h4>
+<p>① 서비스는 제공하는 정보의 정확성에 대해 최선을 다하나, 이를 보장하지 않습니다.<br>
+② 서비스 사용으로 인한 직간접적 손해에 대해 책임을 지지 않습니다.<br>
+③ 사용자가 서비스 결과를 의학적 판단의 근거로 사용하여 발생한 문제에 대해 책임지지 않습니다.</p>
+
+<h4 class="font-label-md text-label-md text-primary mt-6 mb-2">제5조 (서비스 변경 및 중단)</h4>
+<p>서비스는 운영상 필요에 따라 사전 공지 후 서비스를 변경하거나 중단할 수 있습니다.</p>
+
+<h4 class="font-label-md text-label-md text-primary mt-6 mb-2">제6조 (준거법 및 관할)</h4>
+<p>본 약관은 대한민국 법률에 따라 해석됩니다. 서비스 관련 분쟁은 서울중앙지방법원을 관할 법원으로 합니다.</p>
+
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-6">시행일: 2026년 1월 1일 | 최종 업데이트: 2026년 6월 3일</p>`
+    },
+    disclaimer: {
+      title: '의료 면책 공지',
+      content: `<div class="bg-status-error/5 border border-status-error/20 rounded-xl p-4 mb-4">
+<h4 class="font-label-md text-label-md text-status-error mb-2">⚠️ 중요: 의료 면책 공지</h4>
+<p class="text-body-md font-body-md text-on-surface">본 HealSense 건강 자가진단 도구는 <strong>의학적 진단을 대체하지 않습니다</strong>. 아래 사항을 반드시 숙지하시기 바랍니다.</p>
+</div>
+
+<h4 class="font-label-md text-label-md text-primary mb-2">1. 참고용 정보</h4>
+<p>본 서비스에서 제공하는 모든 정보(질환 정보, 증상 매칭 결과, 권장 조치 등)는 교육적 목적의 참고 자료입니다. 의사의 진단, 조언, 치료를 대체할 수 없습니다.</p>
+
+<h4 class="font-label-md text-label-md text-primary mt-6 mb-2">2. 전문 의료진 상담 필수</h4>
+<p>건강 상태에 대한 정확한 평가와 진단은 반드시 면허를 가진 의료 전문가(의사, 간호사 등)에게 받으셔야 합니다. 증상이 지속되거나 악화되는 경우 지체 없이 의료기관을 방문하세요.</p>
+
+<h4 class="font-label-md text-label-md text-primary mt-6 mb-2">3. 응급 상황</h4>
+<p>다음과 같은 응급 상황이 의심되면 본 서비스를 사용하지 말고 <strong>즉시 119에 전화</strong>하세요:</p>
+<ul class="list-disc pl-5 space-y-1">
+<li>심한 흉통 (5분 이상 지속)</li>
+<li>갑작스러운 호흡곤란</li>
+<li>편측 마비 (한쪽 팔다리/얼굴 마비)</li>
+<li>언어장애 (말이 어눌해짐)</li>
+<li>갑작스러운 극심한 두통</li>
+<li>의식 저하</li>
+<li>심한 출혈</li>
+<li>자살 충동</li>
+</ul>
+
+<h4 class="font-label-md text-label-md text-primary mt-6 mb-2">4. 서비스 책임 한계</h4>
+<p>본 서비스는 가능한 정확한 정보를 제공하기 위해 노력하나, 정보의 완전성, 정확성, 적시성을 보장하지 않습니다. 서비스 사용으로 인한 직간접적 손해에 대해 책임지지 않습니다.</p>
+
+<h4 class="font-label-md text-label-md text-primary mt-6 mb-2">5. 긴급 연락처</h4>
+<p>응급의료: 119 | 자살예방 상담전화: 1393 | 정신건강위기상담전화: 1577-0199</p>`
+    }
+  },
+
+  showLegal(type) {
+    const modal = document.getElementById('legalModal');
+    const title = document.getElementById('legalTitle');
+    const content = document.getElementById('legalContent');
+    const data = this.legalData[type];
+    if (!data) return;
+    title.textContent = data.title;
+    content.innerHTML = data.content;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  },
+
+  closeLegal() {
+    document.getElementById('legalModal').classList.add('hidden');
+    document.body.style.overflow = '';
   }
 };
 
