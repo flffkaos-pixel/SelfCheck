@@ -1,71 +1,170 @@
 <!DOCTYPE html>
 <html lang="ko" itemscope itemtype="https://schema.org/MedicalWebPage">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="theme-color" content="#2563eb">
+<meta name="theme-color" content="#00408b">
 
-<title>건강 자가진단 - 증상으로 질환 확인 | 감기, 암, 만성질환 자가진단</title>
-<meta name="description" content="증상을 선택하여 감기, 독감, 고혈압, 당뇨, 폐렴, 위암, 폐암, 뇌졸중 등 70여 가지 질환을 자가진단해보세요. 14개 카테고리, 87개 증상으로 정확한 자가진단을 제공합니다. 응급 상황 시 119로 즉시 연락하세요.">
-<meta name="keywords" content="자가진단,증상진단,질병진단,감기진단,암진단,당뇨진단,위암,폐암,대장암,고혈압,뇌졸중,두통,복통,호흡곤란,발열,어지러움,만성피로,위장관장애,심장질환,건강검진,응급실,119,AI진단,온라인진단">
-<meta name="author" content="건강 자가진단">
+<title>HealSense - 건강 자가진단 | 증상으로 질환 확인 | AI 증상 분석</title>
+<meta name="description" content="HealSense의 AI 알고리즘이 증상을 분석하여 가능한 질환을 확인해드립니다. 감기부터 암까지 70여 가지 질환 자가진단, 14개 카테고리, 87개 증상, 무료 제공. 응급 상황 시 119로 즉시 연락하세요.">
+<meta name="keywords" content="자가진단,증상진단,AI진단,HealSense,질병진단,감기진단,암진단,당뇨진단,위암,폐암,대장암,고혈압,뇌졸중,두통,복통,호흡곤란,발열,어지러움,만성피로,위장관장애,심장질환,건강검진,응급실,119,온라인진단,건강앱">
+<meta name="author" content="HealSense">
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
 <meta name="googlebot" content="index,follow">
 <meta name="Naverbot" content="index,follow">
-<meta name="format-detection" content="telephone=no">
-<meta name="subject" content="건강 자가진단 - 증상 기반 질환 예측 도구">
-<meta name="reply-to" content="contact@example.com">
-<meta name="owner" content="건강 자가진단">
-<meta name="url" content="https://example.com/self-diagnosis/">
-<meta name="identifier-URL" content="https://example.com/self-diagnosis/">
-<meta name="directory" content="health,medical,diagnosis">
-<meta name="category" content="health,medical">
-<meta name="coverage" content="Worldwide">
-<meta name="distribution" content="Global">
-<meta name="rating" content="General">
-<meta name="copyright" content="Copyright 2026">
-<meta name="language" content="ko-KR">
-<meta name="target" content="all">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-<link rel="canonical" href="https://example.com/self-diagnosis/">
-<link rel="alternate" hreflang="ko-KR" href="https://example.com/self-diagnosis/">
+<link rel="canonical" href="https://github.com/flffkaos-pixel/SelfCheck/">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏥%3C/text%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏥%3C/text%3E%3C/svg%3E">
 
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="건강 자가진단">
-<meta property="og:title" content="건강 자가진단 - 증상으로 질환 확인 | 70여 가지 질환 자가진단">
-<meta property="og:description" content="증상을 선택하여 감기부터 암까지 70여 가지 질환을 자가진단해보세요. 14개 카테고리, 87개 증상으로 무료로 제공됩니다.">
-<meta property="og:url" content="https://example.com/self-diagnosis/">
-<meta property="og:image" content="https://example.com/self-diagnosis/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="건강 자가진단 - 증상 기반 질환 예측 도구">
+<meta property="og:site_name" content="HealSense">
+<meta property="og:title" content="HealSense - AI 건강 자가진단 | 증상으로 질환 확인">
+<meta property="og:description" content="증상을 선택하여 감기부터 암까지 70여 가지 질환을 AI가 분석합니다.">
+<meta property="og:url" content="https://github.com/flffkaos-pixel/SelfCheck/">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:locale:alternate" content="en_US">
-<meta property="og:country-name" content="Korea">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="건강 자가진단 - 증상으로 질환 확인">
-<meta name="twitter:description" content="감기부터 암까지 70여 가지 질환을 자가진단해보세요. 무료, 빠른, 정확한 증상 분석.">
-<meta name="twitter:image" content="https://example.com/self-diagnosis/twitter-image.png">
-<meta name="twitter:image:alt" content="건강 자가진단">
-
-<meta name="article:author" content="건강 자가진단">
-<meta name="article:publisher" content="https://example.com/self-diagnosis/">
-<meta name="article:section" content="Health">
-<meta name="article:tag" content="자가진단,증상,질환,건강">
-<meta name="article:published_time" content="2026-01-01T00:00:00+09:00">
-<meta name="article:modified_time" content="2026-05-28T00:00:00+09:00">
+<meta name="twitter:title" content="HealSense - AI 건강 자가진단">
+<meta name="twitter:description" content="감기부터 암까지 70여 가지 질환을 AI가 자가진단합니다.">
 
 <meta name="naver-site-verification" content="0000000000000000000000000000000000000000">
 <meta name="google-site-verification" content="0000000000000000000000000000000000000000">
-<meta name="msvalidate.01" content="0000000000000000000000000000000000000000">
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "status-info": "#0057B8",
+          "surface-container-high": "#e8e6ff",
+          "surface-tint": "#0d5bbc",
+          "inverse-on-surface": "#f2efff",
+          "on-secondary": "#ffffff",
+          "on-secondary-container": "#2e4e84",
+          "on-tertiary-container": "#c9cfff",
+          "surface-dim": "#d8d6ff",
+          "on-primary-container": "#bfd2ff",
+          "tertiary": "#002cc0",
+          "on-background": "#17173d",
+          "surface-variant": "#e1dfff",
+          "secondary-fixed": "#d7e2ff",
+          "inverse-surface": "#2c2c53",
+          "outline": "#727784",
+          "secondary": "#3f5e95",
+          "primary-fixed-dim": "#adc7ff",
+          "status-success": "#1B5E20",
+          "on-error-container": "#93000a",
+          "on-surface-variant": "#424752",
+          "on-tertiary": "#ffffff",
+          "secondary-container": "#a2c1fe",
+          "surface-container": "#efecff",
+          "on-primary-fixed": "#001a41",
+          "primary": "#00408b",
+          "tertiary-fixed": "#dee0ff",
+          "status-error": "#C62828",
+          "inverse-primary": "#adc7ff",
+          "surface-container-low": "#f5f2ff",
+          "on-secondary-fixed": "#001b3f",
+          "on-primary-fixed-variant": "#004493",
+          "on-primary": "#ffffff",
+          "background": "#fcf8ff",
+          "on-secondary-fixed-variant": "#25467b",
+          "tertiary-container": "#1942ee",
+          "on-surface": "#17173d",
+          "error-container": "#ffdad6",
+          "secondary-fixed-dim": "#abc7ff",
+          "tertiary-fixed-dim": "#bac3ff",
+          "primary-fixed": "#d8e2ff",
+          "on-tertiary-fixed-variant": "#002fc9",
+          "error": "#ba1a1a",
+          "surface-bright": "#fcf8ff",
+          "on-error": "#ffffff",
+          "on-tertiary-fixed": "#00105b",
+          "surface-container-lowest": "#ffffff",
+          "primary-container": "#0057b8",
+          "outline-variant": "#c2c6d4",
+          "surface": "#fcf8ff",
+          "surface-container-highest": "#e1dfff"
+        },
+        borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+        spacing: {
+          "margin-mobile": "20px",
+          "margin-desktop": "48px",
+          "gutter-desktop": "24px",
+          "unit": "8px",
+          "container-max": "1200px",
+          "gutter-mobile": "16px"
+        },
+        fontFamily: {
+          "label-sm": ["Manrope"],
+          "body-lg": ["Manrope"],
+          "headline-lg": ["Manrope"],
+          "headline-md": ["Manrope"],
+          "headline-lg-mobile": ["Manrope"],
+          "body-md": ["Manrope"],
+          "display-lg": ["Manrope"],
+          "label-md": ["Manrope"]
+        },
+        fontSize: {
+          "label-sm": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+          "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+          "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "700" }],
+          "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+          "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "700" }],
+          "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+          "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+          "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }]
+        }
+      },
+    },
+  }
+</script>
+
+<style>
+  body { font-family: 'Manrope', sans-serif; }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .hero-gradient { background: linear-gradient(135deg, #fcf8ff 0%, #d8e2ff 100%); }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .checker-step { display: none; }
+  .checker-step.active { display: block; animation: fadeIn .35s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px);} to { opacity:1; transform: translateY(0);} }
+  .symptom-chip {
+    user-select: none;
+    transition: all .2s ease;
+  }
+  .symptom-chip.selected {
+    background: #00408b !important;
+    color: #fff !important;
+    border-color: #00408b !important;
+  }
+  .category-card.selected {
+    border-color: #00408b !important;
+    background: #f5f2ff !important;
+  }
+  .result-card { transition: all .2s ease; }
+  .result-card:hover { box-shadow: 0 8px 24px rgba(13, 91, 188, 0.12); }
+  .result-card .result-body { display: none; }
+  .result-card.expanded .result-body { display: block; }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: #f5f2ff; }
+  ::-webkit-scrollbar-thumb { background: #adc7ff; border-radius: 8px; }
+  ::-webkit-scrollbar-thumb:hover { background: #00408b; }
+  .tag-remove { cursor: pointer; }
+</style>
 
 <script type="application/ld+json">
 {
@@ -73,17 +172,14 @@
   "@graph": [
     {
       "@type": "MedicalWebPage",
-      "@id": "https://example.com/self-diagnosis/#webpage",
-      "url": "https://example.com/self-diagnosis/",
-      "name": "건강 자가진단 - 증상 기반 질환 예측 도구",
-      "description": "증상을 선택하여 감기, 암, 만성질환 등 70여 가지 질환을 자가진단하는 무료 온라인 도구",
+      "@id": "https://github.com/flffkaos-pixel/SelfCheck/#webpage",
+      "url": "https://github.com/flffkaos-pixel/SelfCheck/",
+      "name": "HealSense - AI 건강 자가진단",
+      "description": "증상을 선택하여 감기, 암, 만성질환 등 70여 가지 질환을 AI가 자가진단하는 무료 온라인 도구",
       "inLanguage": "ko-KR",
-      "isPartOf": {"@id": "https://example.com/#website"},
-      "primaryImageOfPage": {"@type": "ImageObject", "url": "https://example.com/self-diagnosis/og-image.png", "width": 1200, "height": 630},
+      "primaryImageOfPage": {"@type": "ImageObject", "url": "https://github.com/flffkaos-pixel/SelfCheck/og-image.png", "width": 1200, "height": 630},
       "datePublished": "2026-01-01T00:00:00+09:00",
-      "dateModified": "2026-05-28T00:00:00+09:00",
-      "lastReviewed": "2026-05-28T00:00:00+09:00",
-      "reviewedBy": {"@type": "Organization", "name": "건강 자가진단 의료 컨텐츠 검토팀"},
+      "dateModified": "2026-06-03T00:00:00+09:00",
       "medicalAudience": {"@type": "MedicalAudience", "audienceType": "Patient"},
       "about": [
         {"@type": "MedicalCondition", "name": "감기"},
@@ -97,79 +193,40 @@
         {"@type": "MedicalCondition", "name": "심근경색"},
         {"@type": "MedicalCondition", "name": "폐렴"}
       ],
-      "aspect": ["https://schema.org/HealthTopicContent"],
-      "significantLink": [
-        "https://www.119.go.kr",
-        "https://www.mohw.go.kr"
-      ],
-      "mainContentOfPage": {
-        "@type": "WebPageElement",
-        "cssSelector": "#resultsArea"
-      },
-      "specialty": ["내과", "일반의", "응급의학과"],
-      "citation": {
-        "@type": "CreativeWork",
-        "name": "한국의학백과사전, 질병관리청 건강정보"
-      }
+      "citation": {"@type": "CreativeWork", "name": "한국의학백과사전, 질병관리청 건강정보"}
     },
     {
       "@type": "Organization",
-      "@id": "https://example.com/#organization",
-      "name": "건강 자가진단",
-      "url": "https://example.com/",
-      "logo": {"@type": "ImageObject", "url": "https://example.com/logo.png", "width": 600, "height": 60},
-      "description": "증상 기반 질환 자가진단 도구 제공",
-      "sameAs": ["https://www.facebook.com/example", "https://twitter.com/example"],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Customer Service",
-        "availableLanguage": ["Korean", "English"]
-      }
+      "@id": "https://github.com/flffkaos-pixel/SelfCheck/#organization",
+      "name": "HealSense",
+      "url": "https://github.com/flffkaos-pixel/SelfCheck/",
+      "description": "AI 기반 건강 자가진단 도구"
     },
     {
       "@type": "WebSite",
-      "@id": "https://example.com/#website",
-      "url": "https://example.com/",
-      "name": "건강 자가진단",
-      "description": "온라인 증상 자가진단 도구",
-      "inLanguage": "ko-KR",
-      "publisher": {"@id": "https://example.com/#organization"},
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://example.com/self-diagnosis/?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://example.com/self-diagnosis/#breadcrumb",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "홈", "item": "https://example.com/"},
-        {"@type": "ListItem", "position": 2, "name": "건강", "item": "https://example.com/health/"},
-        {"@type": "ListItem", "position": 3, "name": "자가진단", "item": "https://example.com/self-diagnosis/"}
-      ]
+      "@id": "https://github.com/flffkaos-pixel/SelfCheck/#website",
+      "url": "https://github.com/flffkaos-pixel/SelfCheck/",
+      "name": "HealSense",
+      "inLanguage": "ko-KR"
     },
     {
       "@type": "FAQPage",
-      "@id": "https://example.com/self-diagnosis/#faq",
+      "@id": "https://github.com/flffkaos-pixel/SelfCheck/#faq",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "자가진단은 정확한가요?",
+          "name": "HealSense는 무료인가요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "이 자가진단은 의학적 진단을 대체하지 않으며, 참고용으로만 사용해야 합니다. 정확한 진단은 반드시 의사 또는 의료 전문가와 상담하셔야 합니다. 응급 상황(심한 흉통, 호흡곤란, 의식 저하 등)이 의심되면 즉시 119에 연락하세요."
+            "text": "네, HealSense는 완전 무료이며 회원가입이 필요 없습니다. 모든 데이터는 브라우저에서만 처리되어 서버로 전송되지 않습니다."
           }
         },
         {
           "@type": "Question",
-          "name": "어떤 질환들을 자가진단할 수 있나요?",
+          "name": "어떤 질환을 자가진단할 수 있나요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "감기, 독감, 폐렴, 천식 같은 호흡기 질환, 위장염, 위궤양, 위암, 대장암, 간암 등 소화기 질환, 고혈압, 협심증, 심근경색, 뇌졸중 등 심혈관 질환, 두통, 편두통, 뇌종양 등 신경계 질환, 관절염, 디스크, 골다공증, 아토피, 피부암, 요로감염, 신장암, 당뇨병, 갑상선 질환, 결핵, HIV/AIDS, 패혈증, 각종 암(유방암, 자궁경부암, 폐암, 위암, 대장암, 간암, 췌장암, 식도암, 전립선암, 백혈병, 림프종), 우울증, 불안장애 등 70여 가지 질환을 자가진단할 수 있습니다."
+            "text": "감기, 독감, 폐렴 같은 호흡기 질환, 위장염, 위궤양, 위암, 대장암, 간암, 췌장암 등 소화기 질환, 고혈압, 협심증, 심근경색, 뇌졸중 등 심혈관 질환, 두통, 편두통, 뇌종양 등 신경계 질환, 관절염, 디스크, 골다공증, 아토피, 피부암, 요로감염, 신장암, 당뇨병, 갑상선 질환, 결핵, HIV/AIDS, 패혈증, 각종 암(유방암, 자궁경부암, 폐암, 위암, 대장암, 간암, 췌장암, 식도암, 전립선암, 백혈병, 림프종), 우울증, 불안장애 등 70여 가지 질환을 자가진단할 수 있습니다."
           }
         },
         {
@@ -177,523 +234,789 @@
           "name": "응급 상황은 어떻게 판단하나요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "다음 증상이 나타나면 즉시 119에 연락하세요: 심한 흉통(가슴을 쥐어짜는 듯한 통증), 갑작스러운 호흡곤란, 편측 마비(한쪽 팔다리나 얼굴이 안 움직임), 언어장애(말이 어눌해짐), 갑작스러운 심한 두통(일생中最 심한 두통), 의식 저하, 심한 출혈, 자살 충동."
+            "text": "심한 흉통, 갑작스러운 호흡곤란, 편측 마비, 언어장애, 갑작스러운 심한 두통, 의식 저하, 심한 출혈, 자살 충동 시 즉시 119에 연락하세요."
           }
         },
         {
           "@type": "Question",
-          "name": "어떤 증상을 선택해야 하나요?",
+          "name": "자가진단 결과를 신뢰할 수 있나요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "현재 겪고 있는 증상을 가능한 한 모두 선택하세요. 증상이 많을수록 더 정확한 자가진단이 가능합니다. 증상의 정확한 부위, 양상(날카로운/둔한/쥐어짜는), 시간대, 악화/완화 요인 등을 함께 고려하면 더욱 좋습니다."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "자가진단 결과는 어떻게 해석하나요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "결과는 4단계(낮음/중간/높음/매우 높음)로 위험도가 표시됩니다. 일치율이 높고 위험도가 '높음' 또는 '매우 높음'으로 표시된 질환은 가능한 한 빨리 병원을 방문하는 것이 좋습니다. 일치율이 낮더라도 심각한 증상이 있다면 의사와 상담하세요."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "개인정보는 안전한가요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "이 자가진단 도구는 모든 처리를 사용자의 브라우저에서만 수행합니다. 입력한 증상 정보는 서버로 전송되지 않으며, 저장되지 않습니다. 개인정보 보호가 철저히 보장됩니다."
+            "text": "HealSense의 자가진단은 의학적 진단을 대체하지 않으며, 교육·참고용입니다. 정확한 진단을 위해 반드시 의료 전문가와 상담하시기 바랍니다."
           }
         }
       ]
     },
     {
       "@type": "HowTo",
-      "@id": "https://example.com/self-diagnosis/#howto",
-      "name": "자가진단 사용 방법",
+      "@id": "https://github.com/flffkaos-pixel/SelfCheck/#howto",
+      "name": "HealSense 자가진단 사용 방법",
       "description": "4단계로 간단히 자가진단을 받을 수 있습니다",
       "totalTime": "PT3M",
       "step": [
-        {"@type": "HowToStep", "position": 1, "name": "카테고리 선택", "text": "14개 카테고리(호흡기, 소화기, 심혈관 등) 중 해당하는 부위를 선택합니다."},
-        {"@type": "HowToStep", "position": 2, "name": "증상 선택", "text": "해당 카테고리에서 겪고 있는 증상을 모두 선택합니다. 검색 기능을 활용할 수 있습니다."},
-        {"@type": "HowToStep", "position": 3, "name": "증상 기간 입력", "text": "증상이 얼마나 지속되었는지 선택합니다 (1~3일, 4~7일, 1~2주, 2주~1개월, 1개월 이상)."},
-        {"@type": "HowToStep", "position": 4, "name": "결과 확인", "text": "AI가 분석한 가능한 질환과 위험도, 권장 조치를 확인합니다."}
+        {"@type": "HowToStep", "position": 1, "name": "카테고리 선택", "text": "14개 카테고리 중 해당하는 부위를 선택합니다."},
+        {"@type": "HowToStep", "position": 2, "name": "증상 선택", "text": "겪고 있는 증상을 모두 선택합니다."},
+        {"@type": "HowToStep", "position": 3, "name": "증상 기간 입력", "text": "증상이 지속된 기간을 선택합니다."},
+        {"@type": "HowToStep", "position": 4, "name": "결과 확인", "text": "AI가 분석한 결과와 권장 조치를 확인합니다."}
       ]
     }
   ]
 }
 </script>
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--primary:#2563eb;--primary-dark:#1d4ed8;--danger:#dc2626;--warning:#f59e0b;--success:#16a34a;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-500:#6b7280;--gray-700:#374151;--gray-900:#111827}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--gray-50);color:var(--gray-900);min-height:100vh}
-.header{background:linear-gradient(135deg,#2563eb,#1e40af);color:#fff;padding:2rem 1rem;text-align:center}
-.header h1{font-size:1.8rem;margin-bottom:.5rem}
-.header p{opacity:.9;font-size:.95rem}
-.container{max-width:900px;margin:0 auto;padding:1rem}
-.disclaimer{background:#fef3c7;border:1px solid #f59e0b;border-radius:12px;padding:1rem;margin-bottom:1.5rem;font-size:.85rem;color:#92400e;line-height:1.5}
-.disclaimer strong{color:#78350f}
-.step-indicator{display:flex;gap:.5rem;margin-bottom:1.5rem;justify-content:center}
-.step{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;background:var(--gray-200);color:var(--gray-500);transition:all .3s}
-.step.active{background:var(--primary);color:#fff}
-.step.done{background:var(--success);color:#fff}
-.step-line{width:40px;height:2px;align-self:center;background:var(--gray-200)}
-.step-line.done{background:var(--success)}
-.section{display:none}
-.section.active{display:block;animation:fadeIn .3s}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.section-title{font-size:1.2rem;font-weight:700;margin-bottom:1rem;color:var(--gray-900)}
-.category-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.75rem;margin-bottom:1.5rem}
-.category-btn{background:#fff;border:2px solid var(--gray-200);border-radius:12px;padding:.75rem .5rem;text-align:center;cursor:pointer;transition:all .2s;font-size:.85rem}
-.category-btn:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 4px 12px rgba(37,99,235,.15)}
-.category-btn.selected{background:#eff6ff;border-color:var(--primary);color:var(--primary);font-weight:600}
-.category-btn .icon{font-size:1.5rem;display:block;margin-bottom:.25rem}
-.symptom-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.5rem;margin-bottom:1.5rem}
-.symptom-btn{background:#fff;border:2px solid var(--gray-200);border-radius:10px;padding:.6rem .5rem;text-align:center;cursor:pointer;transition:all .2s;font-size:.8rem;line-height:1.3}
-.symptom-btn:hover{border-color:var(--primary);background:#eff6ff}
-.symptom-btn.selected{background:#dbeafe;border-color:var(--primary);color:var(--primary-dark);font-weight:600}
-.symptom-btn.disabled{opacity:.4;cursor:not-allowed}
-.duration-section{margin-bottom:1.5rem}
-.duration-section label{display:block;margin-bottom:.5rem;font-weight:600;font-size:.9rem}
-.duration-section select{width:100%;padding:.75rem;border:2px solid var(--gray-200);border-radius:10px;font-size:1rem;background:#fff;cursor:pointer}
-.duration-section select:focus{outline:none;border-color:var(--primary)}
-.selected-symptoms{background:#fff;border-radius:12px;padding:1rem;margin-bottom:1.5rem;border:1px solid var(--gray-200)}
-.selected-symptoms h3{font-size:.9rem;margin-bottom:.5rem;color:var(--gray-500)}
-.selected-tags{display:flex;flex-wrap:wrap;gap:.4rem}
-.tag{background:#eff6ff;color:var(--primary);padding:.25rem .6rem;border-radius:20px;font-size:.8rem;display:flex;align-items:center;gap:.3rem}
-.tag button{background:none;border:none;color:var(--danger);cursor:pointer;font-size:1rem;padding:0 2px;line-height:1}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border:none;border-radius:10px;font-size:.95rem;font-weight:600;cursor:pointer;transition:all .2s}
-.btn-primary{background:var(--primary);color:#fff}
-.btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px)}
-.btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
-.btn-outline{background:#fff;color:var(--gray-700);border:2px solid var(--gray-200)}
-.btn-outline:hover{border-color:var(--primary);color:var(--primary)}
-.btn-danger{background:var(--danger);color:#fff}
-.btn-danger:hover{opacity:.9}
-.btn-group{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;margin-top:1rem}
-.center{text-align:center}
-.results-container{display:flex;flex-direction:column;gap:1rem}
-.result-card{background:#fff;border-radius:12px;border:1px solid var(--gray-200);overflow:hidden;transition:all .2s}
-.result-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.08)}
-.result-card.high{border-left:4px solid var(--danger)}
-.result-card.medium{border-left:4px solid var(--warning)}
-.result-card.low{border-left:4px solid var(--success)}
-.result-header{padding:1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
-.result-info{flex:1}
-.result-name{font-size:1.1rem;font-weight:700;margin-bottom:.2rem}
-.result-category{font-size:.8rem;color:var(--gray-500)}
-.result-match{text-align:right;min-width:80px}
-.match-percent{font-size:1.3rem;font-weight:700}
-.match-bar{height:4px;background:var(--gray-200);border-radius:2px;margin-top:.25rem;overflow:hidden}
-.match-fill{height:100%;border-radius:2px;transition:width .5s}
-.result-body{padding:0 1rem 1rem;display:none}
-.result-card.expanded .result-body{display:block}
-.result-body p{font-size:.85rem;line-height:1.6;color:var(--gray-700);margin-bottom:.75rem}
-.result-body ul{padding-left:1.2rem;font-size:.85rem;color:var(--gray-700);margin-bottom:.75rem}
-.result-body li{margin-bottom:.3rem}
-.result-action{background:#fef2f2;border-radius:8px;padding:.75rem;font-size:.85rem;color:#991b1b;margin-top:.5rem}
-.result-action.info{background:#eff6ff;color:#1e40af}
-.result-action.warning{background:#fffbeb;color:#92400e}
-.loading{text-align:center;padding:3rem}
-.loading-spinner{width:48px;height:48px;border:4px solid var(--gray-200);border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 1rem}
-@keyframes spin{to{transform:rotate(360deg)}}
-.search-box{position:relative;margin-bottom:1rem}
-.search-box input{width:100%;padding:.75rem 1rem .75rem 2.5rem;border:2px solid var(--gray-200);border-radius:10px;font-size:.9rem;background:#fff}
-.search-box input:focus{outline:none;border-color:var(--primary)}
-.search-box .search-icon{position:absolute;left:.8rem;top:50%;transform:translateY(-50%);color:var(--gray-500)}
-.reset-btn{position:fixed;bottom:1.5rem;right:1.5rem;width:52px;height:52px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 16px rgba(37,99,235,.3);transition:all .2s;z-index:100;display:none}
-.reset-btn:hover{transform:scale(1.1)}
-@media(max-width:600px){
-.header h1{font-size:1.4rem}
-.container{padding:.75rem}
-.category-grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
-.symptom-grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
-.result-header{flex-direction:column;text-align:center;gap:.5rem}
-.result-match{text-align:center}
-}
-</style>
 </head>
-<body itemscope itemtype="https://schema.org/WebPage">
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
 
-<a href="#main" class="skip-link" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">본문 바로가기</a>
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary focus:text-on-primary focus:px-4 focus:py-2 focus:rounded">본문 바로가기</a>
 
-<header class="header" role="banner" itemprop="header">
-  <h1 itemprop="name">건강 자가진단 - 증상 기반 질환 예측 도구</h1>
-  <p itemprop="description">감기부터 암까지 70여 가지 질환을 자가진단해보세요</p>
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant" role="banner">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20">
+<div class="flex items-center gap-8">
+<span class="text-headline-md font-headline-md text-primary cursor-pointer" onclick="App.goToStep(0)">HealSense</span>
+<nav class="hidden md:flex gap-6">
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 cursor-pointer transition-all duration-200" href="#checker">자가진단</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="#library">건강 백과</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="#chronic">만성질환 관리</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200 cursor-pointer" href="#faq">FAQ</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant focus-within:border-primary">
+<span class="material-symbols-outlined text-outline">search</span>
+<input id="navSearch" class="bg-transparent border-none focus:ring-0 text-label-md ml-2 w-48 outline-none" placeholder="증상을 입력하세요..." type="text"/>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary hidden md:inline">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary hidden md:inline">account_circle</span>
+<button id="mobileMenuBtn" class="md:hidden material-symbols-outlined text-on-surface" aria-label="메뉴">menu</button>
+</div>
+</div>
+<div id="mobileMenu" class="hidden md:hidden border-t border-outline-variant bg-surface">
+<nav class="flex flex-col px-margin-mobile py-4 gap-3">
+<a class="font-body-md text-body-md text-primary font-bold cursor-pointer" href="#checker">자가진단</a>
+<a class="font-body-md text-body-md text-on-surface-variant cursor-pointer" href="#library">건강 백과</a>
+<a class="font-body-md text-body-md text-on-surface-variant cursor-pointer" href="#chronic">만성질환 관리</a>
+<a class="font-body-md text-body-md text-on-surface-variant cursor-pointer" href="#faq">FAQ</a>
+</nav>
+</div>
 </header>
 
-<main id="main" class="container" role="main" itemprop="mainContentOfPage">
+<main id="main-content" class="flex-grow" role="main">
 
-<nav aria-label="브레드크럼" itemprop="breadcrumb" style="font-size:.8rem;color:var(--gray-500);margin-bottom:1rem">
-  <a href="/" style="color:var(--primary);text-decoration:none">홈</a>
-  &gt; <a href="/health" style="color:var(--primary);text-decoration:none">건강</a>
-  &gt; <span>자가진단</span>
-</nav>
+<!-- Hero Section -->
+<section class="hero-gradient py-12 md:py-20 relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid md:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-6 leading-tight">
+  당신의 증상으로<br/><span class="text-primary">질환을 확인해 보세요</span>
+</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-10 max-w-lg">
+  HealSense의 고도화된 AI 알고리즘이 당신의 증상을 분석하여 가장 가능성 있는 원인을 찾고 적절한 대처 방법을 안내해 드립니다.
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button onclick="App.goToStep(1)" class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md text-label-md shadow-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2 active:scale-95">
+  증상 체크 시작하기
+  <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button onclick="document.getElementById('library').scrollIntoView({behavior:'smooth'})" class="bg-surface-container-lowest text-primary border border-primary px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-primary-fixed-dim transition-all active:scale-95">
+  건강 백과 보기
+</button>
+</div>
+<div class="mt-8 flex flex-wrap gap-4 text-label-sm font-label-sm text-on-surface-variant">
+  <span class="flex items-center gap-1"><span class="material-symbols-outlined text-status-success text-[18px]">check_circle</span> 무료</span>
+  <span class="flex items-center gap-1"><span class="material-symbols-outlined text-status-success text-[18px]">check_circle</span> 개인정보 보호</span>
+  <span class="flex items-center gap-1"><span class="material-symbols-outlined text-status-success text-[18px]">check_circle</span> 70여 질환 분석</span>
+  <span class="flex items-center gap-1"><span class="material-symbols-outlined text-status-success text-[18px]">check_circle</span> 즉시 결과</span>
+</div>
+</div>
+<div class="relative hidden md:block">
+<div class="w-full h-[400px] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/20 to-tertiary/20 flex items-center justify-center">
+<div class="text-center p-8">
+<span class="material-symbols-outlined text-primary text-[120px]">medical_services</span>
+<div class="mt-4">
+<p class="text-headline-md font-headline-md text-primary">AI 자가진단</p>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">14개 카테고리 · 87개 증상 · 71개 질환</p>
+</div>
+</div>
+</div>
+<div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-xl shadow-xl flex items-center gap-4">
+<div class="bg-status-success/20 p-3 rounded-full">
+<span class="material-symbols-outlined text-status-success" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-outline">실시간 분석 중</p>
+<p class="text-label-md font-label-md text-on-surface">정확도 98.2% 확보</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-<aside class="disclaimer" role="note" aria-label="의료 면책 공지" itemprop="disclaimers" itemscope itemtype="https://schema.org/MedicalDisclaimer">
-  <strong>⚠️ 의료 면책 공지</strong><br>
-  <span itemprop="text">이 자가진단은 참고용으로만 사용하세요. 정확한 진단은 반드시 의사와 상담하시기 바랍니다. 응급 상황이 의심되면 즉시 119에 연락하세요.</span>
+<!-- Emergency Banner -->
+<aside class="bg-error-container py-3" role="alert">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-wrap items-center justify-center gap-4 text-center">
+<span class="material-symbols-outlined text-status-error animate-pulse" style="font-variation-settings: 'FILL' 1;">warning</span>
+<p class="text-label-md font-label-md text-on-error-container">
+  호흡 곤란, 심한 가슴 통증 등 <span class="font-bold underline cursor-pointer" onclick="App.showEmergency()">응급 상황 시 행동 요령</span>을 즉시 확인하십시오.
+</p>
+<a href="tel:119" class="text-status-error font-bold text-label-md border-l border-on-error-container/20 pl-4 hover:opacity-70 transition-opacity">119 연결</a>
+</div>
 </aside>
 
-<section aria-label="자가진단 단계" class="diagnostic-tool" itemprop="mainEntity" itemscope itemtype="https://schema.org/MedicalWebPage">
-<meta itemprop="name" content="건강 자가진단 도구">
-<meta itemprop="audience" content="일반인, 환자">
+<!-- Symptom Checker Section -->
+<section id="checker" class="py-12 md:py-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-10 text-center">
+<span class="text-label-md font-label-md text-primary uppercase tracking-wider">AI Symptom Checker</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-2">증상 자가진단 시작하기</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-3 max-w-2xl mx-auto">아래 단계를 따라 현재 겪고 계신 증상을 선택하시면 AI가 가능한 질환을 분석해드립니다.</p>
+</div>
 
-<nav class="step-indicator" aria-label="진단 진행 단계">
-  <div class="step active" id="step1" aria-label="1단계: 카테고리 선택">1</div>
-  <div class="step-line" id="stepLine1" aria-hidden="true"></div>
-  <div class="step" id="step2" aria-label="2단계: 증상 선택">2</div>
-  <div class="step-line" id="stepLine2" aria-hidden="true"></div>
-  <div class="step" id="step3" aria-label="3단계: 증상 기간">3</div>
-  <div class="step-line" id="stepLine3" aria-hidden="true"></div>
-  <div class="step" id="step4" aria-label="4단계: 결과 확인">4</div>
-</nav>
+<!-- Step Indicator -->
+<div class="flex items-center justify-center gap-2 mb-10 flex-wrap" id="stepIndicator">
+  <div class="flex items-center gap-2 step-item active" data-step="1">
+    <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-label-md step-circle bg-primary text-on-primary">1</div>
+    <span class="text-label-md font-label-md hidden sm:inline step-label text-primary">카테고리</span>
+  </div>
+  <div class="w-8 md:w-16 h-0.5 step-line bg-outline-variant"></div>
+  <div class="flex items-center gap-2 step-item" data-step="2">
+    <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-label-md step-circle bg-outline-variant text-on-surface-variant">2</div>
+    <span class="text-label-md font-label-md hidden sm:inline step-label text-on-surface-variant">증상 선택</span>
+  </div>
+  <div class="w-8 md:w-16 h-0.5 step-line bg-outline-variant"></div>
+  <div class="flex items-center gap-2 step-item" data-step="3">
+    <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-label-md step-circle bg-outline-variant text-on-surface-variant">3</div>
+    <span class="text-label-md font-label-md hidden sm:inline step-label text-on-surface-variant">기간</span>
+  </div>
+  <div class="w-8 md:w-16 h-0.5 step-line bg-outline-variant"></div>
+  <div class="flex items-center gap-2 step-item" data-step="4">
+    <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-label-md step-circle bg-outline-variant text-on-surface-variant">4</div>
+    <span class="text-label-md font-label-md hidden sm:inline step-label text-on-surface-variant">결과</span>
+  </div>
+</div>
 
-  <div class="section active" id="section1" role="region" aria-label="카테고리 선택">
-    <h2 class="section-title">1. 증상 카테고리를 선택하세요</h2>
-    <div class="category-grid" id="categoryGrid" role="radiogroup" aria-label="증상 카테고리"></div>
-    <div class="btn-group">
-      <button class="btn btn-primary" id="toStep2" disabled>다음: 증상 선택 →</button>
+<!-- Step 0: Welcome -->
+<div id="step0" class="checker-step active">
+<div class="bg-surface-container-lowest rounded-2xl p-8 md:p-12 border border-outline-variant text-center max-w-3xl mx-auto">
+<span class="material-symbols-outlined text-primary text-[80px] mb-4">health_and_safety</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">HealSense 자가진단에 오신 것을 환영합니다</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-8">4단계로 간단하게 자가진단을 받아보세요. 약 3분 정도 소요됩니다.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+  <div class="text-center">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
+  <span class="material-symbols-outlined text-primary">category</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">카테고리 선택</p>
+  </div>
+  <div class="text-center">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
+  <span class="material-symbols-outlined text-primary">checklist</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">증상 선택</p>
+  </div>
+  <div class="text-center">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
+  <span class="material-symbols-outlined text-primary">schedule</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">기간 입력</p>
+  </div>
+  <div class="text-center">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
+  <span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">결과 확인</p>
+  </div>
+</div>
+<button onclick="App.goToStep(1)" class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md text-label-md shadow-lg hover:bg-primary-container transition-all inline-flex items-center gap-2 active:scale-95">
+  시작하기 <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+
+<!-- Step 1: Category Selection -->
+<div id="step1" class="checker-step">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 text-center">1. 증상 카테고리를 선택하세요</h3>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3" id="categoryGrid"></div>
+<div class="flex justify-between items-center mt-8 flex-wrap gap-3">
+  <button onclick="App.goToStep(0)" class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline">
+    <span class="material-symbols-outlined text-[18px]">arrow_back</span> 이전
+  </button>
+  <span class="text-label-sm font-label-sm text-on-surface-variant"><span id="catCount">0</span>개 선택됨</span>
+  <button id="toStep2" disabled onclick="App.goToStep(2)" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95">
+    다음: 증상 선택 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+  </button>
+</div>
+</div>
+
+<!-- Step 2: Symptom Selection -->
+<div id="step2" class="checker-step">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 text-center">2. 해당하는 증상을 모두 선택하세요</h3>
+<div class="max-w-2xl mx-auto mb-6">
+  <div class="flex items-center bg-surface-container-low px-4 py-3 rounded-full border border-outline-variant focus-within:border-primary">
+    <span class="material-symbols-outlined text-outline">search</span>
+    <input id="symptomSearch" type="text" placeholder="증상 검색 (예: 두통, 발열, 기침...)" class="bg-transparent border-none focus:ring-0 text-label-md ml-2 w-full outline-none"/>
+  </div>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-4 md:p-6">
+  <div class="flex flex-wrap gap-2" id="symptomGrid" role="group" aria-label="증상 목록"></div>
+  <div id="noSymptoms" class="hidden text-center py-12 text-on-surface-variant">
+    <span class="material-symbols-outlined text-[48px]">search_off</span>
+    <p class="mt-2">검색 결과가 없습니다. 다른 키워드로 검색해보세요.</p>
+  </div>
+</div>
+<div class="mt-6">
+  <div class="bg-surface-container-low rounded-xl p-4 border border-outline-variant">
+    <p class="text-label-sm font-label-sm text-on-surface-variant mb-2">선택한 증상 (<span id="selectedCount">0</span>개)</p>
+    <div class="flex flex-wrap gap-2 min-h-[2rem]" id="selectedTags">
+      <span class="text-on-surface-variant text-label-sm font-label-sm">선택된 증상이 여기에 표시됩니다</span>
     </div>
   </div>
+</div>
+<div class="flex justify-between items-center mt-8 flex-wrap gap-3">
+  <button onclick="App.goToStep(1)" class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline">
+    <span class="material-symbols-outlined text-[18px]">arrow_back</span> 이전
+  </button>
+  <span class="text-label-sm font-label-sm text-on-surface-variant">최소 1개 증상 선택 필요</span>
+  <button id="toStep3" disabled onclick="App.goToStep(3)" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95">
+    다음: 증상 기간 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+  </button>
+</div>
+</div>
 
-  <div class="section" id="section2" role="region" aria-label="증상 선택">
-    <h2 class="section-title">2. 해당하는 증상을 모두 선택하세요</h2>
-    <div class="search-box">
-      <label for="symptomSearch" class="visually-hidden" style="position:absolute;left:-9999px">증상 검색</label>
-      <span class="search-icon" aria-hidden="true">🔍</span>
-      <input type="text" id="symptomSearch" placeholder="증상 검색..." aria-label="증상 검색">
+<!-- Step 3: Duration -->
+<div id="step3" class="checker-step">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 text-center">3. 증상이 지속된 기간을 선택하세요</h3>
+<div class="max-w-2xl mx-auto bg-surface-container-lowest rounded-2xl border border-outline-variant p-6 md:p-8">
+<div class="space-y-3" id="durationOptions">
+  <label class="flex items-center gap-4 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
+    <input type="radio" name="duration" value="1-3" class="w-5 h-5 accent-primary" checked>
+    <div class="flex-1">
+      <p class="font-label-md text-label-md text-on-surface">1~3일</p>
+      <p class="text-label-sm font-label-sm text-on-surface-variant">갑자기 시작된 증상</p>
     </div>
-    <div class="symptom-grid" id="symptomGrid" role="group" aria-label="증상 목록"></div>
-    <div class="selected-symptoms" aria-live="polite">
-      <h3>선택한 증상 (<span id="selectedCount">0</span>)</h3>
-      <div class="selected-tags" id="selectedTags"></div>
+    <span class="material-symbols-outlined text-outline">today</span>
+  </label>
+  <label class="flex items-center gap-4 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
+    <input type="radio" name="duration" value="4-7" class="w-5 h-5 accent-primary">
+    <div class="flex-1">
+      <p class="font-label-md text-label-md text-on-surface">4~7일</p>
+      <p class="text-label-sm font-label-sm text-on-surface-variant">일주일 미만 지속</p>
     </div>
-    <div class="btn-group">
-      <button class="btn btn-outline" id="backToStep1">← 이전</button>
-      <button class="btn btn-primary" id="toStep3" disabled>다음: 증상 기간 →</button>
+    <span class="material-symbols-outlined text-outline">date_range</span>
+  </label>
+  <label class="flex items-center gap-4 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
+    <input type="radio" name="duration" value="8-14" class="w-5 h-5 accent-primary">
+    <div class="flex-1">
+      <p class="font-label-md text-label-md text-on-surface">1~2주</p>
+      <p class="text-label-sm font-label-sm text-on-surface-variant">2주 미만 지속</p>
+    </div>
+    <span class="material-symbols-outlined text-outline">calendar_month</span>
+  </label>
+  <label class="flex items-center gap-4 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
+    <input type="radio" name="duration" value="15-30" class="w-5 h-5 accent-primary">
+    <div class="flex-1">
+      <p class="font-label-md text-label-md text-on-surface">2주~1개월</p>
+      <p class="text-label-sm font-label-sm text-on-surface-variant">상당 기간 지속</p>
+    </div>
+    <span class="material-symbols-outlined text-outline">event</span>
+  </label>
+  <label class="flex items-center gap-4 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
+    <input type="radio" name="duration" value="31+" class="w-5 h-5 accent-primary">
+    <div class="flex-1">
+      <p class="font-label-md text-label-md text-on-surface">1개월 이상</p>
+      <p class="text-label-sm font-label-sm text-on-surface-variant">만성적 증상 가능성</p>
+    </div>
+    <span class="material-symbols-outlined text-outline">calendar_today</span>
+  </label>
+</div>
+</div>
+<div class="flex justify-between items-center mt-8 flex-wrap gap-3">
+  <button onclick="App.goToStep(2)" class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline">
+    <span class="material-symbols-outlined text-[18px]">arrow_back</span> 이전
+  </button>
+  <button onclick="App.diagnose()" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-2 active:scale-95">
+    AI 진단 시작 <span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+  </button>
+</div>
+</div>
+
+<!-- Step 4: Results -->
+<div id="step4" class="checker-step">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 text-center">진단 결과</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6 text-center" id="resultSummary"></p>
+
+<div id="loadingArea" class="hidden text-center py-16">
+  <div class="inline-block w-16 h-16 border-4 border-outline-variant border-t-primary rounded-full animate-spin"></div>
+  <p class="mt-4 text-body-md font-body-md text-on-surface-variant">AI가 증상을 분석하고 있습니다...</p>
+</div>
+
+<div id="resultsArea" class="space-y-4 max-w-4xl mx-auto"></div>
+
+<div id="resultActions" class="hidden flex flex-col sm:flex-row justify-center gap-3 mt-10">
+  <button onclick="App.goToStep(2)" class="bg-surface-container-lowest text-primary border border-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-fixed-dim transition-all flex items-center justify-center gap-2 active:scale-95">
+    <span class="material-symbols-outlined text-[18px]">edit</span> 증상 수정
+  </button>
+  <button onclick="App.reset()" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all flex items-center justify-center gap-2 active:scale-95">
+    <span class="material-symbols-outlined text-[18px]">refresh</span> 처음부터 다시
+  </button>
+</div>
+
+<div class="mt-10 max-w-3xl mx-auto bg-surface-container-low rounded-2xl p-6 border border-outline-variant">
+  <div class="flex items-start gap-3">
+    <span class="material-symbols-outlined text-primary mt-1">info</span>
+    <div>
+      <h4 class="font-label-md text-label-md text-on-surface mb-2">📌 중요 안내</h4>
+      <p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">이 결과는 AI 기반 참고용 진단입니다. 정확한 진단을 위해 반드시 의료기관을 방문하세요. 증상이 심각하거나 악화되는 경우 즉시 응급실(119)에 연락하십시오.</p>
     </div>
   </div>
-
-  <div class="section" id="section3" role="region" aria-label="증상 기간 입력">
-    <h2 class="section-title">3. 증상이 지속된 기간</h2>
-    <div class="duration-section">
-      <label for="duration">증상이 얼마나 지속되었나요?</label>
-      <select id="duration">
-        <option value="1-3">1~3일</option>
-        <option value="4-7">4~7일</option>
-        <option value="8-14">1~2주</option>
-        <option value="15-30">2주~1개월</option>
-        <option value="31+">1개월 이상</option>
-      </select>
-    </div>
-    <div class="btn-group">
-      <button class="btn btn-outline" id="backToStep2">← 이전</button>
-      <button class="btn btn-primary" id="diagnoseBtn">진단 시작 →</button>
-    </div>
-  </div>
-
-  <div class="section" id="section4" role="region" aria-label="진단 결과">
-    <h2 class="section-title">진단 결과</h2>
-    <div id="loadingArea" class="loading" style="display:none" role="status" aria-live="polite">
-      <div class="loading-spinner" aria-hidden="true"></div>
-      <p>증상 분석 중...</p>
-    </div>
-    <div id="resultsArea" aria-live="polite"></div>
-    <div class="btn-group">
-      <button class="btn btn-outline" id="backToStep3">← 이전</button>
-      <button class="btn btn-primary" id="restartBtn">처음부터 다시</button>
-    </div>
-  </div>
+</div>
+</div>
 </section>
 
-<section class="seo-content" aria-label="건강 자가진단 가이드" style="margin-top:3rem;background:#fff;border-radius:12px;padding:1.5rem;line-height:1.7;color:var(--gray-700)" itemprop="mainContentOfPage" itemscope itemtype="https://schema.org/HealthTopicContent">
-<meta itemprop="medicalAudience" content="https://schema.org/Patient">
-<meta itemprop="about" content="증상 기반 자가진단">
+<!-- Emergency Modal -->
+<div id="emergencyModal" class="hidden fixed inset-0 z-[100] bg-black/50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="emergencyTitle">
+<div class="bg-surface-container-lowest rounded-2xl max-w-lg w-full p-6 md:p-8 max-h-[90vh] overflow-y-auto">
+  <div class="flex items-start justify-between mb-4">
+    <h3 id="emergencyTitle" class="font-headline-md text-headline-md text-status-error flex items-center gap-2">
+      <span class="material-symbols-outlined">emergency</span> 응급 상황 대처 요령
+    </h3>
+    <button onclick="App.closeEmergency()" class="material-symbols-outlined text-on-surface-variant hover:text-on-surface">close</button>
+  </div>
+  <div class="space-y-4 text-body-md font-body-md text-on-surface">
+    <div class="bg-error-container p-4 rounded-xl">
+      <p class="font-bold text-on-error-container mb-2">🚨 다음 증상이 나타나면 즉시 119에 전화하세요:</p>
+      <ul class="list-disc pl-5 space-y-1 text-on-error-container">
+        <li>심한 흉통 (5분 이상 지속, 쥐어짜는 통증)</li>
+        <li>갑작스러운 호흡곤란</li>
+        <li>편측 마비 (한쪽 팔다리/얼굴이 안 움직임)</li>
+        <li>언어장애 (말이 어눌해짐)</li>
+        <li>갑작스러운 극심한 두통 (일생中最 심한)</li>
+        <li>의식 저하 또는 혼미</li>
+        <li>심한 출혈</li>
+        <li>자살 충동</li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-label-md text-label-md text-primary mb-2">📞 주요 응급 연락처</h4>
+      <ul class="space-y-1">
+        <li><strong>응급의료:</strong> <a href="tel:119" class="text-primary">119</a></li>
+        <li><strong>자살예방:</strong> <a href="tel:1393" class="text-primary">1393</a></li>
+        <li><strong>정신건강위기:</strong> <a href="tel:1577-0199" class="text-primary">1577-0199</a></li>
+      </ul>
+    </div>
+    <div class="bg-primary-fixed p-4 rounded-xl">
+      <h4 class="font-label-md text-label-md text-on-primary-fixed mb-2">💡 일반적인 응급 대처</h4>
+      <ul class="list-disc pl-5 space-y-1 text-on-primary-fixed">
+        <li>환자를 편안한 자세로 눕히세요</li>
+        <li>옷깃, 벨트 등 조이는 것을 풀어주세요</li>
+        <li>의식을 잃으면 회복자세로</li>
+        <li>구급대가 도착할 때까지 환자와 함께 있어 주세요</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
 
-<article itemprop="articleSection">
-<h2 style="font-size:1.3rem;margin-bottom:1rem;color:var(--gray-900)">건강 자가진단이란?</h2>
-<p>건강 자가진단(Self-diagnosis)은 사용자가 직접 자신의 증상을 입력하고, 이를 기반으로 가능한 질환을 추정하는 과정입니다. 본 도구는 <strong>14개 카테고리</strong>(호흡기, 소화기, 심혈관, 신경계, 근골격계, 피부, 비뇨/생식, 내분비/대사, 이비인후과, 안과, 감염성, 종양/암, 정신건강, 전신)에서 <strong>87개 증상</strong>을 선택하여 <strong>71개 질환</strong>의 가능성을 분석합니다.</p>
-
-<h2 style="font-size:1.3rem;margin:1.5rem 0 1rem;color:var(--gray-900)">자가진단 가능한 질환 목록</h2>
-<h3 style="font-size:1.1rem;margin:1rem 0 .5rem">호흡기 질환</h3>
-<p>감기(급성상기도감염), 인플루엔자(독감), 폐렴, 천식, 급성기관지염, 만성폐쇄성폐질환(COPD), 폐암</p>
-
-<h3 style="font-size:1.1rem;margin:1rem 0 .5rem">소화기 질환</h3>
-<p>급성위장염, 위식도역류질환(GERD), 위궤양/십이지장궤양, 위암, 대장암, 급성충수염(맹장염), 간염, 간암, 췌장암</p>
-
-<h3 style="font-size:1.1rem;margin:1rem 0 .5rem">심혈관 질환</h3>
-<p>고혈압, 협심증, 심근경색(심장마비), 부정맥, 심부전, 뇌졸중(중풍), 뇌동맥류</p>
-
-<h3 style="font-size:1.1rem;margin:1rem 0 .5rem">신경계 질환</h3>
-<p>긴장성두통, 편두통, 뇌종양, 파킨슨병, 알츠하이머병(치매), 뇌전증(간질), 수막염</p>
-
-<h3 style="font-size:1.1rem;margin:1rem 0 .5rem">근골격계 질환</h3>
-<p>요통(허리통증), 디스크(추간판탈출증), 골관절염, 류마티스관절염, 골다공증</p>
-
-<h3 style="font-size:1.1rem;margin:1rem 0 .5rem">피부 질환</h3>
-<p>아토피피부염, 두드러기, 피부암(기저세포암), 악성흑색종(흑색종)</p>
-
-<h3 style="font-size:1.1rem;margin:1rem 0 .5rem">비뇨기/생식기 질환</h3>
-<p>요로감염(방광염), 신장암, 방광암, 전립선비대증, 전립선암</p>
-
-<h3 style="font-size:1.1rem;margin:1rem 0 .5rem">내분비/대사 질환</h3>
-<p>당뇨병, 갑상선항진증, 갑상선기능저하증, 갑상선암</p>
-
-<h3 style="font-size:1.1rem;margin:1rem 0 .5rem">감염성 질환</h3>
-<p>결핵, HIV/AIDS, 패혈증</p>
-
-<h3 style="font-size:1.1rem;margin:1rem 0 .5rem">종양/암 질환</h3>
-<p>유방암, 자궁경부암, 난소암, 췌장암, 식도암, 구강암, 폐암, 위암, 대장암, 간암, 신장암, 방광암, 전립선암, 갑상선암, 악성흑색종, 뇌종양, 림프종, 백혈병</p>
-
-<h3 style="font-size:1.1rem;margin:1rem 0 .5rem">정신건강 질환</h3>
-<p>불안장애, 우울장애, 조현병(정신분열증), 불면증</p>
-
-<h2 style="font-size:1.3rem;margin:1.5rem 0 1rem;color:var(--gray-900)">자가진단 vs 의사의 진단</h2>
-<p>본 자가진단은 의학적 진단을 대체하지 않습니다. 의사는 문진, 진찰, 영상검사(X-ray, CT, MRI), 혈액검사, 조직검사 등을 종합하여 진단을 내립니다. 자가진단은 의사를 방문하기 전 자신의 증상을 정리하거나, 증상의 심각성을 가늠하는 데 도움을 줄 수 있습니다. <strong>증상이 심각하거나 지속된다면 반드시 의료기관을 방문하세요.</strong></p>
-
-<h2 style="font-size:1.3rem;margin:1.5rem 0 1rem;color:var(--gray-900)">응급 상황 가이드</h2>
-<p>다음과 같은 증상이 나타난다면 <strong>즉시 119에 전화</strong>하거나 응급실을 방문하세요:</p>
-<ul style="padding-left:1.5rem">
-<li>심한 흉통(가슴을 쥐어짜는 통증, 5분 이상 지속)</li>
-<li>갑작스러운 호흡곤란</li>
-<li>편측 마비(한쪽 팔다리/얼굴이 안 움직임) - 뇌졸중 의심</li>
-<li>언어장애(말이 어눌해짐) - 뇌졸중 의심</li>
-<li>갑작스러운 극심한 두통(일생中最 심한 두통) - 뇌출혈 의심</li>
-<li>의식 저하 또는 혼미</li>
-<li>심한 출혈</li>
-<li>자살 충동 또는 자해 시도</li>
-</ul>
-
-<h2 style="font-size:1.3rem;margin:1.5rem 0 1rem;color:var(--gray-900)">증상별 자가진단 가이드</h2>
-
-<h3 style="font-size:1.1rem;margin:1rem 0 .5rem">두통이 있을 때</h3>
-<p>두통은 긴장성두통, 편두통, 군발두통, 부비동염, 뇌출혈, 뇌종양 등 다양한 원인에 의해 발생합니다. 갑작스러운 극심한 두통, 발열 동반, 구토, 시야장애, 마비 증상이 동반된다면 즉시 병원을 방문하세요.</p>
-
-<h3 style="font-size:1.1rem;margin:1rem 0 .5rem">가슴통증이 있을 때</h3>
-<p>흉통은 심장(협심증, 심근경색), 폐(폐색전증, 기흉), 소화기(위식도역류), 근골격(갈비뼈 골절) 등 다양한 원인이 있습니다. 5분 이상 지속되는 쥐어짜는 통증, 왼팔/턱 방사통, 호흡곤란 동반 시 심근경색 가능성이 있어 119에 연락하세요.</p>
-
-<h3 style="font-size:1.1rem;margin:1rem 0 .5rem">복통이 있을 때</h3>
-<p>복통은 위치(상복부, 하복부, 우상복부, 좌하복부 등)와 양상에 따라 원인을 추정할 수 있습니다. 우하복부 통증은 충수염, 상복부 통증은 위궤양/췌장염, 우상복부는 담낭염을 의심할 수 있습니다.</p>
-
-<h3 style="font-size:1.1rem;margin:1rem 0 .5rem">발열이 있을 때</h3>
-<p>38도 이상의 발열은 감염(바이러스, 세균), 염증, 종양 등 다양한 원인에 의해 발생합니다. 3일 이상 지속되거나 40도 이상의 고열, 의식 저하, 경련이 동반되면 병원 방문이 필요합니다.</p>
-
-<h3 style="font-size:1.1rem;margin:1rem 0 .5rem">호흡곤란이 있을 때</h3>
-<p>호흡곤란은 천식, 폐렴, COPD, 심부전, 폐색전증, 불안발작 등 다양한 원인에 의해 발생합니다. 갑작스러운 호흡곤란, 입술/손톱 청색증, 말하기 어려움 시 응급실 방문이 필요합니다.</p>
-
-<h2 style="font-size:1.3rem;margin:1.5rem 0 1rem;color:var(--gray-900)">암의 초기 증상</h2>
-<p>암의 조기 발견은 생존율을 크게 높입니다. 다음 증상이 2주 이상 지속된다면 검진을 권장합니다:</p>
-<ul style="padding-left:1.5rem">
-<li>원인 모를 체중 감소(6개월 내 5kg 이상)</li>
-<li>만성 피로, 무기력</li>
-<li>만성 발열</li>
-<li>야간 발한</li>
-<li>림프절 종대(목, 겨드랑이, 사타구니의 혹)</li>
-<li>만성 기침, 객혈</li>
-<li>배변/배뇨 습관 변화</li>
-<li>원인 모를 출혈</li>
-<li>점(모반)의 변화(크기, 색상, 모양)</li>
-<li>2주 이상 치유되지 않는 궤양</li>
-<li>삼킴 곤란</li>
-</ul>
-
-<h2 style="font-size:1.3rem;margin:1.5rem 0 1rem;color:var(--gray-900)">자주 묻는 질문 (FAQ)</h2>
-
-<details style="margin-bottom:.5rem;background:var(--gray-50);padding:1rem;border-radius:8px">
-<summary style="font-weight:600;cursor:pointer">Q. 이 자가진단은 무료인가요?</summary>
-<p style="margin-top:.5rem">네, 완전 무료이며 회원가입도 필요하지 않습니다. 모든 처리는 브라우저에서 이루어지며 서버로 데이터가 전송되지 않습니다.</p>
-</details>
-
-<details style="margin-bottom:.5rem;background:var(--gray-50);padding:1rem;border-radius:8px">
-<summary style="font-weight:600;cursor:pointer">Q. 자가진단 결과를 신뢰할 수 있나요?</summary>
-<p style="margin-top:.5rem">이 도구는 의학적 진단이 아닌 교육·참고용입니다. 결과는 의학적 진단을 대체할 수 없으며, 정확한 진단은 반드시 의료 전문가와 상담하셔야 합니다.</p>
-</details>
-
-<details style="margin-bottom:.5rem;background:var(--gray-50);padding:1rem;border-radius:8px">
-<summary style="font-weight:600;cursor:pointer">Q. 어떤 진료과에 가야 할지 모르겠어요.</summary>
-<p style="margin-top:.5rem">내과, 가정의학과에서 1차 진료를 받으실 수 있습니다. 결과 페이지의 권장 조치에서 적절한 진료과를 안내해드립니다.</p>
-</details>
-
-<details style="margin-bottom:.5rem;background:var(--gray-50);padding:1rem;border-radius:8px">
-<summary style="font-weight:600;cursor:pointer">Q. 응급실에 가야 할지 모르겠어요.</summary>
-<p style="margin-top:.5rem">응급 상황 가이드를 참고하세요. 심한 흉통, 호흡곤란, 편측 마비, 의식 저하, 심한 출혈 시 즉시 119에 전화하세요.</p>
-</details>
-
-<details style="margin-bottom:.5rem;background:var(--gray-50);padding:1rem;border-radius:8px">
-<summary style="font-weight:600;cursor:pointer">Q. 개인정보는 안전한가요?</summary>
-<p style="margin-top:.5rem">모든 데이터는 브라우저 내에서만 처리됩니다. 입력한 증상은 서버로 전송되거나 저장되지 않으므로 개인정보가 완전히 보호됩니다.</p>
-</details>
-
-<details style="margin-bottom:.5rem;background:var(--gray-50);padding:1rem;border-radius:8px">
-<summary style="font-weight:600;cursor:pointer">Q. 모바일에서도 사용할 수 있나요?</summary>
-<p style="margin-top:.5rem">네, 반응형 웹 디자인으로 모바일, 태블릿, 데스크톱 모든 기기에서 최적화되어 있습니다.</p>
-</details>
-</article>
+<!-- Category Cards -->
+<section id="library" class="py-12 md:py-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex items-center justify-between mb-10 flex-wrap gap-4">
+  <div>
+    <span class="text-label-md font-label-md text-primary uppercase tracking-wider">Health Library</span>
+    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-2">분야별 빠른 진단</h2>
+  </div>
+  <button onclick="App.goToStep(1)" class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline">
+    전체 카테고리 보기
+    <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+  </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+  <div class="group bg-surface-container-low p-8 rounded-xl border border-outline-variant hover:border-primary hover:shadow-lg transition-all cursor-pointer relative overflow-hidden" onclick="App.startWithCategory('respiratory')">
+    <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+      <span class="material-symbols-outlined text-primary text-[32px]">pulmonology</span>
+    </div>
+    <h3 class="font-headline-md text-headline-md text-on-surface mb-3">호흡기 질환</h3>
+    <p class="text-on-surface-variant font-body-md text-body-md mb-6">감기, 독감, 폐렴, 천식, 기관지염 등 호흡기 질환 자가진단</p>
+    <div class="flex items-center text-primary font-label-md text-label-md group-hover:gap-2 transition-all">
+      진단 시작 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    </div>
+    <div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+      <span class="material-symbols-outlined text-[120px]">air</span>
+    </div>
+  </div>
+  <div class="group bg-surface-container-low p-8 rounded-xl border border-outline-variant hover:border-primary hover:shadow-lg transition-all cursor-pointer relative overflow-hidden" onclick="App.startWithCategory('digestive')">
+    <div class="bg-tertiary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+      <span class="material-symbols-outlined text-tertiary text-[32px]">gastroenterology</span>
+    </div>
+    <h3 class="font-headline-md text-headline-md text-on-surface mb-3">소화기 질환</h3>
+    <p class="text-on-surface-variant font-body-md text-body-md mb-6">위장염, 위궤양, 위암, 대장암, 간암 등 소화기 질환 자가진단</p>
+    <div class="flex items-center text-primary font-label-md text-label-md group-hover:gap-2 transition-all">
+      진단 시작 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    </div>
+    <div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+      <span class="material-symbols-outlined text-[120px]">lunch_dining</span>
+    </div>
+  </div>
+  <div class="group bg-surface-container-low p-8 rounded-xl border border-outline-variant hover:border-primary hover:shadow-lg transition-all cursor-pointer relative overflow-hidden" onclick="App.startWithCategory('cardiovascular')">
+    <div class="bg-status-error/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+      <span class="material-symbols-outlined text-status-error text-[32px]">cardiology</span>
+    </div>
+    <h3 class="font-headline-md text-headline-md text-on-surface mb-3">심혈관 질환</h3>
+    <p class="text-on-surface-variant font-body-md text-body-md mb-6">고혈압, 협심증, 심근경색, 뇌졸중 등 심혈관 질환 자가진단</p>
+    <div class="flex items-center text-primary font-label-md text-label-md group-hover:gap-2 transition-all">
+      진단 시작 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    </div>
+    <div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+      <span class="material-symbols-outlined text-[120px]">favorite</span>
+    </div>
+  </div>
+  <div class="group bg-surface-container-low p-8 rounded-xl border border-outline-variant hover:border-primary hover:shadow-lg transition-all cursor-pointer relative overflow-hidden" onclick="App.startWithCategory('cancer')">
+    <div class="bg-tertiary-container/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+      <span class="material-symbols-outlined text-tertiary text-[32px]">biotech</span>
+    </div>
+    <h3 class="font-headline-md text-headline-md text-on-surface mb-3">종양 / 암</h3>
+    <p class="text-on-surface-variant font-body-md text-body-md mb-6">폐암, 위암, 대장암, 유방암 등 주요 암종 초기 증상 확인</p>
+    <div class="flex items-center text-primary font-label-md text-label-md group-hover:gap-2 transition-all">
+      진단 시작 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    </div>
+    <div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+      <span class="material-symbols-outlined text-[120px]">science</span>
+    </div>
+  </div>
+  <div class="group bg-surface-container-low p-8 rounded-xl border border-outline-variant hover:border-primary hover:shadow-lg transition-all cursor-pointer relative overflow-hidden" onclick="App.startWithCategory('neurological')">
+    <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+      <span class="material-symbols-outlined text-primary text-[32px]">psychology</span>
+    </div>
+    <h3 class="font-headline-md text-headline-md text-on-surface mb-3">신경계 질환</h3>
+    <p class="text-on-surface-variant font-body-md text-body-md mb-6">두통, 편두통, 뇌졸중, 파킨슨병, 치매 등 신경계 자가진단</p>
+    <div class="flex items-center text-primary font-label-md text-label-md group-hover:gap-2 transition-all">
+      진단 시작 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    </div>
+    <div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+      <span class="material-symbols-outlined text-[120px]">neurology</span>
+    </div>
+  </div>
+  <div class="group bg-surface-container-low p-8 rounded-xl border border-outline-variant hover:border-primary hover:shadow-lg transition-all cursor-pointer relative overflow-hidden" onclick="App.startWithCategory('mental')">
+    <div class="bg-status-success/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+      <span class="material-symbols-outlined text-status-success text-[32px]">self_improvement</span>
+    </div>
+    <h3 class="font-headline-md text-headline-md text-on-surface mb-3">정신건강</h3>
+    <p class="text-on-surface-variant font-body-md text-body-md mb-6">우울증, 불안장애, 불면증 등 정신건강 자가진단</p>
+    <div class="flex items-center text-primary font-label-md text-label-md group-hover:gap-2 transition-all">
+      진단 시작 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    </div>
+    <div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+      <span class="material-symbols-outlined text-[120px]">spa</span>
+    </div>
+  </div>
+</div>
 </section>
 
-<section class="related-resources" aria-label="관련 기관 및 자원" style="margin-top:2rem;background:#fff;border-radius:12px;padding:1.5rem">
-<h2 style="font-size:1.3rem;margin-bottom:1rem;color:var(--gray-900)">관련 기관 및 의료 자원</h2>
-<ul style="padding-left:1.5rem;line-height:2">
-<li><strong>응급의료:</strong> <a href="tel:119" style="color:var(--primary)">119 (소방청 응급실)</a></li>
-<li><strong>자살예방 상담전화:</strong> <a href="tel:1393" style="color:var(--primary)">1393</a></li>
-<li><strong>정신건강위기상담전화:</strong> <a href="tel:1577-0199" style="color:var(--primary)">1577-0199</a></li>
-<li><strong>건강보험심사평가원:</strong> <a href="https://www.hira.or.kr" rel="external nofollow" target="_blank" style="color:var(--primary)">www.hira.or.kr</a></li>
-<li><strong>질병관리청:</strong> <a href="https://www.kdca.go.kr" rel="external nofollow" target="_blank" style="color:var(--primary)">www.kdca.go.kr</a></li>
-<li><strong>국민건강보험공단:</strong> <a href="https://www.nhis.or.kr" rel="external nofollow" target="_blank" style="color:var(--primary)">www.nhis.or.kr</a></li>
-<li><strong>식품의약품안전처:</strong> <a href="https://www.mfds.go.kr" rel="external nofollow" target="_blank" style="color:var(--primary)">www.mfds.go.kr</a></li>
-<li><strong>국립암센터:</strong> <a href="https://www.ncc.re.kr" rel="external nofollow" target="_blank" style="color:var(--primary)">www.ncc.re.kr</a></li>
-</ul>
+<!-- Chronic Disease Management -->
+<section id="chronic" class="bg-surface-container py-12 md:py-20">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-12 text-center">
+  <span class="text-label-md font-label-md text-primary uppercase tracking-wider">Chronic Care</span>
+  <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-2">만성질환 관리 가이드</h2>
+  <p class="text-body-md font-body-md text-on-surface-variant mt-3 max-w-2xl mx-auto">고혈압, 당뇨병, 천식, COPD 등 만성질환의 자가 관리법을 안내합니다.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+    <div class="bg-status-error/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+      <span class="material-symbols-outlined text-status-error">blood_pressure</span>
+    </div>
+    <h3 class="font-label-md text-label-md text-on-surface mb-2">고혈압 관리</h3>
+    <p class="text-on-surface-variant text-body-md font-body-md mb-3">정기 혈압 측정, 저염식, 운동, 약물 복용 관리</p>
+    <button onclick="App.startWithCategory('cardiovascular')" class="text-primary font-label-sm font-label-sm flex items-center gap-1 hover:underline">자가진단 <span class="material-symbols-outlined text-[16px]">arrow_forward</span></button>
+  </div>
+  <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+    <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+      <span class="material-symbols-outlined text-primary">bloodtype</span>
+    </div>
+    <h3 class="font-label-md text-label-md text-on-surface mb-2">당뇨 관리</h3>
+    <p class="text-on-surface-variant text-body-md font-body-md mb-3">혈당 측정, 식이요법, 운동, 인슐린 관리</p>
+    <button onclick="App.startWithCategory('endocrine')" class="text-primary font-label-sm font-label-sm flex items-center gap-1 hover:underline">자가진단 <span class="material-symbols-outlined text-[16px]">arrow_forward</span></button>
+  </div>
+  <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+    <div class="bg-status-success/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+      <span class="material-symbols-outlined text-status-success">air</span>
+    </div>
+    <h3 class="font-label-md text-label-md text-on-surface mb-2">천식 관리</h3>
+    <p class="text-on-surface-variant text-body-md font-body-md mb-3">흡입기 사용법, 발작 시 대처, 환경 관리</p>
+    <button onclick="App.startWithCategory('respiratory')" class="text-primary font-label-sm font-label-sm flex items-center gap-1 hover:underline">자가진단 <span class="material-symbols-outlined text-[16px]">arrow_forward</span></button>
+  </div>
+  <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+    <div class="bg-tertiary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+      <span class="material-symbols-outlined text-tertiary">sentiment_very_satisfied</span>
+    </div>
+    <h3 class="font-label-md text-label-md text-on-surface mb-2">우울증 관리</h3>
+    <p class="text-on-surface-variant text-body-md font-body-md mb-3">약물 복용, 상담 치료, 일상 활동</p>
+    <button onclick="App.startWithCategory('mental')" class="text-primary font-label-sm font-label-sm flex items-center gap-1 hover:underline">자가진단 <span class="material-symbols-outlined text-[16px]">arrow_forward</span></button>
+  </div>
+  <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+    <div class="bg-status-info/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+      <span class="material-symbols-outlined text-status-info">visibility</span>
+    </div>
+    <h3 class="font-label-md text-label-md text-on-surface mb-2">갑상선 질환</h3>
+    <p class="text-on-surface-variant text-body-md font-body-md mb-3">호르몬 수치 확인, 약물 복용, 정기 검진</p>
+    <button onclick="App.startWithCategory('endocrine')" class="text-primary font-label-sm font-label-sm flex items-center gap-1 hover:underline">자가진단 <span class="material-symbols-outlined text-[16px]">arrow_forward</span></button>
+  </div>
+  <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
+    <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+      <span class="material-symbols-outlined text-primary">elderly</span>
+    </div>
+    <h3 class="font-label-md text-label-md text-on-surface mb-2">골다공증 관리</h3>
+    <p class="text-on-surface-variant text-body-md font-body-md mb-3">칼슘 섭취, 운동, 낙상 예방</p>
+    <button onclick="App.startWithCategory('musculoskeletal')" class="text-primary font-label-sm font-label-sm flex items-center gap-1 hover:underline">자가진단 <span class="material-symbols-outlined text-[16px]">arrow_forward</span></button>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="py-12 md:py-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-12 text-center">
+  <span class="text-label-md font-label-md text-primary uppercase tracking-wider">FAQ</span>
+  <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-2">자주 묻는 질문</h2>
+</div>
+<div class="max-w-3xl mx-auto space-y-3">
+  <details class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 cursor-pointer">
+    <summary class="font-label-md text-label-md text-on-surface flex items-center justify-between gap-2 list-none">
+      Q. HealSense는 무료인가요?
+      <span class="material-symbols-outlined text-outline">expand_more</span>
+    </summary>
+    <p class="mt-3 text-body-md font-body-md text-on-surface-variant">네, 완전 무료이며 회원가입도 필요하지 않습니다. 모든 처리는 브라우저에서 이루어지며 서버로 데이터가 전송되지 않습니다.</p>
+  </details>
+  <details class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 cursor-pointer">
+    <summary class="font-label-md text-label-md text-on-surface flex items-center justify-between gap-2 list-none">
+      Q. 자가진단 결과를 신뢰할 수 있나요?
+      <span class="material-symbols-outlined text-outline">expand_more</span>
+    </summary>
+    <p class="mt-3 text-body-md font-body-md text-on-surface-variant">이 도구는 의학적 진단이 아닌 교육·참고용입니다. 결과는 의학적 진단을 대체할 수 없으며, 정확한 진단은 반드시 의료 전문가와 상담하셔야 합니다.</p>
+  </details>
+  <details class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 cursor-pointer">
+    <summary class="font-label-md text-label-md text-on-surface flex items-center justify-between gap-2 list-none">
+      Q. 어떤 질환을 자가진단할 수 있나요?
+      <span class="material-symbols-outlined text-outline">expand_more</span>
+    </summary>
+    <p class="mt-3 text-body-md font-body-md text-on-surface-variant">감기, 독감, 폐렴 같은 호흡기 질환, 위장염, 위궤양, 위암, 대장암 등 소화기 질환, 고혈압, 협심증, 심근경색, 뇌졸중 등 심혈관 질환, 두통, 편두통, 뇌종양, 치매, 파킨슨병, 관절염, 디스크, 아토피, 피부암, 요로감염, 신장암, 당뇨병, 갑상선 질환, 결핵, HIV/AIDS, 패혈증, 각종 암, 우울증, 불안장애 등 70여 가지 질환을 자가진단할 수 있습니다.</p>
+  </details>
+  <details class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 cursor-pointer">
+    <summary class="font-label-md text-label-md text-on-surface flex items-center justify-between gap-2 list-none">
+      Q. 응급실에 가야 할지 모르겠어요.
+      <span class="material-symbols-outlined text-outline">expand_more</span>
+    </summary>
+    <p class="mt-3 text-body-md font-body-md text-on-surface-variant">심한 흉통, 호흡곤란, 편측 마비, 의식 저하, 심한 출혈 시 즉시 119에 전화하세요. 응급 상황 대처 요령 버튼을 눌러 자세한 내용을 확인할 수 있습니다.</p>
+  </details>
+  <details class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 cursor-pointer">
+    <summary class="font-label-md text-label-md text-on-surface flex items-center justify-between gap-2 list-none">
+      Q. 개인정보는 안전한가요?
+      <span class="material-symbols-outlined text-outline">expand_more</span>
+    </summary>
+    <p class="mt-3 text-body-md font-body-md text-on-surface-variant">모든 데이터는 브라우저 내에서만 처리됩니다. 입력한 증상은 서버로 전송되거나 저장되지 않으므로 개인정보가 완전히 보호됩니다.</p>
+  </details>
+  <details class="bg-surface-container-lowest border border-outline-variant rounded-xl p-5 cursor-pointer">
+    <summary class="font-label-md text-label-md text-on-surface flex items-center justify-between gap-2 list-none">
+      Q. 모바일에서도 사용할 수 있나요?
+      <span class="material-symbols-outlined text-outline">expand_more</span>
+    </summary>
+    <p class="mt-3 text-body-md font-body-md text-on-surface-variant">네, 반응형 웹 디자인으로 모바일, 태블릿, 데스크톱 모든 기기에서 최적화되어 있습니다.</p>
+  </details>
+</div>
+</section>
+
+<!-- Related Resources -->
+<section class="py-12 md:py-16 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-6 md:p-8">
+  <h2 class="font-headline-md text-headline-md text-on-surface mb-6 text-center">관련 의료 기관 및 자원</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <a href="tel:119" class="flex flex-col items-center p-4 bg-status-error/5 border border-status-error/20 rounded-xl hover:bg-status-error/10 transition-colors">
+      <span class="material-symbols-outlined text-status-error text-[32px] mb-2">local_hospital</span>
+      <p class="font-label-md text-label-md text-status-error">응급 119</p>
+    </a>
+    <a href="tel:1393" class="flex flex-col items-center p-4 bg-primary/5 border border-primary/20 rounded-xl hover:bg-primary/10 transition-colors">
+      <span class="material-symbols-outlined text-primary text-[32px] mb-2">support_agent</span>
+      <p class="font-label-md text-label-md text-primary">자살예방 1393</p>
+    </a>
+    <a href="tel:1577-0199" class="flex flex-col items-center p-4 bg-tertiary/5 border border-tertiary/20 rounded-xl hover:bg-tertiary/10 transition-colors">
+      <span class="material-symbols-outlined text-tertiary text-[32px] mb-2">psychology_alt</span>
+      <p class="font-label-md text-label-md text-tertiary">정신건강 1577-0199</p>
+    </a>
+    <a href="https://www.kdca.go.kr" target="_blank" rel="external nofollow" class="flex flex-col items-center p-4 bg-status-success/5 border border-status-success/20 rounded-xl hover:bg-status-success/10 transition-colors">
+      <span class="material-symbols-outlined text-status-success text-[32px] mb-2">health_and_safety</span>
+      <p class="font-label-md text-label-md text-status-success">질병관리청</p>
+    </a>
+  </div>
+</div>
 </section>
 
 </main>
 
-<footer role="contentinfo" style="background:var(--gray-900);color:var(--gray-300);padding:2rem 1rem;margin-top:3rem" itemprop="footer">
-<div style="max-width:900px;margin:0 auto;text-align:center;line-height:1.8">
-<p style="font-size:1rem;margin-bottom:.5rem"><strong>건강 자가진단</strong></p>
-<p style="font-size:.85rem;opacity:.8">증상 기반 질환 예측 도구 | 무료 온라인 자가진단</p>
-<p style="font-size:.8rem;margin-top:1rem;opacity:.7">© 2026 건강 자가진단. 본 사이트는 의학적 진단을 제공하지 않으며, 모든 결과는 참고용입니다.</p>
-<p style="font-size:.8rem;margin-top:.5rem;opacity:.7">응급 상황 시 <a href="tel:119" style="color:#60a5fa">119</a>로 즉시 연락하세요.</p>
-<nav style="margin-top:1rem;font-size:.85rem">
-<a href="/about" style="color:#60a5fa;margin:0 .5rem">소개</a>|
-<a href="/privacy" style="color:#60a5fa;margin:0 .5rem">개인정보처리방침</a>|
-<a href="/terms" style="color:#60a5fa;margin:0 .5rem">이용약관</a>|
-<a href="/contact" style="color:#60a5fa;margin:0 .5rem">문의하기</a>
-</nav>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container border-t border-outline-variant" role="contentinfo">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+  <div>
+    <span class="text-headline-md font-headline-md text-primary mb-4 block">HealSense</span>
+    <p class="text-on-surface-variant font-label-md text-label-md max-w-md">AI 기반 건강 자가진단 도구. 본 사이트는 의학적 진단을 제공하지 않으며, 모든 결과는 참고용입니다.</p>
+    <p class="text-on-surface-variant font-label-sm font-label-sm mt-3">© 2026 HealSense. 응급 상황 시 119로 즉시 연락하세요.</p>
+  </div>
+  <div class="grid grid-cols-2 sm:grid-cols-3 gap-8">
+    <div>
+      <h5 class="font-bold text-on-surface mb-4">서비스</h5>
+      <ul class="flex flex-col gap-2">
+        <li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" onclick="App.showEmergency()">응급 연락처</a></li>
+        <li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#faq">고객 지원</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-bold text-on-surface mb-4">정보</h5>
+      <ul class="flex flex-col gap-2">
+        <li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#library">건강 백과</a></li>
+        <li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#chronic">만성질환</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 class="font-bold text-on-surface mb-4">법적 고지</h5>
+      <ul class="flex flex-col gap-2">
+        <li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer">개인정보처리방침</a></li>
+        <li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer">이용약관</a></li>
+        <li><a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer underline">의료 면책</a></li>
+      </ul>
+    </div>
+  </div>
 </div>
 </footer>
 
-<button class="reset-btn" id="resetBtn" title="처음으로" aria-label="자가진단 초기화">↺</button>
+<!-- Floating Action Button -->
+<button id="fab" onclick="App.goToStep(0)" class="hidden fixed bottom-6 right-6 z-50 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl hover:bg-primary-container transition-all active:scale-95 flex items-center justify-center" aria-label="자가진단 시작">
+  <span class="material-symbols-outlined text-[28px]">medical_services</span>
+</button>
 
 <script>
+/* ============================================
+   HealSense 자가진단 애플리케이션
+   ============================================ */
+
 const DB = {
   categories: [
-    { id: 'respiratory', name: '호흡기', icon: '🫁' },
-    { id: 'digestive', name: '소화기', icon: '🫃' },
-    { id: 'cardiovascular', name: '심혈관', icon: '❤️' },
-    { id: 'neurological', name: '신경계', icon: '🧠' },
-    { id: 'musculoskeletal', name: '근골격계', icon: '🦴' },
-    { id: 'skin', name: '피부', icon: '🧴' },
-    { id: 'urinary', name: '비뇨/생식', icon: '🫧' },
-    { id: 'endocrine', name: '내분비/대사', icon: '⚖️' },
-    { id: 'ent', name: '이비인후과', icon: '👂' },
-    { id: 'ophthalmic', name: '안과', icon: '👁️' },
-    { id: 'infectious', name: '감염성', icon: '🦠' },
-    { id: 'cancer', name: '종양/암', icon: '🎗️' },
-    { id: 'mental', name: '정신건강', icon: '💭' },
-    { id: 'general', name: '전신', icon: '🏥' }
+    { id: 'respiratory', name: '호흡기', icon: 'pulmonology' },
+    { id: 'digestive', name: '소화기', icon: 'lunch_dining' },
+    { id: 'cardiovascular', name: '심혈관', icon: 'favorite' },
+    { id: 'neurological', name: '신경계', icon: 'psychology' },
+    { id: 'musculoskeletal', name: '근골격계', icon: 'accessibility_new' },
+    { id: 'skin', name: '피부', icon: 'face' },
+    { id: 'urinary', name: '비뇨/생식', icon: 'water_drop' },
+    { id: 'endocrine', name: '내분비/대사', icon: 'medication' },
+    { id: 'ent', name: '이비인후과', icon: 'hearing' },
+    { id: 'ophthalmic', name: '안과', icon: 'visibility' },
+    { id: 'infectious', name: '감염성', icon: 'coronavirus' },
+    { id: 'cancer', name: '종양/암', icon: 'biotech' },
+    { id: 'mental', name: '정신건강', icon: 'self_improvement' },
+    { id: 'general', name: '전신', icon: 'health_and_safety' }
   ],
-
-  getSymptomsByCategory(catId) {
-    return this.symptoms.filter(s => s.category === catId);
-  },
 
   symptoms: [
     // 호흡기
-    { id:'s1', name:'기침', category:'respiratory', keywords:['cough','기침','켁'] },
-    { id:'s2', name:'가래', category:'respiratory', keywords:['sputum','phlegm','가래'] },
-    { id:'s3', name:'호흡곤란', category:'respiratory', keywords:['dyspnea','shortness of breath','숨참','호흡곤란'] },
-    { id:'s4', name:'천명음(쌕쌕거림)', category:'respiratory', keywords:['wheezing','천명'] },
-    { id:'s5', name:'코막힘/콧물', category:'respiratory', keywords:['nasal congestion','runny nose','코막힘','콧물'] },
-    { id:'s6', name:'인후통', category:'respiratory', keywords:['sore throat','인후통','목아픔'] },
-    { id:'s7', name:'객혈(피섞인가래)', category:'respiratory', keywords:['hemoptysis','blood in sputum','객혈'] },
-    { id:'s8', name:'빈호흡(빠른숨)', category:'respiratory', keywords:['tachypnea','rapid breathing','빈호흡'] },
+    { id:'s1', name:'기침', category:'respiratory', kw:['cough','기침','켁'] },
+    { id:'s2', name:'가래', category:'respiratory', kw:['sputum','phlegm','가래'] },
+    { id:'s3', name:'호흡곤란', category:'respiratory', kw:['dyspnea','숨참','호흡곤란'] },
+    { id:'s4', name:'천명음(쌕쌕거림)', category:'respiratory', kw:['wheezing','천명'] },
+    { id:'s5', name:'코막힘/콧물', category:'respiratory', kw:['nasal','콧물','코'] },
+    { id:'s6', name:'인후통', category:'respiratory', kw:['sore throat','인후통','목'] },
+    { id:'s7', name:'객혈(피섞인가래)', category:'respiratory', kw:['hemoptysis','객혈'] },
+    { id:'s8', name:'빈호흡(빠른숨)', category:'respiratory', kw:['tachypnea','빈호흡'] },
     // 소화기
-    { id:'s9', name:'복통', category:'digestive', keywords:['abdominal pain','복통','배아픔'] },
-    { id:'s10', name:'메스꺼움/구토', category:'digestive', keywords:['nausea','vomiting','메스꺼움','구토'] },
-    { id:'s11', name:'설사', category:'digestive', keywords:['diarrhea','설사'] },
-    { id:'s12', name:'변비', category:'digestive', keywords:['constipation','변비'] },
-    { id:'s13', name:'속쓰림/역류', category:'digestive', keywords:['heartburn','acid reflux','속쓰림','역류'] },
-    { id:'s14', name:'혈변/흑변', category:'digestive', keywords:['blood in stool','melena','혈변','흑변'] },
-    { id:'s15', name:'황달(피부노래짐)', category:'digestive', keywords:['jaundice','황달'] },
-    { id:'s16', name:'체중감소', category:'digestive', keywords:['weight loss','체중감소','살빠짐'] },
-    { id:'s17', name:'연하곤란(삼킴곤란)', category:'digestive', keywords:['dysphagia','삼킴곤란','연하곤란'] },
-    { id:'s18', name:'복부팽만', category:'digestive', keywords:['bloating','복부팽만','배부름'] },
+    { id:'s9', name:'복통', category:'digestive', kw:['abdominal','복통','배'] },
+    { id:'s10', name:'메스꺼움/구토', category:'digestive', kw:['nausea','vomiting','메스꺼움','구토'] },
+    { id:'s11', name:'설사', category:'digestive', kw:['diarrhea','설사'] },
+    { id:'s12', name:'변비', category:'digestive', kw:['constipation','변비'] },
+    { id:'s13', name:'속쓰림/역류', category:'digestive', kw:['heartburn','reflux','속쓰림','역류'] },
+    { id:'s14', name:'혈변/흑변', category:'digestive', kw:['melena','혈변','흑변'] },
+    { id:'s15', name:'황달(피부노래짐)', category:'digestive', kw:['jaundice','황달'] },
+    { id:'s16', name:'체중감소', category:'digestive', kw:['weight loss','체중감소','살빠짐'] },
+    { id:'s17', name:'연하곤란(삼킴곤란)', category:'digestive', kw:['dysphagia','삼킴','연하곤란'] },
+    { id:'s18', name:'복부팽만', category:'digestive', kw:['bloating','복부팽만','배부름'] },
     // 심혈관
-    { id:'s19', name:'흉통', category:'cardiovascular', keywords:['chest pain','흉통','가슴통증'] },
-    { id:'s20', name:'두근거림(심계항진)', category:'cardiovascular', keywords:['palpitations','heart racing','두근거림','심계항진'] },
-    { id:'s21', name:'부종(붓기)', category:'cardiovascular', keywords:['edema','swelling','부종','붓기'] },
-    { id:'s22', name:'어지러움/실신', category:'cardiovascular', keywords:['dizziness','syncope','어지러움','실신'] },
-    { id:'s23', name:'호흡곤란(누웠을때)', category:'cardiovascular', keywords:['orthopnea','paroxysmal nocturnal dyspnea'] },
-    { id:'s24', name:'손발저림', category:'cardiovascular', keywords:['numbness','저림','손발저림'] },
+    { id:'s19', name:'흉통', category:'cardiovascular', kw:['chest pain','흉통','가슴'] },
+    { id:'s20', name:'두근거림(심계항진)', category:'cardiovascular', kw:['palpitations','두근거림','심계항진'] },
+    { id:'s21', name:'부종(붓기)', category:'cardiovascular', kw:['edema','부종','붓기'] },
+    { id:'s22', name:'어지러움/실신', category:'cardiovascular', kw:['dizziness','syncope','어지러움','실신'] },
+    { id:'s23', name:'호흡곤란(누웠을때)', category:'cardiovascular', kw:['orthopnea','누우면숨'] },
+    { id:'s24', name:'손발저림', category:'cardiovascular', kw:['numbness','저림','손발'] },
     // 신경계
-    { id:'s25', name:'두통', category:'neurological', keywords:['headache','두통'] },
-    { id:'s26', name:'편두통', category:'neurological', keywords:['migraine','편두통'] },
-    { id:'s27', name:'발작/경련', category:'neurological', keywords:['seizure','convulsion','발작','경련'] },
-    { id:'s28', name:'감각이상(저림/마비)', category:'neurological', keywords:['paresthesia','numbness','감각이상','마비'] },
-    { id:'s29', name:'떨림(진전)', category:'neurological', keywords:['tremor','떨림','진전'] },
-    { id:'s30', name:'보행장애', category:'neurological', keywords:['gait disturbance','보행장애'] },
-    { id:'s31', name:'기억력감퇴', category:'neurological', keywords:['memory loss','기억력','치매'] },
-    { id:'s32', name:'시야장애', category:'neurological', keywords:['visual disturbance','시야장애'] },
+    { id:'s25', name:'두통', category:'neurological', kw:['headache','두통'] },
+    { id:'s26', name:'편두통', category:'neurological', kw:['migraine','편두통'] },
+    { id:'s27', name:'발작/경련', category:'neurological', kw:['seizure','발작','경련'] },
+    { id:'s28', name:'감각이상(저림/마비)', category:'neurological', kw:['paresthesia','감각이상','마비'] },
+    { id:'s29', name:'떨림(진전)', category:'neurological', kw:['tremor','떨림','진전'] },
+    { id:'s30', name:'보행장애', category:'neurological', kw:['gait','보행장애'] },
+    { id:'s31', name:'기억력감퇴', category:'neurological', kw:['memory','기억력','치매'] },
+    { id:'s32', name:'시야장애', category:'neurological', kw:['visual','시야장애'] },
     // 근골격계
-    { id:'s33', name:'관절통', category:'musculoskeletal', keywords:['joint pain','arthralgia','관절통'] },
-    { id:'s34', name:'근육통', category:'musculoskeletal', keywords:['myalgia','muscle pain','근육통'] },
-    { id:'s35', name:'등허리통증', category:'musculoskeletal', keywords:['back pain','요통','등통증'] },
-    { id:'s36', name:'목통증', category:'musculoskeletal', keywords:['neck pain','목통증'] },
-    { id:'s37', name:'관절뻣뻣함(조조강직)', category:'musculoskeletal', keywords:['morning stiffness','조조강직'] },
-    { id:'s38', name:'근력약화', category:'musculoskeletal', keywords:['muscle weakness','근력약화','힘빠짐'] },
-    { id:'s39', name:'골절', category:'musculoskeletal', keywords:['fracture','골절'] },
+    { id:'s33', name:'관절통', category:'musculoskeletal', kw:['arthralgia','관절통','관절'] },
+    { id:'s34', name:'근육통', category:'musculoskeletal', kw:['myalgia','근육통','근육'] },
+    { id:'s35', name:'등허리통증', category:'musculoskeletal', kw:['back pain','요통','허리'] },
+    { id:'s36', name:'목통증', category:'musculoskeletal', kw:['neck','목통증'] },
+    { id:'s37', name:'관절뻣뻣함(조조강직)', category:'musculoskeletal', kw:['stiffness','강직'] },
+    { id:'s38', name:'근력약화', category:'musculoskeletal', kw:['weakness','근력약화','힘'] },
+    { id:'s39', name:'골절', category:'musculoskeletal', kw:['fracture','골절'] },
     // 피부
-    { id:'s40', name:'발진', category:'skin', keywords:['rash','발진'] },
-    { id:'s41', name:'가려움증', category:'skin', keywords:['pruritus','itching','가려움'] },
-    { id:'s42', name:'피부궤양', category:'skin', keywords:['skin ulcer','궤양'] },
-    { id:'s43', name:'점(모반) 변화', category:'skin', keywords:['mole change','점 변화'] },
-    { id:'s44', name:'피부건조/각질', category:'skin', keywords:['dry skin','건조','각질'] },
-    { id:'s45', name:'두드러기', category:'skin', keywords:['urticaria','hives','두드러기'] },
+    { id:'s40', name:'발진', category:'skin', kw:['rash','발진'] },
+    { id:'s41', name:'가려움증', category:'skin', kw:['pruritus','itching','가려움'] },
+    { id:'s42', name:'피부궤양', category:'skin', kw:['ulcer','궤양'] },
+    { id:'s43', name:'점(모반) 변화', category:'skin', kw:['mole','점변화'] },
+    { id:'s44', name:'피부건조/각질', category:'skin', kw:['dry skin','건조','각질'] },
+    { id:'s45', name:'두드러기', category:'skin', kw:['urticaria','두드러기'] },
     // 비뇨/생식
-    { id:'s46', name:'배뇨통(소변시통증)', category:'urinary', keywords:['dysuria','배뇨통'] },
-    { id:'s47', name:'혈뇨', category:'urinary', keywords:['hematuria','blood in urine','혈뇨'] },
-    { id:'s48', name:'빈뇨(소변자주)', category:'urinary', keywords:['frequent urination','빈뇨'] },
-    { id:'s49', name:'요실금', category:'urinary', keywords:['incontinence','요실금'] },
-    { id:'s50', name:'생식기분비물', category:'urinary', keywords:['genital discharge','분비물'] },
+    { id:'s46', name:'배뇨통', category:'urinary', kw:['dysuria','배뇨통'] },
+    { id:'s47', name:'혈뇨', category:'urinary', kw:['hematuria','혈뇨'] },
+    { id:'s48', name:'빈뇨(소변자주)', category:'urinary', kw:['frequent','빈뇨'] },
+    { id:'s49', name:'요실금', category:'urinary', kw:['incontinence','요실금'] },
+    { id:'s50', name:'생식기분비물', category:'urinary', kw:['discharge','분비물'] },
     // 내분비
-    { id:'s51', name:'갈증/다음', category:'endocrine', keywords:['thirst','polydipsia','갈증','다음'] },
-    { id:'s52', name:'다뇨(소변량증가)', category:'endocrine', keywords:['polyuria','다뇨'] },
-    { id:'s53', name:'체중변화', category:'endocrine', keywords:['weight change','체중변화'] },
-    { id:'s54', name:'피로/무기력', category:'endocrine', keywords:['fatigue','피로','무기력'] },
-    { id:'s55', name:'더위/추위불내성', category:'endocrine', keywords:['heat intolerance','cold intolerance','불내성'] },
+    { id:'s51', name:'갈증/다음', category:'endocrine', kw:['thirst','갈증','다음'] },
+    { id:'s52', name:'다뇨(소변량증가)', category:'endocrine', kw:['polyuria','다뇨'] },
+    { id:'s53', name:'체중변화', category:'endocrine', kw:['weight','체중변화'] },
+    { id:'s54', name:'피로/무기력', category:'endocrine', kw:['fatigue','피로','무기력'] },
+    { id:'s55', name:'더위/추위불내성', category:'endocrine', kw:['intolerance','불내성'] },
     // 이비인후과
-    { id:'s56', name:'청력감소', category:'ent', keywords:['hearing loss','청력감소','귀안들림'] },
-    { id:'s57', name:'이명(귀울림)', category:'ent', keywords:['tinnitus','이명','귀울림'] },
-    { id:'s58', name:'이통(귀통증)', category:'ent', keywords:['ear pain','earache','이통','귀통증'] },
-    { id:'s59', name:'어지럼증(현훈)', category:'ent', keywords:['vertigo','어지럼증','현훈'] },
-    { id:'s60', name:'후각감소', category:'ent', keywords:['anosmia','후각상실','냄새못맡음'] },
+    { id:'s56', name:'청력감소', category:'ent', kw:['hearing loss','청력','귀'] },
+    { id:'s57', name:'이명(귀울림)', category:'ent', kw:['tinnitus','이명'] },
+    { id:'s58', name:'이통(귀통증)', category:'ent', kw:['ear pain','귀통증'] },
+    { id:'s59', name:'어지럼증(현훈)', category:'ent', kw:['vertigo','현훈'] },
+    { id:'s60', name:'후각감소', category:'ent', kw:['anosmia','후각'] },
     // 안과
-    { id:'s61', name:'시력저하', category:'ophthalmic', keywords:['blurred vision','시력저하'] },
-    { id:'s62', name:'안통(눈통증)', category:'ophthalmic', keywords:['eye pain','안통','눈통증'] },
-    { id:'s63', name:'충혈', category:'ophthalmic', keywords:['red eye','conjunctival injection','충혈'] },
-    { id:'s64', name:'부유물(날파리증)', category:'ophthalmic', keywords:['floaters','날파리','부유물'] },
+    { id:'s61', name:'시력저하', category:'ophthalmic', kw:['blurred','시력','눈'] },
+    { id:'s62', name:'안통(눈통증)', category:'ophthalmic', kw:['eye pain','눈통증','안통'] },
+    { id:'s63', name:'충혈', category:'ophthalmic', kw:['red eye','충혈'] },
+    { id:'s64', name:'부유물(날파리증)', category:'ophthalmic', kw:['floaters','날파리'] },
     // 감염성
-    { id:'s65', name:'발열(열)', category:'infectious', keywords:['fever','pyrexia','발열','열'] },
-    { id:'s66', name:'오한', category:'infectious', keywords:['chills','오한'] },
-    { id:'s67', name:'야간발한(밤에땀)', category:'infectious', keywords:['night sweats','야간발한'] },
-    { id:'s68', name:'림프절종대(혹)', category:'infectious', keywords:['lymphadenopathy','림프절','멍울'] },
+    { id:'s65', name:'발열', category:'infectious', kw:['fever','pyrexia','발열','열'] },
+    { id:'s66', name:'오한', category:'infectious', kw:['chills','오한'] },
+    { id:'s67', name:'야간발한(밤에땀)', category:'infectious', kw:['night sweats','야간발한'] },
+    { id:'s68', name:'림프절종대(혹)', category:'infectious', kw:['lymph','림프절','멍울'] },
     // 종양/암
-    { id:'s69', name:'종괴(덩어리만져짐)', category:'cancer', keywords:['mass','lump','종괴','덩어리'] },
-    { id:'s70', name:'원인모를출혈', category:'cancer', keywords:['unexplained bleeding','출혈'] },
-    { id:'s71', name:'악성빈혈', category:'cancer', keywords:['anemia','빈혈'] },
-    { id:'s72', name:'연하곤란', category:'cancer', keywords:['dysphagia','swallowing difficulty','연하곤란'] },
-    { id:'s73', name:'배변습관변화', category:'cancer', keywords:['change in bowel habits','배변습관'] },
-    { id:'s74', name:'설치류(혀궤양)', category:'cancer', keywords:['tongue ulcer','oral ulcer','설치류','구강궤양'] },
-    { id:'s75', name:'쉰목소리(애성)', category:'cancer', keywords:['hoarseness','쉰목소리','애성'] },
+    { id:'s69', name:'종괴(덩어리만져짐)', category:'cancer', kw:['mass','lump','종괴','덩어리'] },
+    { id:'s70', name:'원인모를출혈', category:'cancer', kw:['bleeding','출혈'] },
+    { id:'s71', name:'악성빈혈', category:'cancer', kw:['anemia','빈혈'] },
+    { id:'s72', name:'연하곤란', category:'cancer', kw:['dysphagia','연하곤란'] },
+    { id:'s73', name:'배변습관변화', category:'cancer', kw:['bowel','배변습관'] },
+    { id:'s74', name:'구강궤양', category:'cancer', kw:['oral ulcer','구강궤양'] },
+    { id:'s75', name:'쉰목소리(애성)', category:'cancer', kw:['hoarseness','애성'] },
     // 정신건강
-    { id:'s76', name:'불안/초조', category:'mental', keywords:['anxiety','불안','초조'] },
-    { id:'s77', name:'우울감', category:'mental', keywords:['depression','sadness','우울','슬픔'] },
-    { id:'s78', name:'불면증', category:'mental', keywords:['insomnia','불면','잠못삼'] },
-    { id:'s79', name:'환각/망상', category:'mental', keywords:['hallucination','delusion','환각','망상'] },
-    { id:'s80', name:'집중력저하', category:'mental', keywords:['poor concentration','집중력'] },
+    { id:'s76', name:'불안/초조', category:'mental', kw:['anxiety','불안','초조'] },
+    { id:'s77', name:'우울감', category:'mental', kw:['depression','우울','슬픔'] },
+    { id:'s78', name:'불면증', category:'mental', kw:['insomnia','불면','잠'] },
+    { id:'s79', name:'환각/망상', category:'mental', kw:['hallucination','환각','망상'] },
+    { id:'s80', name:'집중력저하', category:'mental', kw:['concentration','집중력'] },
     // 전신
-    { id:'s81', name:'발열', category:'general', keywords:['fever','열'] },
-    { id:'s82', name:'오한/떨림', category:'general', keywords:['chills','shivering','오한'] },
-    { id:'s83', name:'피로감', category:'general', keywords:['fatigue','tiredness','피로'] },
-    { id:'s84', name:'식욕부진', category:'general', keywords:['anorexia','loss of appetite','식욕부진'] },
-    { id:'s85', name:'체중감소(의도치않음)', category:'general', keywords:['unintentional weight loss','체중감소'] },
-    { id:'s86', name:'야간발한', category:'general', keywords:['night sweats','야간발한'] },
-    { id:'s87', name:'관절통', category:'general', keywords:['arthralgia','joint pain'] }
+    { id:'s81', name:'전신쇠약', category:'general', kw:['weakness','쇠약'] },
+    { id:'s82', name:'오한/떨림', category:'general', kw:['shivering','오한'] },
+    { id:'s83', name:'만성피로', category:'general', kw:['chronic','만성피로'] },
+    { id:'s84', name:'식욕부진', category:'general', kw:['anorexia','식욕부진'] },
+    { id:'s85', name:'의도치않은체중감소', category:'general', kw:['unintentional','체중감소'] },
+    { id:'s86', name:'야간발한', category:'general', kw:['sweats','야간발한'] },
+    { id:'s87', name:'전신통증', category:'general', kw:['generalized','전신통증'] }
   ],
 
   diseases: [
-    // ===== 호흡기 질환 =====
     { id:'d1', name:'감기(급성상기도감염)', category:'호흡기', severity:'low',
       symptoms:['s5','s6','s1','s25','s65','s82','s83'],
       desc:'가장 흔한 바이러스 감염으로 코, 인후, 부비동에 염증이 생깁니다.',
@@ -710,7 +1033,7 @@ const DB = {
       action:'즉시 병원 방문이 필요합니다. 항생제 치료와 산소치료가 필요할 수 있습니다.',
       actionType:'danger' },
     { id:'d4', name:'천식', category:'호흡기', severity:'medium',
-      symptoms:['s1','s4','s3','s19','s1'],
+      symptoms:['s1','s4','s3','s19'],
       desc:'기관지가 과민하게 반응하여 기침, 천명, 호흡곤란이 반복되는 만성 질환입니다.',
       action:'호흡기내과 진료 권장. 흡입제(기관지확장제)를 통한 증상 조절이 필요합니다.',
       actionType:'warning' },
@@ -729,8 +1052,6 @@ const DB = {
       desc:'폐에 발생하는 악성 종양으로 흡연이 가장 큰 위험인자입니다.',
       action:'흉부외과/호흡기내과 진료 필수. 조기 발견 시 치료 성공률이 높습니다.',
       actionType:'danger' },
-
-    // ===== 소화기 질환 =====
     { id:'d8', name:'급성위장염', category:'소화기', severity:'low',
       symptoms:['s9','s10','s11','s65','s83'],
       desc:'바이러스나 세균에 의한 위장관 염증으로 구토, 설사가 주 증상입니다.',
@@ -757,7 +1078,7 @@ const DB = {
       action:'대장내시경 검사 필수. 조기 발견 시 완치율이 높습니다. 50세 이상 정기 검진 권장.',
       actionType:'danger' },
     { id:'d13', name:'급성충수염(맹장염)', category:'소화기', severity:'high',
-      symptoms:['s9','s10','s84','s65','s10'],
+      symptoms:['s9','s10','s84','s65'],
       desc:'맹장(충수)에 염증이 생긴 상태로 수술적 치료가 필요합니다.',
       action:'우측 하복부 통증이 특징적입니다. 즉시 응급실 방문하여 수술 여부 판단.',
       actionType:'danger' },
@@ -776,11 +1097,9 @@ const DB = {
       desc:'조기 발견이 어려운 췌장의 악성 종양으로 예후가 좋지 않습니다.',
       action:'상복부 통증, 체중감소, 황달이 동반되면 즉시 소화기내과 진료.',
       actionType:'danger' },
-
-    // ===== 심혈관 질환 =====
     { id:'d17', name:'고혈압', category:'심혈관', severity:'medium',
       symptoms:['s22','s25','s19','s24','s83'],
-      desc:'혈압이 지속적으로 높은 상태로 '소리 없는 살인자'라고 불립니다.',
+      desc:'혈압이 지속적으로 높은 상태로 소리 없는 살인자라고 불립니다.',
       action:'정기적인 혈압 측정, 저염식이, 운동. 약물 치료 필요 시 내과 진료.',
       actionType:'warning' },
     { id:'d18', name:'협심증', category:'심혈관', severity:'high',
@@ -806,15 +1125,13 @@ const DB = {
     { id:'d22', name:'뇌졸중(중풍)', category:'심혈관', severity:'critical',
       symptoms:['s28','s30','s32','s22','s25','s76'],
       desc:'뇌혈관이 막히거나(뇌경색) 터져서(뇌출혈) 발생하는 응급 질환입니다.',
-      action:''골든타임(3시간) 내 치료가 중요합니다. 얼굴비대칭, 편측마비, 언어장애 시 즉시 119.',
+      action:'골든타임(3시간) 내 치료가 중요합니다. 얼굴비대칭, 편측마비, 언어장애 시 즉시 119.',
       actionType:'danger' },
     { id:'d23', name:'뇌동맥류', category:'심혈관', severity:'critical',
       symptoms:['s25','s10','s22','s32','s76'],
       desc:'뇌혈관 벽 일부가 풍선처럼 부풀어 오른 상태로 파열 시 위험합니다.',
       action:'극심한 두통(천둥소리 같은 두통)이 갑자기 발생하면 즉시 응급실. 미리 발견되면 수술적 치료.',
       actionType:'danger' },
-
-    // ===== 신경계 질환 =====
     { id:'d24', name:'긴장성두통', category:'신경계', severity:'low',
       symptoms:['s25','s76','s80'],
       desc:'스트레스, 긴장으로 인한 가장 흔한 두통으로 머리를 조이는 듯한 통증입니다.',
@@ -850,8 +1167,6 @@ const DB = {
       desc:'뇌와 척수를 덮는 수막에 염증이 생기는 심각한 감염 질환입니다.',
       action:'고열, 심한 두통, 목 경직이 동반되면 즉시 응급실 방문. 조기 치료가 생명을 구합니다.',
       actionType:'danger' },
-
-    // ===== 근골격계 질환 =====
     { id:'d31', name:'요통(허리통증)', category:'근골격계', severity:'low',
       symptoms:['s35'],
       desc:'허리 부위의 통증으로 잘못된 자세나 근육 긴장이 주요 원인입니다.',
@@ -877,8 +1192,6 @@ const DB = {
       desc:'뼈의 밀도가 감소하여 골절 위험이 증가하는 질환입니다.',
       action:'골밀도 검사. 칼슘, 비타민D 섭취. 운동. 내과/정형외과 진료.',
       actionType:'warning' },
-
-    // ===== 피부 질환 =====
     { id:'d36', name:'아토피피부염', category:'피부', severity:'low',
       symptoms:['s41','s44','s40'],
       desc:'만성 알레르기성 피부 질환으로 심한 가려움증이 특징입니다.',
@@ -899,8 +1212,6 @@ const DB = {
       desc:'가장 위험한 피부암으로 점이 변화하거나 새로 생기는 경우 의심합니다.',
       action:'ABCDE 법칙(비대칭, 경계, 색상, 직경, 변화) 확인. 피부과 즉시 방문.',
       actionType:'danger' },
-
-    // ===== 비뇨기/생식기 =====
     { id:'d40', name:'요로감염(방광염)', category:'비뇨/생식', severity:'low',
       symptoms:['s46','s48','s47','s9'],
       desc:'세균이 요로에 감염을 일으키는 질환으로 여성에게 흔합니다.',
@@ -926,14 +1237,12 @@ const DB = {
       desc:'전립선에 발생하는 악성 종양. 초기 증상이 거의 없습니다.',
       action:'50세 이상 남성 정기 검진(PSA 검사) 필수. 비뇨의학과 진료.',
       actionType:'danger' },
-
-    // ===== 내분비/대사 =====
     { id:'d45', name:'당뇨병', category:'내분비/대사', severity:'high',
       symptoms:['s51','s52','s16','s83','s54','s32','s24'],
       desc:'인슐린 분비 또는 기능 이상으로 혈당이 높아지는 만성 질환입니다.',
       action:'내과 진료. 혈당 조절, 식이요법, 운동. 합병증(당뇨발, 망막증) 주의.',
       actionType:'warning' },
-    { id:'d46', name:'갑상선항진증(그레이브스병)', category:'내분비/대사', severity:'medium',
+    { id:'d46', name:'갑상선항진증', category:'내분비/대사', severity:'medium',
       symptoms:['s20','s16','s55','s76','s29','s51','s83'],
       desc:'갑상선 호르몬이 과다 분비되는 질환입니다.',
       action:'내과 진료. 항갑상선제, 방사성요오드 치료 또는 수술.',
@@ -948,8 +1257,6 @@ const DB = {
       desc:'갑상선에 발생하는 악성 종양으로 비교적 예후가 좋은 편입니다.',
       action:'내분비내과/외과 진료. 초음파, 세침흡인검사. 수술적 치료.',
       actionType:'warning' },
-
-    // ===== 이비인후과 =====
     { id:'d49', name:'급성중이염', category:'이비인후과', severity:'low',
       symptoms:['s58','s65','s56','s25'],
       desc:'중귀에 염증이 생기는 질환으로 주로 감기 후 발생합니다.',
@@ -965,8 +1272,6 @@ const DB = {
       desc:'후두에 발생하는 악성 종양으로 쉰 목소리가 지속됩니다.',
       action:'2주 이상 쉰 목소리가 지속되면 이비인후과 진료. 조기 발견 시 후두 보존 가능.',
       actionType:'danger' },
-
-    // ===== 안과 =====
     { id:'d52', name:'녹내장', category:'안과', severity:'high',
       symptoms:['s61','s62','s32','s25'],
       desc:'시신경이 손상되는 질환으로 실명의 주요 원인입니다.',
@@ -982,8 +1287,6 @@ const DB = {
       desc:'망막이 떨어져 나가는 응급 안과 질환입니다.',
       action:'갑자기 날파리가 많아지고 번쩍이는 빛이 보이면 즉시 안과 응급 방문.',
       actionType:'danger' },
-
-    // ===== 감염성 질환 =====
     { id:'d55', name:'결핵', category:'감염성', severity:'high',
       symptoms:['s1','s2','s65','s67','s16','s83','s7'],
       desc:'결핵균에 의한 감염 질환으로 주로 폐에 발생합니다.',
@@ -999,8 +1302,6 @@ const DB = {
       desc:'감염에 대한 전신 염증 반응으로 생명을 위협하는 응급 상태입니다.',
       action:'즉시 응급실 방문. 집중 치료 필요. 빠른 항생제 투여가 생명을 구합니다.',
       actionType:'danger' },
-
-    // ===== 종양/암 (기타) =====
     { id:'d58', name:'유방암', category:'종양/암', severity:'high',
       symptoms:['s69','s42','s40'],
       desc:'유방에 발생하는 악성 종양. 여성암 1위입니다.',
@@ -1016,61 +1317,52 @@ const DB = {
       desc:'난소에 발생하는 악성 종양으로 조기 발견이 어렵습니다.',
       action:'산부인과 정기 검진. 골반 초음파, CA-125 혈액 검사.',
       actionType:'danger' },
-    { id:'d61', name:'췌장암', category:'종양/암', severity:'critical',
-      symptoms:['s9','s16','s15','s84','s83'],
-      desc:'췌장에 발생하는 악성 종양으로 예후가 매우 나쁩니다.',
-      action:'상복부 통증, 체중 감소, 황달이 있으면 즉시 소화기내과 진료.',
-      actionType:'danger' },
-    { id:'d62', name:'식도암', category:'종양/암', severity:'critical',
+    { id:'d61', name:'식도암', category:'종양/암', severity:'critical',
       symptoms:['s72','s16','s19','s75','s1'],
       desc:'식도에 발생하는 악성 종양으로 삼킴 곤란이 주 증상입니다.',
       action:'소화기내과 진료. 내시경 검사. 조기 발견 시 치료 성공률 향상.',
       actionType:'danger' },
-    { id:'d63', name:'구강암', category:'종양/암', severity:'high',
+    { id:'d62', name:'구강암', category:'종양/암', severity:'high',
       symptoms:['s74','s72','s69','s75'],
       desc:'입안에 발생하는 악성 종양입니다.',
       action:'2주 이상 치유되지 않는 구내 궤양은 반드시 이비인후과/구강외과 진료.',
       actionType:'danger' },
-
-    // ===== 정신건강 =====
-    { id:'d64', name:'불안장애', category:'정신건강', severity:'medium',
+    { id:'d63', name:'불안장애', category:'정신건강', severity:'medium',
       symptoms:['s76','s20','s3','s22','s80','s78'],
       desc:'과도한 불안과 걱정이 일상생활을 방해하는 질환입니다.',
       action:'정신건강의학과 진료. 상담 치료, 약물 치료. 스트레스 관리.',
       actionType:'info' },
-    { id:'d65', name:'우울장애', category:'정신건강', severity:'high',
+    { id:'d64', name:'우울장애', category:'정신건강', severity:'high',
       symptoms:['s77','s78','s84','s83','s80','s76','s16'],
       desc:'지속적인 우울감과 흥미 상실이 특징인 정신 질환입니다.',
       action:'정신건강의학과 진료 필수. 상담(인지행동치료), 항우울제 치료. 자살 생각 시 즉시 도움 요청.',
       actionType:'warning' },
-    { id:'d66', name:'조현병(정신분열증)', category:'정신건강', severity:'high',
+    { id:'d65', name:'조현병(정신분열증)', category:'정신건강', severity:'high',
       symptoms:['s79','s76','s80','s77','s78','s31'],
       desc:'현실 감각 상실, 환각, 망상이 특징인 중증 정신 질환입니다.',
       action:'정신건강의학과 진료 필수. 항정신병약물 치료. 지속적인 관리 필요.',
       actionType:'danger' },
-    { id:'d67', name:'불면증', category:'정신건강', severity:'low',
+    { id:'d66', name:'불면증', category:'정신건강', severity:'low',
       symptoms:['s78','s76','s77','s80','s83'],
       desc:'잠들기 어렵거나 자주 깨거나 일찍 깨는 수면 장애입니다.',
       action:'수면 위생 개선(규칙적 취침, 카페인 제한). 지속 시 정신건강의학과 진료.',
       actionType:'info' },
-
-    // ===== 전신 =====
-    { id:'d68', name:'만성피로증후군', category:'전신', severity:'low',
+    { id:'d67', name:'만성피로증후군', category:'전신', severity:'low',
       symptoms:['s83','s54','s80','s78','s34','s84'],
       desc:'6개월 이상 지속되는 심한 피로가 주 증상인 질환입니다.',
       action:'내과 진료. 다른 질환 배제 필요. 점진적 운동, 생활 패턴 조절.',
       actionType:'info' },
-    { id:'d69', name:'섬유근통', category:'전신', severity:'medium',
+    { id:'d68', name:'섬유근통', category:'전신', severity:'medium',
       symptoms:['s34','s33','s83','s78','s76','s80'],
       desc:'전신의 만성 통증과 압통점이 특징인 질환입니다.',
       action:'류마티스내과/신경과 진료. 운동, 약물 치료. 스트레스 관리.',
       actionType:'warning' },
-    { id:'d70', name:'전신홍반루푸스', category:'전신', severity:'high',
+    { id:'d69', name:'전신홍반루푸스', category:'전신', severity:'high',
       symptoms:['s83','s33','s40','s65','s84','s16'],
       desc:'전신에 염증이 생기는 자가면역 질환입니다.',
       action:'류마티스내과 진료. 면역억제제 치료. 정기적 관리 필요.',
       actionType:'danger' },
-    { id:'d71', name:'림프종(악성림프종)', category:'전신', severity:'critical',
+    { id:'d70', name:'림프종', category:'전신', severity:'critical',
       symptoms:['s68','s65','s67','s83','s16','s41'],
       desc:'림프계에 발생하는 악성 종양입니다.',
       action:'혈액종양내과 진료. 조직검사 필수. 항암치료 필요.',
@@ -1078,221 +1370,393 @@ const DB = {
   ]
 };
 
+/* ============================================
+   App - 자가진단 애플리케이션
+   ============================================ */
+
 const App = {
   state: {
-    selectedCategories: [],
+    selectedCategories: new Set(),
     selectedSymptoms: new Set(),
-    duration: '1-3',
-    results: null
+    currentStep: 0,
+    searchTerm: ''
   },
 
   init() {
     this.renderCategories();
     this.bindEvents();
+    this.bindStepButtons();
+    this.bindDurationOptions();
+    this.updateStepIndicator(0);
   },
 
   renderCategories() {
     const grid = document.getElementById('categoryGrid');
-    grid.innerHTML = DB.categories.map(c =>
-      `<div class="category-btn" data-id="${c.id}" onclick="App.toggleCategory('${c.id}')">
-        <span class="icon">${c.icon}</span>${c.name}
-      </div>`
-    ).join('');
+    if (!grid) return;
+    grid.innerHTML = DB.categories.map(c => `
+      <button type="button" data-category-id="${c.id}" data-action="toggle-category" class="category-card group bg-surface-container-low p-4 rounded-xl border-2 border-outline-variant hover:border-primary transition-all text-center cursor-pointer">
+        <span class="material-symbols-outlined text-primary text-[32px] block mb-2">${c.icon}</span>
+        <span class="text-label-md font-label-md text-on-surface">${c.name}</span>
+      </button>
+    `).join('');
   },
 
-  toggleCategory(catId) {
-    const idx = this.state.selectedCategories.indexOf(catId);
-    const btn = document.querySelector(`.category-btn[data-id="${catId}"]`);
-    if (idx > -1) {
-      this.state.selectedCategories.splice(idx, 1);
-      btn.classList.remove('selected');
-    } else {
-      this.state.selectedCategories.push(catId);
-      btn.classList.add('selected');
-    }
-    document.getElementById('toStep2').disabled = this.state.selectedCategories.length === 0;
-  },
-
-  goToStep(step) {
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.getElementById(`section${step}`).classList.add('active');
-    for (let i = 1; i <= 4; i++) {
-      const el = document.getElementById(`step${i}`);
-      const line = document.getElementById(`stepLine${i}`);
-      if (i < step) { el.classList.add('done'); el.classList.remove('active'); if(line) line.classList.add('done'); }
-      else if (i === step) { el.classList.add('active'); el.classList.remove('done'); }
-      else { el.classList.remove('active', 'done'); if(line) line.classList.remove('done'); }
-    }
-    document.getElementById('resetBtn').style.display = step > 1 ? 'flex' : 'none';
-    if (step === 2) this.renderSymptoms();
-    if (step === 4) this.diagnose();
-  },
-
-  renderSymptoms(filter) {
+  renderSymptoms() {
     const grid = document.getElementById('symptomGrid');
+    const noSymptoms = document.getElementById('noSymptoms');
+    if (!grid) return;
+
     let symptoms = [];
     this.state.selectedCategories.forEach(catId => {
-      symptoms = symptoms.concat(DB.getSymptomsByCategory(catId));
+      symptoms = symptoms.concat(DB.symptoms.filter(s => s.category === catId));
     });
-    if (filter) {
-      const f = filter.toLowerCase();
-      symptoms = symptoms.filter(s => s.name.includes(f) || s.keywords.some(k => k.includes(f)));
-    }
-    grid.innerHTML = symptoms.map(s =>
-      `<div class="symptom-btn ${this.state.selectedSymptoms.has(s.id) ? 'selected' : ''}"
-            data-id="${s.id}" onclick="App.toggleSymptom('${s.id}')">${s.name}</div>`
-    ).join('');
-    this.updateSelectedTags();
-  },
 
-  toggleSymptom(sId) {
-    if (this.state.selectedSymptoms.has(sId)) {
-      this.state.selectedSymptoms.delete(sId);
-    } else {
-      this.state.selectedSymptoms.add(sId);
+    if (this.state.searchTerm) {
+      const f = this.state.searchTerm.toLowerCase();
+      symptoms = symptoms.filter(s =>
+        s.name.toLowerCase().includes(f) ||
+        s.kw.some(k => k.toLowerCase().includes(f))
+      );
     }
-    this.renderSymptoms(document.getElementById('symptomSearch').value);
-    document.getElementById('toStep3').disabled = this.state.selectedSymptoms.size === 0;
+
+    if (symptoms.length === 0) {
+      grid.innerHTML = '';
+      noSymptoms.classList.remove('hidden');
+      return;
+    }
+    noSymptoms.classList.add('hidden');
+
+    grid.innerHTML = symptoms.map(s => {
+      const selected = this.state.selectedSymptoms.has(s.id);
+      return `<button type="button" data-symptom-id="${s.id}" data-action="toggle-symptom"
+        class="symptom-chip px-4 py-2 bg-surface-container-low border-2 border-outline-variant rounded-full text-label-md font-label-md text-on-surface hover:border-primary ${selected ? 'selected' : ''}">
+        ${s.name}
+      </button>`;
+    }).join('');
   },
 
   updateSelectedTags() {
     const container = document.getElementById('selectedTags');
-    document.getElementById('selectedCount').textContent = this.state.selectedSymptoms.size;
+    const count = document.getElementById('selectedCount');
+    count.textContent = this.state.selectedSymptoms.size;
+
     if (this.state.selectedSymptoms.size === 0) {
-      container.innerHTML = '<span style="color:var(--gray-300);font-size:.85rem">선택한 증상이 없습니다</span>';
+      container.innerHTML = '<span class="text-on-surface-variant text-label-sm font-label-sm">선택된 증상이 여기에 표시됩니다</span>';
+      document.getElementById('toStep3').disabled = true;
       return;
     }
+    document.getElementById('toStep3').disabled = false;
+
     container.innerHTML = Array.from(this.state.selectedSymptoms).map(sId => {
       const s = DB.symptoms.find(s => s.id === sId);
-      return `<span class="tag">${s.name} <button onclick="App.toggleSymptom('${sId}')">×</button></span>`;
+      return `<span class="inline-flex items-center gap-1 px-3 py-1 bg-primary text-on-primary rounded-full text-label-sm font-label-sm">
+        ${s.name}
+        <span data-action="toggle-symptom" data-symptom-id="${sId}" class="tag-remove material-symbols-outlined text-[16px]">close</span>
+      </span>`;
     }).join('');
   },
 
-  async diagnose() {
-    document.getElementById('loadingArea').style.display = 'block';
-    document.getElementById('resultsArea').innerHTML = '';
-    await new Promise(r => setTimeout(r, 800));
-    document.getElementById('loadingArea').style.display = 'none';
-
-    const selected = Array.from(this.state.selectedSymptoms);
-    const duration = document.getElementById('duration').value;
-    const durMultiplier = { '1-3':1, '4-7':1.2, '8-14':1.5, '15-30':1.8, '31+':2 };
-
-    const scored = DB.diseases.map(d => {
-      const matchCount = d.symptoms.filter(sId => selected.includes(sId)).length;
-      let score = d.symptoms.length > 0 ? matchCount / Math.max(d.symptoms.length, 3) : 0;
-
-      const severityWeight = { low:0.8, medium:1, high:1.2, critical:1.3 };
-      score *= (severityWeight[d.severity] || 1);
-
-      score *= durMultiplier[duration] || 1;
-      if (d.severity === 'high' && ['8-14','15-30','31+'].includes(duration)) score *= 1.1;
-      if (d.severity === 'critical' && duration !== '1-3') score *= 1.2;
-
-      const extraMatch = selected.filter(sId => d.symptoms.includes(sId)).length;
-      score = score * (0.5 + 0.5 * (extraMatch / Math.max(selected.length, 1)));
-
-      return { ...d, matchCount, score: Math.min(score * 100, 99) };
+  updateCategoryUI() {
+    document.getElementById('catCount').textContent = this.state.selectedCategories.size;
+    document.getElementById('toStep2').disabled = this.state.selectedCategories.size === 0;
+    document.querySelectorAll('[data-category-id]').forEach(el => {
+      const id = el.getAttribute('data-category-id');
+      if (this.state.selectedCategories.has(id)) {
+        el.classList.add('selected');
+      } else {
+        el.classList.remove('selected');
+      }
     });
+  },
 
-    const minMatch = Math.max(...scored.map(s => s.score)) * 0.3;
-    const filtered = scored.filter(d => d.score >= minMatch && d.matchCount >= 1)
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 12);
+  updateStepIndicator(step) {
+    document.querySelectorAll('.step-item').forEach(item => {
+      const s = parseInt(item.getAttribute('data-step'), 10);
+      const circle = item.querySelector('.step-circle');
+      const label = item.querySelector('.step-label');
+      if (s === step) {
+        circle.className = 'w-10 h-10 rounded-full flex items-center justify-center font-bold text-label-md step-circle bg-primary text-on-primary';
+        if (label) label.className = 'text-label-md font-label-md hidden sm:inline step-label text-primary';
+      } else if (s < step) {
+        circle.className = 'w-10 h-10 rounded-full flex items-center justify-center font-bold text-label-md step-circle bg-status-success text-on-primary';
+        if (label) label.className = 'text-label-md font-label-md hidden sm:inline step-label text-status-success';
+      } else {
+        circle.className = 'w-10 h-10 rounded-full flex items-center justify-center font-bold text-label-md step-circle bg-outline-variant text-on-surface-variant';
+        if (label) label.className = 'text-label-md font-label-md hidden sm:inline step-label text-on-surface-variant';
+      }
+    });
+    document.querySelectorAll('.step-line').forEach((line, idx) => {
+      if (idx < step - 1) {
+        line.className = 'w-8 md:w-16 h-0.5 step-line bg-status-success';
+      } else {
+        line.className = 'w-8 md:w-16 h-0.5 step-line bg-outline-variant';
+      }
+    });
+  },
 
-    this.state.results = filtered;
-    this.renderResults(filtered);
+  goToStep(step) {
+    if (step === 2 && this.state.selectedCategories.size === 0) {
+      alert('카테고리를 최소 1개 선택해주세요.');
+      return;
+    }
+    if (step === 3 && this.state.selectedSymptoms.size === 0) {
+      alert('증상을 최소 1개 선택해주세요.');
+      return;
+    }
+
+    document.querySelectorAll('.checker-step').forEach(el => el.classList.remove('active'));
+    const target = document.getElementById(`step${step}`);
+    if (target) target.classList.add('active');
+
+    this.state.currentStep = step;
+    this.updateStepIndicator(step);
+
+    const fab = document.getElementById('fab');
+    if (step > 0 && step < 4) {
+      fab.classList.add('hidden');
+    } else if (step === 0) {
+      fab.classList.add('hidden');
+    }
+
+    if (step === 2) {
+      this.renderSymptoms();
+      this.updateSelectedTags();
+    }
+
+    if (step > 0) {
+      document.getElementById('checker').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  },
+
+  startWithCategory(catId) {
+    this.state.selectedCategories = new Set([catId]);
+    this.updateCategoryUI();
+    this.goToStep(2);
+  },
+
+  diagnose() {
+    const loading = document.getElementById('loadingArea');
+    const results = document.getElementById('resultsArea');
+    const summary = document.getElementById('resultSummary');
+    const actions = document.getElementById('resultActions');
+    loading.classList.remove('hidden');
+    results.innerHTML = '';
+    actions.classList.add('hidden');
+
+    setTimeout(() => {
+      const selected = Array.from(this.state.selectedSymptoms);
+      const durationRadio = document.querySelector('input[name="duration"]:checked');
+      const duration = durationRadio ? durationRadio.value : '1-3';
+      const durMult = { '1-3':1, '4-7':1.2, '8-14':1.5, '15-30':1.8, '31+':2 };
+
+      const scored = DB.diseases.map(d => {
+        const matchCount = d.symptoms.filter(sId => selected.includes(sId)).length;
+        let score = d.symptoms.length > 0 ? matchCount / Math.max(d.symptoms.length, 3) : 0;
+        const sevW = { low:0.85, medium:1, high:1.2, critical:1.35 };
+        score *= (sevW[d.severity] || 1);
+        score *= durMult[duration] || 1;
+        if (d.severity === 'high' && ['8-14','15-30','31+'].includes(duration)) score *= 1.1;
+        if (d.severity === 'critical' && duration !== '1-3') score *= 1.2;
+        const extraMatch = selected.filter(sId => d.symptoms.includes(sId)).length;
+        score = score * (0.5 + 0.5 * (extraMatch / Math.max(selected.length, 1)));
+        return { ...d, matchCount, score: Math.min(score * 100, 99) };
+      });
+
+      const maxScore = Math.max(...scored.map(s => s.score), 1);
+      const filtered = scored.filter(d => d.score >= maxScore * 0.25 && d.matchCount >= 1)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 12);
+
+      loading.classList.add('hidden');
+      summary.textContent = `총 ${filtered.length}개의 가능한 질환을 찾았습니다. (선택 증상: ${selected.length}개, 기간: ${duration})`;
+      this.renderResults(filtered);
+      actions.classList.remove('hidden');
+    }, 1200);
   },
 
   renderResults(results) {
     const area = document.getElementById('resultsArea');
     if (results.length === 0) {
       area.innerHTML = `
-        <div class="center" style="padding:2rem">
-          <p style="font-size:1.2rem;margin-bottom:.5rem">🤔 일치하는 질환을 찾을 수 없습니다</p>
-          <p style="color:var(--gray-500);font-size:.9rem">더 많은 증상을 선택하거나 의사와 상담하세요</p>
+        <div class="text-center py-12 bg-surface-container-lowest rounded-2xl border border-outline-variant">
+          <span class="material-symbols-outlined text-outline text-[64px]">search_off</span>
+          <p class="mt-3 text-body-md font-body-md text-on-surface">일치하는 질환을 찾을 수 없습니다</p>
+          <p class="text-label-sm font-label-sm text-on-surface-variant mt-1">더 많은 증상을 선택하거나 의사와 상담하세요</p>
         </div>`;
       return;
     }
 
-    const severityColors = {low:'var(--success)',medium:'var(--warning)',high:'var(--danger)',critical:'#7c3aed'};
-    const severityLabels = {low:'낮음',medium:'중간',high:'높음',critical:'매우 높음'};
+    const sevColor = { low:'text-status-success', medium:'text-status-info', high:'text-status-error', critical:'text-tertiary' };
+    const sevBg = { low:'bg-status-success', medium:'bg-status-info', high:'bg-status-error', critical:'bg-tertiary' };
+    const sevLabel = { low:'낮음', medium:'중간', high:'높음', critical:'매우 높음' };
+    const actionBg = { info:'bg-primary/5 border-primary/20 text-primary', warning:'bg-status-info/5 border-status-info/20 text-status-info', danger:'bg-status-error/5 border-status-error/20 text-status-error' };
 
-    area.innerHTML = `<p style="font-size:.85rem;color:var(--gray-500);margin-bottom:1rem">
-      총 ${results.length}개의 가능한 질환을 찾았습니다. 아래 결과를 참고하여 의사와 상담하세요.</p>
-      <div class="results-container">
-      ${results.map((d, i) => {
-        const color = severityColors[d.severity] || 'var(--gray-500)';
-        const matchPct = Math.round(d.score);
-        return `
-          <div class="result-card ${d.severity === 'high' || d.severity === 'critical' ? 'high' : d.severity === 'medium' ? 'medium' : 'low'}"
-               onclick="App.toggleResult(${i})">
-            <div class="result-header">
-              <div class="result-info">
-                <div class="result-name">${d.name}</div>
-                <div class="result-category">${d.category} · 위험도: ${severityLabels[d.severity]}</div>
+    area.innerHTML = results.map((d, i) => {
+      const color = sevColor[d.severity] || 'text-on-surface';
+      const barColor = sevBg[d.severity] || 'bg-outline';
+      const matchPct = Math.round(d.score);
+      return `
+        <div class="result-card bg-surface-container-lowest border-l-4 ${d.severity === 'critical' ? 'border-tertiary' : d.severity === 'high' ? 'border-status-error' : d.severity === 'medium' ? 'border-status-info' : 'border-status-success'} rounded-2xl border border-outline-variant overflow-hidden">
+          <div class="p-5 md:p-6 cursor-pointer" data-action="toggle-result" data-result-id="${i}">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-1 flex-wrap">
+                  <h3 class="font-label-md text-label-md md:text-headline-md font-headline-md text-on-surface">${d.name}</h3>
+                  <span class="${sevBg[d.severity]} text-on-primary text-label-sm font-label-sm px-2 py-0.5 rounded-full">${sevLabel[d.severity]}</span>
+                </div>
+                <p class="text-label-sm font-label-sm text-on-surface-variant">${d.category} · ${d.matchCount}개 증상 일치</p>
               </div>
-              <div class="result-match">
-                <div class="match-percent" style="color:${color}">${matchPct}%</div>
-                <div class="match-bar"><div class="match-fill" style="width:${matchPct}%;background:${color}"></div></div>
-                <div style="font-size:.7rem;color:var(--gray-500);margin-top:.15rem">일치율</div>
+              <div class="text-right md:min-w-[120px]">
+                <p class="text-headline-md font-headline-md ${color}">${matchPct}%</p>
+                <p class="text-label-sm font-label-sm text-on-surface-variant">일치율</p>
+                <div class="h-1.5 bg-outline-variant rounded-full mt-1 overflow-hidden">
+                  <div class="h-full ${barColor} rounded-full transition-all" style="width:${matchPct}%"></div>
+                </div>
               </div>
             </div>
-            <div class="result-body" id="resultBody${i}">
-              <p>${d.desc}</p>
-              <div class="result-action ${d.actionType || 'warning'}">${d.action}</div>
+            <div class="flex items-center gap-1 mt-3 text-primary text-label-sm font-label-sm">
+              <span>상세 정보</span>
+              <span class="material-symbols-outlined text-[18px]">expand_more</span>
             </div>
-          </div>`;
-      }).join('')}
-    </div>`;
-
-    document.getElementById('resultsArea').innerHTML += `
-      <div style="background:var(--gray-100);border-radius:12px;padding:1rem;margin-top:1.5rem;font-size:.85rem;color:var(--gray-500);text-align:center;line-height:1.6">
-        <strong>📌 중요 안내</strong><br>
-        이 결과는 참고용입니다. 정확한 진단을 위해 반드시 의료기관을 방문하세요.<br>
-        증상이 심각하거나 악화되는 경우 즉시 응급실(119)에 연락하십시오.
-      </div>`;
+          </div>
+          <div class="result-body px-5 md:px-6 pb-5 md:pb-6">
+            <p class="text-body-md font-body-md text-on-surface leading-relaxed mb-3">${d.desc}</p>
+            <div class="border-l-4 ${d.actionType === 'danger' ? 'border-status-error' : d.actionType === 'warning' ? 'border-status-info' : 'border-primary'} ${actionBg[d.actionType] || actionBg.info} p-4 rounded-r-xl">
+              <p class="font-label-sm font-label-sm"><strong>💡 권장 조치:</strong> ${d.action}</p>
+            </div>
+          </div>
+        </div>`;
+    }).join('');
   },
 
-  toggleResult(idx) {
-    const body = document.getElementById(`resultBody${idx}`);
-    const card = body.closest('.result-card');
-    card.classList.toggle('expanded');
-    body.style.display = body.style.display === 'block' ? 'none' : 'block';
+  showEmergency() {
+    document.getElementById('emergencyModal').classList.remove('hidden');
+  },
+
+  closeEmergency() {
+    document.getElementById('emergencyModal').classList.add('hidden');
   },
 
   reset() {
-    this.state.selectedCategories = [];
+    this.state.selectedCategories = new Set();
     this.state.selectedSymptoms = new Set();
-    this.state.results = null;
-    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('selected'));
-    document.getElementById('toStep2').disabled = true;
-    document.getElementById('toStep3').disabled = true;
-    document.getElementById('symptomSearch').value = '';
-    document.getElementById('selectedTags').innerHTML = '';
-    document.getElementById('selectedCount').textContent = '0';
+    this.state.searchTerm = '';
+    this.updateCategoryUI();
+    this.updateSelectedTags();
     document.getElementById('resultsArea').innerHTML = '';
-    document.getElementById('loadingArea').style.display = 'none';
-    this.goToStep(1);
+    document.getElementById('resultActions').classList.add('hidden');
+    document.getElementById('symptomSearch').value = '';
+    this.goToStep(0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  },
+
+  bindStepButtons() {
+    document.addEventListener('click', (e) => {
+      const target = e.target.closest('[data-action]');
+      if (!target) return;
+      const action = target.getAttribute('data-action');
+
+      if (action === 'toggle-category') {
+        e.preventDefault();
+        const id = target.getAttribute('data-category-id');
+        if (this.state.selectedCategories.has(id)) {
+          this.state.selectedCategories.delete(id);
+        } else {
+          this.state.selectedCategories.add(id);
+        }
+        this.updateCategoryUI();
+      } else if (action === 'toggle-symptom') {
+        e.preventDefault();
+        e.stopPropagation();
+        const id = target.getAttribute('data-symptom-id');
+        if (this.state.selectedSymptoms.has(id)) {
+          this.state.selectedSymptoms.delete(id);
+        } else {
+          this.state.selectedSymptoms.add(id);
+        }
+        if (this.state.currentStep === 2) {
+          this.renderSymptoms();
+          this.updateSelectedTags();
+        } else {
+          this.updateSelectedTags();
+        }
+      } else if (action === 'toggle-result') {
+        e.preventDefault();
+        const card = target.closest('.result-card');
+        if (card) card.classList.toggle('expanded');
+      }
+    });
+  },
+
+  bindDurationOptions() {
+    document.querySelectorAll('.duration-option').forEach(label => {
+      const radio = label.querySelector('input[type="radio"]');
+      if (!radio) return;
+      const update = () => {
+        document.querySelectorAll('.duration-option').forEach(l => {
+          l.classList.remove('border-primary', 'bg-primary/5');
+          l.classList.add('border-outline-variant');
+        });
+        if (radio.checked) {
+          label.classList.remove('border-outline-variant');
+          label.classList.add('border-primary', 'bg-primary/5');
+        }
+      };
+      radio.addEventListener('change', update);
+      label.addEventListener('click', (e) => {
+        if (e.target.tagName !== 'INPUT') {
+          radio.checked = true;
+          update();
+        }
+      });
+      update();
+    });
   },
 
   bindEvents() {
-    document.getElementById('toStep2').onclick = () => this.goToStep(2);
-    document.getElementById('backToStep1').onclick = () => this.goToStep(1);
-    document.getElementById('toStep3').onclick = () => this.goToStep(3);
-    document.getElementById('backToStep2').onclick = () => this.goToStep(2);
-    document.getElementById('diagnoseBtn').onclick = () => this.goToStep(4);
-    document.getElementById('backToStep3').onclick = () => this.goToStep(3);
-    document.getElementById('restartBtn').onclick = () => this.reset();
-    document.getElementById('resetBtn').onclick = () => this.reset();
+    const search = document.getElementById('symptomSearch');
+    if (search) {
+      search.addEventListener('input', (e) => {
+        this.state.searchTerm = e.target.value;
+        if (this.state.currentStep === 2) this.renderSymptoms();
+      });
+    }
 
-    document.getElementById('symptomSearch').addEventListener('input', (e) => {
-      this.renderSymptoms(e.target.value);
+    const navSearch = document.getElementById('navSearch');
+    if (navSearch) {
+      navSearch.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          this.state.searchTerm = e.target.value;
+          if (this.state.selectedCategories.size === 0) {
+            this.state.selectedCategories.add('general');
+            this.updateCategoryUI();
+          }
+          this.goToStep(2);
+        }
+      });
+    }
+
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    }
+
+    const modal = document.getElementById('emergencyModal');
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) this.closeEmergency();
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') this.closeEmergency();
     });
   }
 };
 
 document.addEventListener('DOMContentLoaded', () => App.init());
 </script>
+
 </body>
 </html>

@@ -25,3 +25,7 @@ build/
 
 # Cache
 .cache/
+
+# Backup files
+*.bak
+*.backup
