@@ -552,6 +552,20 @@
 
 <div id="resultsArea" class="space-y-4 max-w-4xl mx-auto"></div>
 
+<div id="productArea" class="hidden max-w-4xl mx-auto mt-8">
+  <div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-5 md:p-6">
+    <div class="flex items-center gap-2 mb-1">
+      <span class="material-symbols-outlined text-primary text-[22px]">shopping_bag</span>
+      <h4 class="font-label-md text-label-md text-on-surface">건강보조식품 추천</h4>
+    </div>
+    <p class="text-label-sm font-label-sm text-on-surface-variant mb-4">진단 결과와 관련된 건강기능식품을 참고용으로 안내합니다. (질병 치료 목적이 아님)</p>
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+    <p class="text-label-sm font-label-sm text-on-surface-variant mt-4 pt-4 border-t border-outline-variant leading-relaxed">
+      <strong>제휴 안내:</strong> 본 페이지는 네이버 쇼핑 커넥트 및 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받을 수 있습니다. 제공되는 상품 정보는 건강 참고용이며, 의학적 진단·치료를 대체하지 않습니다. 구매 전 의료 전문가와 상담하시기 바랍니다.
+    </p>
+  </div>
+</div>
+
 <div id="resultActions" class="hidden flex flex-col sm:flex-row justify-center gap-3 mt-10">
   <button onclick="App.goToStep(2)" class="bg-surface-container-lowest text-primary border border-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-fixed-dim transition-all flex items-center justify-center gap-2 active:scale-95">
     <span class="material-symbols-outlined text-[18px]">edit</span> 증상 수정
@@ -1264,6 +1278,10 @@
     <span class="text-headline-md font-headline-md text-primary mb-4 block">HealSense</span>
     <p class="text-on-surface-variant font-label-md text-label-md max-w-md">증상 기반 건강 자가진단 도구. 본 사이트는 의학적 진단을 제공하지 않으며, 모든 결과는 참고용입니다.</p>
     <p class="text-on-surface-variant font-label-sm font-label-sm mt-3">© 2026 HealSense. 응급 상황 시 119로 즉시 연락하세요.</p>
+    <div class="mt-4 p-3 bg-surface-container-low rounded-lg text-label-sm font-label-sm text-on-surface-variant leading-relaxed">
+      <p><strong>제휴(광고) 표시:</strong> 본 사이트는 네이버 쇼핑 커넥트 및 쿠팡 파트너스 활동의 일환으로, 상품 구매 시 일정액의 수수료를 제공받을 수 있습니다. 제공되는 모든 정보는 건강 참고용이며 의학적 진단·치료를 대체하지 않습니다.</p>
+      <p class="mt-2">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+    </div>
   </div>
   <div class="grid grid-cols-2 sm:grid-cols-3 gap-8">
     <div>
@@ -2279,6 +2297,79 @@ const DB = {
 };
 
 /* ============================================
+   Products - 건강보조식품 추천 (제휴 링크)
+   - 네이버 쇼핑 커넥트 / 쿠팡 파트너스
+   - categories 배열: 질환의 category 필드와 매칭됨
+   ============================================ */
+
+const Products = {
+  items: [
+    // 네이버 쇼핑 (6개)
+    { id:'p1',  name:'장 건강 프로바이오틱스',  platform:'naver',  url:'https://naver.me/5jXngyjg',  categories:['소화기','여성/생식'],                       tags:['과민성대장','변비','설사','소화불량'] },
+    { id:'p2',  name:'오메가-3 (rTG 고농축)',  platform:'naver',  url:'https://naver.me/IFE9Uvjr',   categories:['심혈관','신경계'],                          tags:['고혈압','동맥경화','치매','건조안'] },
+    { id:'p3',  name:'루테인 + 아스타잔틴',   platform:'naver',  url:'https://naver.me/5t7civ5W',   categories:['안과'],                                    tags:['황반변성','안구건조','시력저하'] },
+    { id:'p4',  name:'관절 보스테리아(MSM+글루코사민)', platform:'naver', url:'https://naver.me/Gy3D6BSP', categories:['근골격계'],                                tags:['퇴행성관절염','관절통','디스크','골다공증'] },
+    { id:'p5',  name:'수면·스트레스 마그네슘',   platform:'naver',  url:'https://naver.me/xONJqX9m',  categories:['정신','신경계','내분비/대사'],                tags:['불면증','우울','편두통','근육경련'] },
+    { id:'p6',  name:'콜라겐+비오틴 종합',     platform:'naver',  url:'https://naver.me/F93BGvid',  categories:['피부','근골격계'],                          tags:['아토피','건조','탈모','관절'] },
+
+    // 쿠팡 파트너스 (6개)
+    { id:'p7',  name:'프리미엄 종합비타민',     platform:'coupang', url:'https://link.coupang.com/a/el1aHhcHOm', categories:['내분비/대사','정신','감염'],    tags:['피로','만성피로','감기','면역'] },
+    { id:'p8',  name:'항산화 비타민C+E',       platform:'coupang', url:'https://link.coupang.com/a/el1f5lv5Rk', categories:['피부','감염','암'],                tags:['감기','피부','항산화','면력'] },
+    { id:'p9',  name:'비타민D3 5000IU + K2',   platform:'coupang', url:'https://link.coupang.com/a/el1iecMtGe', categories:['근골격계','내분비/대사','정신'],   tags:['골다공증','우울','피로','면역'] },
+    { id:'p10', name:'밀크시슬 간 건강',        platform:'coupang', url:'https://link.coupang.com/a/el1kL1qlxs', categories:['소화기'],                          tags:['지방간','간수치','음주','피로'] },
+    { id:'p11', name:'코큐텐(CoQ10) + PQQ',    platform:'coupang', url:'https://link.coupang.com/a/el1lI7RVqm', categories:['심혈관','내분비/대사'],            tags:['심장','고혈압','항암제 복용 후','피로'] },
+    { id:'p12', name:'레시틴(인지질) 두뇌 영양',  platform:'coupang', url:'https://link.coupang.com/a/el1mJ91Dbg', categories:['신경계','정신'],                 tags:['기억력','치매','ADHD','학생'] }
+  ],
+
+  // 진단 결과 질환 배열 → 관련 제품 3개 추출
+  match(diseases) {
+    if (!diseases || diseases.length === 0) return [];
+    const scored = this.items.map(p => {
+      let score = 0;
+      diseases.forEach((d, idx) => {
+        if (p.categories.includes(d.category)) {
+          score += (diseases.length - idx) * 2;
+        }
+        if (d.name && p.tags.some(t => d.name.includes(t) || t.includes(d.name))) {
+          score += 3;
+        }
+      });
+      return { ...p, score };
+    });
+    return scored.filter(p => p.score > 0).sort((a,b) => b.score - a.score).slice(0, 3);
+  },
+
+  render(matched) {
+    const area = document.getElementById('productArea');
+    const grid = document.getElementById('productGrid');
+    if (!matched || matched.length === 0) {
+      area.classList.add('hidden');
+      return;
+    }
+    area.classList.remove('hidden');
+    const platformMeta = {
+      naver:  { label:'네이버 쇼핑', color:'bg-[#03C75A] hover:bg-[#02b04f]', icon:'shopping_bag',  text:'text-on-primary' },
+      coupang:{ label:'쿠팡',         color:'bg-[#FF6B00] hover:bg-[#e66000]', icon:'shopping_cart', text:'text-on-primary' }
+    };
+    grid.innerHTML = matched.map(p => {
+      const m = platformMeta[p.platform];
+      return `<div class="bg-surface-container-low border border-outline-variant rounded-xl p-4 flex flex-col">
+        <div class="flex items-center gap-1.5 mb-2">
+          <span class="material-symbols-outlined text-primary text-[18px]">${m.icon}</span>
+          <span class="text-label-sm font-label-sm text-on-surface-variant">${m.label} 제휴</span>
+        </div>
+        <h5 class="font-label-md text-label-md text-on-surface mb-3 flex-grow">${p.name}</h5>
+        <a href="${p.url}" target="_blank" rel="noopener noreferrer nofollow sponsored"
+           class="${m.color} ${m.text} text-label-md font-label-md px-3 py-2 rounded-lg flex items-center justify-center gap-1 transition-colors">
+          <span>보러가기</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+        </a>
+      </div>`;
+    }).join('');
+  }
+};
+
+/* ============================================
    App - 자가진단 애플리케이션
    ============================================ */
 
@@ -2479,6 +2570,7 @@ const App = {
       loading.classList.add('hidden');
       summary.textContent = `총 ${filtered.length}개의 가능한 질환을 찾았습니다. (선택 증상: ${selected.length}개, 기간: ${duration})`;
       this.renderResults(filtered);
+      Products.render(Products.match(filtered));
       actions.classList.remove('hidden');
     }, 1200);
   },
@@ -2553,6 +2645,7 @@ const App = {
     this.updateCategoryUI();
     this.updateSelectedTags();
     document.getElementById('resultsArea').innerHTML = '';
+    document.getElementById('productArea').classList.add('hidden');
     document.getElementById('resultActions').classList.add('hidden');
     document.getElementById('symptomSearch').value = '';
     this.goToStep(0);
