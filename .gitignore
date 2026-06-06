@@ -2,6 +2,10 @@
 node_modules/
 *.log
 
+# Test files
+test*.js
+check*.js
+
 # Editor
 .vscode/
 .idea/
