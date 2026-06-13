@@ -203,10 +203,6 @@
   .bar-medium { background: #F9A825; }
   .bar-high { background: #EF6C00; }
   .bar-critical { background: #C62828; }
-  .border-left-low { border-left-color: #1976D2; }
-  .border-left-medium { border-left-color: #F9A825; }
-  .border-left-high { border-left-color: #EF6C00; }
-  .border-left-critical { border-left-color: #C62828; }
   ::-webkit-scrollbar { width: 8px; height: 8px; }
   ::-webkit-scrollbar-track { background: #f5f2ff; }
   ::-webkit-scrollbar-thumb { background: #adc7ff; border-radius: 8px; }
@@ -1817,7 +1813,15 @@ const DB = {
     { id:'s96', name:'복부비만', category:'endocrine', kw:['abdominal obesity','복부비만','뱃살'] },
     { id:'s97', name:'성격변화', category:'neurological', kw:['personality change','성격변화','성격'] },
     { id:'s98', name:'언어장애', category:'neurological', kw:['speech difficulty','언어장애','말어려움'] },
-    { id:'s99', name:'기립성어지럼', category:'cardiovascular', kw:['orthostatic','기립성','일어날때어지럼'] }
+    { id:'s99', name:'기립성어지럼', category:'cardiovascular', kw:['orthostatic','기립성','일어날때어지럼'] },
+    // KDCA 보강 증상
+    { id:'s100', name:'갑작스런 공포감/호흡곤란', category:'mental', kw:['panic','공포','호흡'] },
+    { id:'s101', name:'얼굴마비(구안와사)', category:'neurological', kw:['facial palsy','안면마비','구안와사'] },
+    { id:'s102', name:'섬광같은 흉통', category:'respiratory', kw:['stabbing chest','찌르는','흉통'] },
+    { id:'s103', name:'피부열감/부기', category:'skin', kw:['cellulitis','열감','부기','발적'] },
+    { id:'s104', name:'손발입물집', category:'infectious', kw:['hand foot mouth','물집','수포'] },
+    { id:'s105', name:'발작적기침(킹킹)', category:'respiratory', kw:['whooping','발작','킹킹'] },
+    { id:'s106', name:'생리과다', category:'urinary', kw:['menorrhagia','생리과다','월경과다'] }
   ],
 
   diseases: [
@@ -2706,7 +2710,48 @@ const DB = {
       symptoms:['s22','s54','s99','s25','s61'],
       desc:'혈압이 정상 이하로 낮은 상태. 기립성 저혈압(갑자기 일어날때 어지럼)이 가장 흔함. 탈수·출혈·약물부작용·심장질환·자율신경장애 등 다양한 원인.',
       action:'혈압 측정(기립 전후). 원인 질환 감별. 수분·염분 적절히 섭취. 천천히 일어나기. 압박스타킹(기립성). 원인약물 조절(의사상담).',
-      actionType:'info' }
+      actionType:'info' },
+    // ---- KDCA 2차 보강 질환 ----
+    { id:'d178', name:'공황장애(Panic Disorder)', category:'정신건강', severity:'medium',
+      symptoms:['s76','s20','s3','s22','s100','s25'],
+      desc:'갑작스러운 극심한 공포와 함께 심장두근거림, 호흡곤란, 어지러움, 질식감 등이 10분 내 최고조에 달하는 공황발작이 반복됨. 예기불안, 회피행동 동반.',
+      action:'정신건강의학과 진료. 인지행동치료(CBT) 1차. SSRI 약물(장기). 항불안제(단기). 이완·호흡법. 카페인·알코올 피함.',
+      actionType:'warning' },
+    { id:'d179', name:'안면신경마비(구안와사/Bell\'s Palsy)', category:'신경계', severity:'low',
+      symptoms:['s101','s62','s25','s54'],
+      desc:'얼굴 한쪽 근육이 갑자기 마비되는 말초성 안면신경(7번 뇌신경) 마비. 이마 주름 안잡힘, 눈 감김 안됨, 입꼬리 처짐. 대부분 3~6개월 내 자연 회복.',
+      action:'신경과 진료. 스테로이드(발병 72시간 내). 항바이러스제(대상포진 동반시). 안구보호(인공눈물·안대). 안면운동 재활. 침치료(보조).',
+      actionType:'info' },
+    { id:'d180', name:'기흉(Pneumothorax)', category:'호흡기', severity:'high',
+      symptoms:['s102','s3','s19','s3','s8'],
+      desc:'폐 표면에 구멍이 생겨 흉강 내 공기가 차며 폐가 허탈되는 상태. 갑자기 찌르는 듯한 흉통, 호흡곤란. 마른키 젊은 남성에 흔함(자연기흉). 긴장성기흉은 응급.',
+      action:'흉부X-ray 진단. 소량→산소·경과관찰. 중등량→흉관삽입. 수술(재발·양측). 긴장성→즉시 흉강천자(응급). 금연. 비행·잠수 금지(회복 전).',
+      actionType:'danger' },
+    { id:'d181', name:'봉와직염(Cellulitis)', category:'피부', severity:'medium',
+      symptoms:['s103','s65','s66','s41','s40'],
+      desc:'피부 진피층과 피하조직의 급성 세균 감염. 붉고 뜨겁게 부으며 통증 동반. 주로 하지. 면역저하자·당뇨 환자 위험. 패혈증으로 진행 가능.',
+      action:'항생제(경구·정주). 환부 거상·안정. 소염진통제. 당뇨 관리. 재발방지: 피부건조·곰팡이 관리. 궤양·심재감염 의심시 입원.',
+      actionType:'warning' },
+    { id:'d182', name:'수족구병(HFMD)', category:'감염성', severity:'low',
+      symptoms:['s65','s10','s104','s40','s84'],
+      desc:'엔테로바이러스 감염. 손·발·입안에 물집성 발진. 영유아에 흔함. 발열, 식욕부진. 대부분 7~10일 자연치유. 드물게 뇌수막염·심근염 합병증.',
+      action:'대증치료(해열·수분). 입안 통증→차가운 음식. 전염기(발병 1주) 격리. 손씻기 철저. 경련·의식저하→즉시 응급실(합병증 의심).',
+      actionType:'info' },
+    { id:'d183', name:'백일해(Whooping Cough)', category:'호흡기', severity:'medium',
+      symptoms:['s105','s5','s6','s65','s10'],
+      desc:'보르데텔라 백일해균 감염. 발작적 기침 후 '킹'하는 흡기음. 2주 이상 기침 지속. 영아에서 중증(무호흡). 최근 청소년·성인에서도 증가(면역감소).',
+      action:'항생제(azithromycin, 조기). 기침발작→산소·흡인. 예방접종(DTaP/Tdap). 가족·접촉자 예방적 항생제. 영아(1세 미만) 입원.',
+      actionType:'warning' },
+    { id:'d184', name:'자궁근종(Uterine Fibroids)', category:'비뇨/생식', severity:'low',
+      symptoms:['s106','s110','s48','s9','s54'],
+      desc:'자궁 평활근에서 발생하는 양성 종양. 가임기 여성 30~50%에 존재. 생리과다(철결핍빈혈), 골반통, 빈뇨, 하복부 압박감. 무증상도 흔함.',
+      action:'산부인과 초음파 진단. 무증상→경과관찰. 증상→약물(피임약·호르몬). 자궁동맥색전술(UAE). 수술(근종절제·자궁절제). 빈혈 철분보충.',
+      actionType:'info' },
+    { id:'d185', name:'만성콩팥병(CKD)', category:'비뇨/생식', severity:'high',
+      symptoms:['s111','s21','s54','s48','s15'],
+      desc:'3개월 이상 지속되는 콩팥 구조·기능 이상. 당뇨·고혈압이 주요 원인. 조기 무증상→말기 피로·부종·빈혈·요독증. 신대체요법(투석·이식) 필요 가능.',
+      action:'신장내과 진료. 혈압조절(RAAS 차단제). 당뇨·지질 관리. 저단백·저염식이. 빈혈(EPO). 말기→혈액투석·복막투석·신장이식. 약물용량조절.',
+      actionType:'warning' }
   ]
 };
 
@@ -3084,6 +3129,7 @@ const App = {
     const sevText = { low:'text-[#1976D2]', medium:'text-[#F9A825]', high:'text-[#EF6C00]', critical:'text-[#C62828]' };
     const sevBg = { low:'sev-low', medium:'sev-medium', high:'sev-high', critical:'sev-critical' };
     const sevBar = { low:'bar-low', medium:'bar-medium', high:'bar-high', critical:'bar-critical' };
+    const sevBorder = { low:'#1976D2', medium:'#F9A825', high:'#EF6C00', critical:'#C62828' };
     const sevLabel = { low:'낮음', medium:'중간', high:'높음', critical:'매우 높음' };
     const sevDesc = { low:'비교적 가벼운 상태로 자연 회복이 가능할 수 있습니다.', medium:'전문의 진료가 권장되는 중등도 상태입니다.', high:'전문의 진단과 치료가 반드시 필요한 상태입니다.', critical:'즉시 응급실을 방문해야 하는 심각한 상태입니다.' };
     const actionBg = { info:'bg-primary/5 border-primary/20 text-primary', warning:'bg-status-info/5 border-status-info/20 text-status-info', danger:'bg-status-error/5 border-status-error/20 text-status-error' };
@@ -3093,7 +3139,7 @@ const App = {
       const barColor = sevBar[d.severity] || 'bg-outline';
       const matchPct = Math.round(d.score);
       return `
-        <div class="result-card bg-surface-container-lowest border-l-4 border-left-${d.severity} rounded-2xl border border-outline-variant overflow-hidden">
+        <div class="result-card bg-surface-container-lowest border-l-4 rounded-2xl border border-outline-variant overflow-hidden" style="border-left-color:${sevBorder[d.severity] || '#c2c6d4'}">
           <div class="p-5 md:p-6 cursor-pointer" data-action="toggle-result" data-result-id="${i}">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div class="flex-1">
