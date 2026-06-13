@@ -166,7 +166,27 @@
   }
   .category-card.selected {
     border-color: #00408b !important;
-    background: #f5f2ff !important;
+    background: #e0eeff !important;
+    box-shadow: 0 0 0 3px rgba(0, 64, 139, 0.25) !important;
+    transform: scale(1.03);
+  }
+  .category-card.selected .material-symbols-outlined {
+    color: #00408b !important;
+  }
+  .category-card.selected span:last-child {
+    color: #00408b !important;
+    font-weight: 700 !important;
+  }
+  .category-card.selected::after {
+    content: 'check_circle';
+    font-family: 'Material Symbols Outlined';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 20px;
+    color: #00408b;
+    background: white;
+    border-radius: 50%;
   }
   .result-card { transition: all .2s ease; }
   .result-card:hover { box-shadow: 0 8px 24px rgba(13, 91, 188, 0.12); }
@@ -2782,7 +2802,7 @@ const App = {
     const grid = document.getElementById('categoryGrid');
     if (!grid) return;
     grid.innerHTML = DB.categories.map(c => `
-      <button type="button" data-category-id="${c.id}" data-action="toggle-category" class="category-card group bg-surface-container-low p-4 rounded-xl border-2 border-outline-variant hover:border-primary transition-all text-center cursor-pointer">
+      <button type="button" data-category-id="${c.id}" data-action="toggle-category" class="category-card group bg-surface-container-low p-4 rounded-xl border-2 border-outline-variant hover:border-primary transition-all text-center cursor-pointer relative">
         <span class="material-symbols-outlined text-primary text-[32px] block mb-2">${c.icon}</span>
         <span class="text-label-md font-label-md text-on-surface">${c.name}</span>
       </button>
