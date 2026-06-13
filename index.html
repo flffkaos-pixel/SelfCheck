@@ -264,7 +264,7 @@
       "step": [
         {"@type": "HowToStep", "position": 1, "name": "카테고리 선택", "text": "14개 카테고리 중 해당하는 부위를 선택합니다."},
         {"@type": "HowToStep", "position": 2, "name": "증상 선택", "text": "겪고 있는 증상을 모두 선택합니다."},
-        {"@type": "HowToStep", "position": 3, "name": "증상 기간 입력", "text": "증상이 지속된 기간을 선택합니다."},
+        {"@type": "HowToStep", "position": 3, "name": "건강 정보 및 증상 기간 입력", "text": "개인 건강 정보와 증상 지속 기간을 입력합니다."},
         {"@type": "HowToStep", "position": 4, "name": "결과 확인", "text": "증상 매칭 결과와 권장 조치를 확인합니다."}
       ]
     }
@@ -386,7 +386,7 @@
   <div class="w-8 md:w-16 h-0.5 step-line bg-outline-variant"></div>
   <div class="flex items-center gap-2 step-item" data-step="3">
     <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-label-md step-circle bg-outline-variant text-on-surface-variant">3</div>
-    <span class="text-label-md font-label-md hidden sm:inline step-label text-on-surface-variant">기간</span>
+    <span class="text-label-md font-label-md hidden sm:inline step-label text-on-surface-variant">건강 정보</span>
   </div>
   <div class="w-8 md:w-16 h-0.5 step-line bg-outline-variant"></div>
   <div class="flex items-center gap-2 step-item" data-step="4">
@@ -478,65 +478,193 @@
   </button>
   <span class="text-label-sm font-label-sm text-on-surface-variant">최소 1개 증상 선택 필요</span>
   <button id="toStep3" disabled onclick="App.goToStep(3)" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95">
-    다음: 증상 기간 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    다음: 건강 정보 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
   </button>
 </div>
 </div>
 
-<!-- Step 3: Duration -->
+<!-- Step 3: Health Info & Duration -->
 <div id="step3" class="checker-step">
-<h3 class="font-headline-md text-headline-md text-on-surface mb-6 text-center">3. 증상이 지속된 기간을 선택하세요</h3>
-<div class="max-w-2xl mx-auto bg-surface-container-lowest rounded-2xl border border-outline-variant p-6 md:p-8">
-<div class="space-y-3" id="durationOptions">
-  <label class="flex items-center gap-4 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
-    <input type="radio" name="duration" value="1-3" class="w-5 h-5 accent-primary" checked>
-    <div class="flex-1">
-      <p class="font-label-md text-label-md text-on-surface">1~3일</p>
-      <p class="text-label-sm font-label-sm text-on-surface-variant">갑자기 시작된 증상</p>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 text-center">3. 건강 정보 입력</h3>
+
+<div class="max-w-3xl mx-auto space-y-6">
+  <!-- 건강 프로필 -->
+  <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-6 md:p-8">
+    <h4 class="font-label-md text-label-md text-primary mb-4 flex items-center gap-2">
+      <span class="material-symbols-outlined text-[20px]">badge</span> 개인 건강 정보
+    </h4>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <!-- 나이 -->
+      <div>
+        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2">연령대</p>
+        <div class="flex flex-wrap gap-2" id="hpAge">
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_age" value="10s" class="hidden"> 10대
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_age" value="20s" class="hidden"> 20대
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_age" value="30s" class="hidden"> 30대
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_age" value="40s" class="hidden"> 40대
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_age" value="50s" class="hidden"> 50대
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_age" value="60s" class="hidden"> 60대
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_age" value="70s+" class="hidden"> 70대↑
+          </label>
+        </div>
+      </div>
+      <!-- 성별 -->
+      <div>
+        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2">성별</p>
+        <div class="flex gap-2" id="hpGender">
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_gender" value="male" class="hidden"> 남성
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_gender" value="female" class="hidden"> 여성
+          </label>
+        </div>
+      </div>
+      <!-- 흡연 -->
+      <div>
+        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2">흡연</p>
+        <div class="flex flex-wrap gap-2" id="hpSmoking">
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_smoking" value="none" class="hidden"> 비흡연
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_smoking" value="past" class="hidden"> 과거 흡연
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_smoking" value="light" class="hidden"> 1갑 미만/일
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_smoking" value="heavy" class="hidden"> 1갑 이상/일
+          </label>
+        </div>
+      </div>
+      <!-- 음주 -->
+      <div>
+        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2">음주</p>
+        <div class="flex flex-wrap gap-2" id="hpAlcohol">
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_alcohol" value="none" class="hidden"> 거의 안함
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_alcohol" value="light" class="hidden"> 주 1~2회
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_alcohol" value="moderate" class="hidden"> 주 3~4회
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_alcohol" value="heavy" class="hidden"> 거의 매일
+          </label>
+        </div>
+      </div>
+      <!-- 운동 -->
+      <div>
+        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2">운동량</p>
+        <div class="flex flex-wrap gap-2" id="hpExercise">
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_exercise" value="none" class="hidden"> 거의 안함
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_exercise" value="light" class="hidden"> 주 1~2회
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_exercise" value="moderate" class="hidden"> 주 3~4회
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_exercise" value="daily" class="hidden"> 거의 매일
+          </label>
+        </div>
+      </div>
+      <!-- 체형 -->
+      <div>
+        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2">체형</p>
+        <div class="flex flex-wrap gap-2" id="hpWeight">
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_weight" value="under" class="hidden"> 저체중
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_weight" value="normal" class="hidden"> 정상
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_weight" value="over" class="hidden"> 과체중
+          </label>
+          <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
+            <input type="radio" name="hp_weight" value="obese" class="hidden"> 비만
+          </label>
+        </div>
+      </div>
     </div>
-    <span class="material-symbols-outlined text-outline">today</span>
-  </label>
-  <label class="flex items-center gap-4 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
-    <input type="radio" name="duration" value="4-7" class="w-5 h-5 accent-primary">
-    <div class="flex-1">
-      <p class="font-label-md text-label-md text-on-surface">4~7일</p>
-      <p class="text-label-sm font-label-sm text-on-surface-variant">일주일 미만 지속</p>
+  </div>
+
+  <!-- 증상 기간 -->
+  <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-6 md:p-8">
+    <h4 class="font-label-md text-label-md text-primary mb-4 flex items-center gap-2">
+      <span class="material-symbols-outlined text-[20px]">schedule</span> 증상 지속 기간
+    </h4>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3" id="durationOptions">
+      <label class="flex flex-col items-center gap-2 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
+        <input type="radio" name="duration" value="1-3" class="hidden" checked>
+        <span class="material-symbols-outlined text-outline text-[28px]">today</span>
+        <div class="text-center">
+          <p class="font-label-sm text-label-sm text-on-surface">1~3일</p>
+          <p class="text-label-sm font-label-sm text-on-surface-variant">급성</p>
+        </div>
+      </label>
+      <label class="flex flex-col items-center gap-2 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
+        <input type="radio" name="duration" value="4-7" class="hidden">
+        <span class="material-symbols-outlined text-outline text-[28px]">date_range</span>
+        <div class="text-center">
+          <p class="font-label-sm text-label-sm text-on-surface">4~7일</p>
+          <p class="text-label-sm font-label-sm text-on-surface-variant">1주 미만</p>
+        </div>
+      </label>
+      <label class="flex flex-col items-center gap-2 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
+        <input type="radio" name="duration" value="8-14" class="hidden">
+        <span class="material-symbols-outlined text-outline text-[28px]">calendar_month</span>
+        <div class="text-center">
+          <p class="font-label-sm text-label-sm text-on-surface">1~2주</p>
+          <p class="text-label-sm font-label-sm text-on-surface-variant">2주 미만</p>
+        </div>
+      </label>
+      <label class="flex flex-col items-center gap-2 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
+        <input type="radio" name="duration" value="15-30" class="hidden">
+        <span class="material-symbols-outlined text-outline text-[28px]">event</span>
+        <div class="text-center">
+          <p class="font-label-sm text-label-sm text-on-surface">2주~1개월</p>
+          <p class="text-label-sm font-label-sm text-on-surface-variant">상당 기간</p>
+        </div>
+      </label>
+      <label class="flex flex-col items-center gap-2 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
+        <input type="radio" name="duration" value="31+" class="hidden">
+        <span class="material-symbols-outlined text-outline text-[28px]">calendar_today</span>
+        <div class="text-center">
+          <p class="font-label-sm text-label-sm text-on-surface">1개월↑</p>
+          <p class="text-label-sm font-label-sm text-on-surface-variant">만성</p>
+        </div>
+      </label>
     </div>
-    <span class="material-symbols-outlined text-outline">date_range</span>
-  </label>
-  <label class="flex items-center gap-4 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
-    <input type="radio" name="duration" value="8-14" class="w-5 h-5 accent-primary">
-    <div class="flex-1">
-      <p class="font-label-md text-label-md text-on-surface">1~2주</p>
-      <p class="text-label-sm font-label-sm text-on-surface-variant">2주 미만 지속</p>
-    </div>
-    <span class="material-symbols-outlined text-outline">calendar_month</span>
-  </label>
-  <label class="flex items-center gap-4 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
-    <input type="radio" name="duration" value="15-30" class="w-5 h-5 accent-primary">
-    <div class="flex-1">
-      <p class="font-label-md text-label-md text-on-surface">2주~1개월</p>
-      <p class="text-label-sm font-label-sm text-on-surface-variant">상당 기간 지속</p>
-    </div>
-    <span class="material-symbols-outlined text-outline">event</span>
-  </label>
-  <label class="flex items-center gap-4 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
-    <input type="radio" name="duration" value="31+" class="w-5 h-5 accent-primary">
-    <div class="flex-1">
-      <p class="font-label-md text-label-md text-on-surface">1개월 이상</p>
-      <p class="text-label-sm font-label-sm text-on-surface-variant">만성적 증상 가능성</p>
-    </div>
-    <span class="material-symbols-outlined text-outline">calendar_today</span>
-  </label>
-</div>
-</div>
-<div class="flex justify-between items-center mt-8 flex-wrap gap-3">
-  <button onclick="App.goToStep(2)" class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline">
-    <span class="material-symbols-outlined text-[18px]">arrow_back</span> 이전
-  </button>
-  <button onclick="App.diagnose()" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-2 active:scale-95">
-    진단 시작 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-  </button>
+  </div>
+
+  <div class="flex justify-between items-center flex-wrap gap-3">
+    <button onclick="App.goToStep(2)" class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline">
+      <span class="material-symbols-outlined text-[18px]">arrow_back</span> 이전
+    </button>
+    <button onclick="App.diagnose()" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-2 active:scale-95">
+      진단 시작 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    </button>
+  </div>
 </div>
 </div>
 
@@ -2750,6 +2878,22 @@ const App = {
       const duration = durationRadio ? durationRadio.value : '1-3';
       const durMult = { '1-3':1, '4-7':1.2, '8-14':1.5, '15-30':1.8, '31+':2 };
 
+      const hp = {
+        age: document.querySelector('input[name="hp_age"]:checked')?.value || '30s',
+        gender: document.querySelector('input[name="hp_gender"]:checked')?.value || 'male',
+        smoking: document.querySelector('input[name="hp_smoking"]:checked')?.value || 'none',
+        alcohol: document.querySelector('input[name="hp_alcohol"]:checked')?.value || 'none',
+        exercise: document.querySelector('input[name="hp_exercise"]:checked')?.value || 'none',
+        weight: document.querySelector('input[name="hp_weight"]:checked')?.value || 'normal'
+      };
+
+      const hpSmokingMap = { 'none':0, 'past':0.6, 'light':0.8, 'heavy':1.2 };
+      const hpAlcoholMap = { 'none':0, 'light':0.5, 'moderate':0.8, 'heavy':1.2 };
+      const hpExerciseMap = { 'none':0.8, 'light':0.3, 'moderate':0, 'daily':-0.2 };
+      const hpWeightMap = { 'under':0.3, 'normal':0, 'over':0.5, 'obese':1.0 };
+      const hpAgeRespMap = { '10s':0.5, '20s':0.3, '30s':0.2, '40s':0.1, '50s':0.05, '60s':0, '70s+':0 };
+      const hpAgeChronMap = { '10s':0, '20s':0, '30s':0.1, '40s':0.2, '50s':0.4, '60s':0.7, '70s+':1.0 };
+
       const scored = DB.diseases.map(d => {
         const matchCount = d.symptoms.filter(sId => selected.includes(sId)).length;
         let score = d.symptoms.length > 0 ? matchCount / Math.max(d.symptoms.length, 3) : 0;
@@ -2760,16 +2904,72 @@ const App = {
         if (d.severity === 'critical' && duration !== '1-3') score *= 1.2;
         const extraMatch = selected.filter(sId => d.symptoms.includes(sId)).length;
         score = score * (0.5 + 0.5 * (extraMatch / Math.max(selected.length, 1)));
+
+        let hpBonus = 0;
+
+        if (['lung cancer','copd','pneumonia','bronchitis','tuberculosis','asthma','pulmonary fibrosis'].some(k => d.id.includes(k))) {
+          hpBonus += hpSmokingMap[hp.smoking] * 0.25;
+          if (hp.age === '60s' || hp.age === '70s+') hpBonus += 0.15;
+        }
+        if (['gastritis','gerd','ulcer','gastric cancer','pancreatitis','liver cancer','fatty liver','cirrhosis','hepatitis','gallbladder','cholecystitis'].some(k => d.id.includes(k))) {
+          hpBonus += hpAlcoholMap[hp.alcohol] * 0.2;
+          if (hp.weight === 'obese' || hp.weight === 'over') hpBonus += 0.1;
+        }
+        if (['diabetes','hypertension','hyperlipidemia','fatty liver','gout','obesity','metabolic'].some(k => d.id.includes(k))) {
+          hpBonus += hpWeightMap[hp.weight] * 0.2;
+          hpBonus += hpExerciseMap[hp.exercise] * 0.12;
+        }
+        if (['arthritis','osteoarthritis','osteoporosis','herniated disc','spinal stenosis','fracture','tendinitis','bursitis'].some(k => d.id.includes(k))) {
+          hpBonus += hpWeightMap[hp.weight] * 0.2;
+          hpBonus += hpAgeChronMap[hp.age] * 0.1;
+        }
+        if (['depression','anxiety','insomnia','panic disorder','bipolar','adhd','ptsd'].some(k => d.id.includes(k))) {
+          if (hp.exercise === 'none') hpBonus += 0.15;
+          hpBonus += hpAlcoholMap[hp.alcohol] * 0.1;
+        }
+        if (['stroke','heart attack','arrhythmia','heart failure','cardiomyopathy','aortic aneurysm','pulmonary embolism','deep vein thrombosis'].some(k => d.id.includes(k))) {
+          hpBonus += hpSmokingMap[hp.smoking] * 0.2;
+          hpBonus += hpWeightMap[hp.weight] * 0.15;
+          hpBonus += hpAlcoholMap[hp.alcohol] * 0.1;
+          hpBonus += hpAgeChronMap[hp.age] * 0.2;
+        }
+        if (['utis','kidney stones','ckd','nephritis','prostatitis','prostate cancer','ovarian cancer','uterine cancer','endometriosis'].some(k => d.id.includes(k))) {
+          hpBonus += hpAgeChronMap[hp.age] * 0.1;
+        }
+        if (['breast cancer','uterine cancer','ovarian cancer','endometriosis','cervical cancer','pcos'].some(k => d.id.includes(k))) {
+          if (hp.gender === 'female') hpBonus += 0.3;
+          else hpBonus -= 0.5;
+        }
+        if (['prostate cancer','prostatitis','bp'].some(k => d.id.includes(k))) {
+          if (hp.gender === 'male') hpBonus += 0.3;
+          else hpBonus -= 0.5;
+        }
+        if (['influenza','common cold','covid','pneumonia','bronchitis','pharyngitis','tonsillitis','sinusitis','otitis media','conjunctivitis','gastroenteritis','food poisoning'].some(k => d.id.includes(k))) {
+          hpBonus += hpAgeRespMap[hp.age] * 0.1;
+        }
+        if (['allergic rhinitis','atopic dermatitis','contact dermatitis','urticaria'].some(k => d.id.includes(k))) {
+          if (hp.age === '10s' || hp.age === '20s') hpBonus += 0.1;
+        }
+
+        score = Math.max(score + hpBonus, 0);
         return { ...d, matchCount, score: Math.min(score * 100, 99) };
       });
 
       const maxScore = Math.max(...scored.map(s => s.score), 1);
       const filtered = scored.filter(d => d.score >= maxScore * 0.25 && d.matchCount >= 1)
         .sort((a, b) => b.score - a.score)
-        .slice(0, 12);
+        .slice(0, 5);
 
       loading.classList.add('hidden');
-      summary.textContent = `총 ${filtered.length}개의 가능한 질환을 찾았습니다. (선택 증상: ${selected.length}개, 기간: ${duration})`;
+      const hpParts = [];
+      if (hp.age) hpParts.push({ '10s':'10대','20s':'20대','30s':'30대','40s':'40대','50s':'50대','60s':'60대','70s+':'70대↑' }[hp.age]);
+      if (hp.gender) hpParts.push({ male:'남성','female':'여성' }[hp.gender]);
+      if (hp.smoking !== 'none') hpParts.push({ past:'과거흡연','light':'흡연(1갑미만)','heavy':'흡연(1갑↑)' }[hp.smoking]);
+      if (hp.alcohol !== 'none') hpParts.push({ light:'주1~2회','moderate':'주3~4회','heavy':'매일음주' }[hp.alcohol]);
+      if (hp.exercise === 'none') hpParts.push('운동부족');
+      if (hp.weight !== 'normal') hpParts.push({ under:'저체중','over':'과체중','obese':'비만' }[hp.weight]);
+      const hpStr = hpParts.length ? ` (${hpParts.join(', ')})` : '';
+      summary.textContent = `총 ${filtered.length}개의 가능한 질환을 찾았습니다. (선택 증상: ${selected.length}개, 기간: ${duration}${hpStr})`;
       this.renderResults(filtered);
       Products.render(Products.match(filtered));
       actions.classList.remove('hidden');
