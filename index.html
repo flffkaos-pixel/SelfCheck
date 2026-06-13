@@ -2991,6 +2991,7 @@ const App = {
     const sevColor = { low:'text-status-success', medium:'text-status-info', high:'text-status-error', critical:'text-tertiary' };
     const sevBg = { low:'bg-status-success', medium:'bg-status-info', high:'bg-status-error', critical:'bg-tertiary' };
     const sevLabel = { low:'낮음', medium:'중간', high:'높음', critical:'매우 높음' };
+    const sevDesc = { low:'비교적 가벼운 상태로 자연 회복이 가능할 수 있습니다.', medium:'전문의 진료가 권장되는 중등도 상태입니다.', high:'전문의 진단과 치료가 반드시 필요한 상태입니다.', critical:'즉시 응급실을 방문해야 하는 심각한 상태입니다.' };
     const actionBg = { info:'bg-primary/5 border-primary/20 text-primary', warning:'bg-status-info/5 border-status-info/20 text-status-info', danger:'bg-status-error/5 border-status-error/20 text-status-error' };
 
     area.innerHTML = results.map((d, i) => {
@@ -3004,7 +3005,6 @@ const App = {
               <div class="flex-1">
                 <div class="flex items-center gap-2 mb-1 flex-wrap">
                   <h3 class="font-label-md text-label-md md:text-headline-md font-headline-md text-on-surface">${d.name}</h3>
-                  <span class="${sevBg[d.severity]} text-on-primary text-label-sm font-label-sm px-2 py-0.5 rounded-full">${sevLabel[d.severity]}</span>
                 </div>
                 <p class="text-label-sm font-label-sm text-on-surface-variant">${d.category} · ${d.matchCount}개 증상 일치</p>
               </div>
@@ -3022,6 +3022,10 @@ const App = {
             </div>
           </div>
           <div class="result-body px-5 md:px-6 pb-5 md:pb-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="${sevBg[d.severity]} text-on-primary text-label-sm font-label-sm px-2 py-0.5 rounded-full">${sevLabel[d.severity]}</span>
+              <span class="text-label-sm font-label-sm text-on-surface-variant">${sevDesc[d.severity]}</span>
+            </div>
             <p class="text-body-md font-body-md text-on-surface leading-relaxed mb-3">${d.desc}</p>
             <div class="border-l-4 ${d.actionType === 'danger' ? 'border-status-error' : d.actionType === 'warning' ? 'border-status-info' : 'border-primary'} ${actionBg[d.actionType] || actionBg.info} p-4 rounded-r-xl">
               <p class="font-label-sm font-label-sm"><strong>💡 권장 조치:</strong> ${d.action}</p>
