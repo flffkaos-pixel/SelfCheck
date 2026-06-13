@@ -1769,7 +1769,23 @@ const DB = {
     { id:'s84', name:'식욕부진', category:'general', kw:['anorexia','식욕부진'] },
     { id:'s85', name:'의도치않은체중감소', category:'general', kw:['unintentional','체중감소'] },
     { id:'s86', name:'야간발한', category:'general', kw:['sweats','야간발한'] },
-    { id:'s87', name:'전신통증', category:'general', kw:['generalized','전신통증'] }
+    { id:'s87', name:'전신통증', category:'general', kw:['generalized','전신통증'] },
+    // 수면
+    { id:'s88', name:'코골이', category:'respiratory', kw:['snoring','코골이'] },
+    { id:'s89', name:'수면 중 무호흡', category:'respiratory', kw:['sleep apnea','수면무호흡'] },
+    { id:'s90', name:'주간졸림증', category:'respiratory', kw:['daytime sleepiness','졸림','주간졸림'] },
+    // 구강
+    { id:'s91', name:'잇몸출혈', category:'general', kw:['gum bleeding','잇몸출혈'] },
+    { id:'s92', name:'치아흔들림', category:'general', kw:['loose teeth','치아흔들림'] },
+    { id:'s93', name:'구취', category:'digestive', kw:['halitosis','구취','입냄새'] },
+    // 귀
+    { id:'s94', name:'귀가려움', category:'ent', kw:['ear itch','귀가려움'] },
+    { id:'s95', name:'귀분비물', category:'ent', kw:['ear discharge','귀분비물'] },
+    // 대사/기타
+    { id:'s96', name:'복부비만', category:'endocrine', kw:['abdominal obesity','복부비만','뱃살'] },
+    { id:'s97', name:'성격변화', category:'neurological', kw:['personality change','성격변화','성격'] },
+    { id:'s98', name:'언어장애', category:'neurological', kw:['speech difficulty','언어장애','말어려움'] },
+    { id:'s99', name:'기립성어지럼', category:'cardiovascular', kw:['orthostatic','기립성','일어날때어지럼'] }
   ],
 
   diseases: [
@@ -2622,7 +2638,43 @@ const DB = {
       symptoms:['s63','s62','s32','s61','s65'],
       desc:'포도막(홍채·모양체·맥락막)의 염증. 안통, 충혈, 시력 저하, 눈부심. 자가면역 질환, 감염 동반 가능.',
       action:'안과 진료(응급). 스테로이드 점안액·경구. 산동제(동공 확장). 면역억제제(만성 재발형). 기저 질환 검사. 합병증(녹내장·백내장) 감시.',
-      actionType:'warning' }
+      actionType:'warning' },
+    // ---- KDCA 보강 질환 ----
+    { id:'d171', name:'수면무호흡증(Sleep Apnea)', category:'호흡기', severity:'medium',
+      symptoms:['s88','s89','s90','s4','s3','s54'],
+      desc:'수면 중 상기도가 반복적으로 막혀 호흡이 멈추는 질환. 코골이, 수면 중 무호흡, 주간졸림증, 아침 두통, 집중력 저하. 치료하지 않으면 고혈압, 심혈관질환, 당뇨 위험 증가.',
+      action:'수면다원검사(PSG) 진단. 양압기(CPAP) 치료가 표준. 체중감량·금주·옆으로 자기. 치과용 구강장치(경증). 이비인후과 상담(편도·아데노이드 절제).',
+      actionType:'warning' },
+    { id:'d172', name:'알코올 간질환(Alcoholic Liver Disease)', category:'소화기', severity:'medium',
+      symptoms:['s9','s10','s15','s18','s54','s84'],
+      desc:'과도한 음주로 인한 간 손상. 지방간→간염→간경변 진행. 우상복부 불편감, 황달, 복부팽만, 피로, 식욕부진. 조기 발견 시 금주로 회복 가능.',
+      action:'절대 금주. 간기능 검사·초음파. 비타민B1·엽산 보충. 간경변 합병증 감시(식도정맥류·복수). 알코올 중독 동반 시 정신건강의학과 상담.',
+      actionType:'warning' },
+    { id:'d173', name:'대사증후군(Metabolic Syndrome)', category:'내분비/대사', severity:'medium',
+      symptoms:['s96','s51','s52','s54','s20','s25'],
+      desc:'복부비만·고혈압·고혈당·고중성지방·낮은HDL 중 3가지 이상 해당하는 상태. 단일 질환이 아니라 심혈관질환·당뇨병의 전단계. 생활습관 개선이 핵심.',
+      action:'허리둘레·혈압·혈당·지질 검사. 체중감량(5~10%). 규칙적 유산소운동(주150분). 저염·저당 식이. 금연·절주. 필요시 약물(혈압·당뇨·지질).',
+      actionType:'warning' },
+    { id:'d174', name:'외이도염(Otitis Externa)', category:'이비인후과', severity:'low',
+      symptoms:['s94','s95','s58','s41'],
+      desc:'외이도(귀구멍) 피부의 염증. 수영 후 흔함(수영장 귀). 귀가려움, 귀통증(턱움직일때 심함), 귀분비물, 청력저하. 만성화 시 곰팡이감염 가능.',
+      action:'이비인후과 진료. 항생제·항진균제 점이액. 귀건조유지(수영·목욕시 귀마개). 면봉사용금지. 진통제(이통 심한 경우).',
+      actionType:'info' },
+    { id:'d175', name:'치주질환(Periodontal Disease)', category:'전신', severity:'low',
+      symptoms:['s91','s92','s93','s44'],
+      desc:'잇몸과 치주조직의 만성 세균성 염증. 초기=치은염(잇몸출혈), 진행=치주염(치조골 파괴→치아상실). 당뇨·심혈관질환·조산 위험 증가시킴.',
+      action:'치과 스케일링(연1회 건강보험). 치근활택술(중증). 매일 올바른 칫솔질·치실·워터픽. 금연. 당뇨 관리(치주염 악화요인). 정기검진(6개월).',
+      actionType:'info' },
+    { id:'d176', name:'혈관성치매(Vascular Dementia)', category:'신경계', severity:'high',
+      symptoms:['s31','s28','s30','s97','s98','s25'],
+      desc:'뇌혈관 질환(뇌졸중·소혈관질환)으로 인한 인지기능 저하. 뇌졸중 후 갑자기 또는 계단식 진행. 기억력감퇴, 성격변화, 언어장애, 보행장애. 위험인자: 고혈압·당뇨·흡연.',
+      action:'신경과 진료. 뇌MRI(MRI) 진단. 혈관위험인자 관리(혈압·당뇨·지질). 인지재활치료. 항혈소판제(뇌졸중재발예방). 도파민성 약물(일부 증상완화).',
+      actionType:'warning' },
+    { id:'d177', name:'저혈압(Hypotension)', category:'심혈관', severity:'low',
+      symptoms:['s22','s54','s99','s25','s61'],
+      desc:'혈압이 정상 이하로 낮은 상태. 기립성 저혈압(갑자기 일어날때 어지럼)이 가장 흔함. 탈수·출혈·약물부작용·심장질환·자율신경장애 등 다양한 원인.',
+      action:'혈압 측정(기립 전후). 원인 질환 감별. 수분·염분 적절히 섭취. 천천히 일어나기. 압박스타킹(기립성). 원인약물 조절(의사상담).',
+      actionType:'info' }
   ]
 };
 
@@ -2914,48 +2966,49 @@ const App = {
         score = score * (0.5 + 0.5 * (extraMatch / Math.max(selected.length, 1)));
 
         let hpBonus = 0;
+        const dn = d.name.toLowerCase();
 
-        if (['lung cancer','copd','pneumonia','bronchitis','tuberculosis','asthma','pulmonary fibrosis'].some(k => d.id.includes(k))) {
+        if (['copd','sleep apnea','수면무호','폐암','폐렴','기관지','결핵','천식','폐섬유'].some(k => dn.includes(k))) {
           hpBonus += hpSmokingMap[hp.smoking] * 0.25;
           if (hp.age === '60s' || hp.age === '70s+') hpBonus += 0.15;
         }
-        if (['gastritis','gerd','ulcer','gastric cancer','pancreatitis','liver cancer','fatty liver','cirrhosis','hepatitis','gallbladder','cholecystitis'].some(k => d.id.includes(k))) {
+        if (['gastritis','gerd','ulcer','gastric','pancrea','liver','fatty liver','cirrho','hepat','gallbladder','cholec','alcoholic','알코올 간','간질환','위염','위궤양','췌장','담석','치핵','구내염','식중독','소화불량'].some(k => dn.includes(k))) {
           hpBonus += hpAlcoholMap[hp.alcohol] * 0.2;
           if (hp.weight === 'obese' || hp.weight === 'over') hpBonus += 0.1;
         }
-        if (['diabetes','hypertension','hyperlipidemia','fatty liver','gout','obesity','metabolic'].some(k => d.id.includes(k))) {
+        if (['diabetes','hypertension','hyperlipi','fatty liver','gout','obesity','metabolic','당뇨','고혈압','고지혈','통풍','비만','대사증후군'].some(k => dn.includes(k))) {
           hpBonus += hpWeightMap[hp.weight] * 0.2;
           hpBonus += hpExerciseMap[hp.exercise] * 0.12;
         }
-        if (['arthritis','osteoarthritis','osteoporosis','herniated disc','spinal stenosis','fracture','tendinitis','bursitis'].some(k => d.id.includes(k))) {
+        if (['arthritis','osteo','osteopor','herniated','spinal','fracture','tendini','bursitis','관절염','골다공','디스크','척추','오십견','염좌'].some(k => dn.includes(k))) {
           hpBonus += hpWeightMap[hp.weight] * 0.2;
           hpBonus += hpAgeChronMap[hp.age] * 0.1;
         }
-        if (['depression','anxiety','insomnia','panic disorder','bipolar','adhd','ptsd'].some(k => d.id.includes(k))) {
+        if (['depression','anxiety','insomnia','panic','bipolar','adhd','ptsd','우울','불안','불면','조현','공황'].some(k => dn.includes(k))) {
           if (hp.exercise === 'none') hpBonus += 0.15;
           hpBonus += hpAlcoholMap[hp.alcohol] * 0.1;
         }
-        if (['stroke','heart attack','arrhythmia','heart failure','cardiomyopathy','aortic aneurysm','pulmonary embolism','deep vein thrombosis'].some(k => d.id.includes(k))) {
+        if (['stroke','heart attack','arrhythmia','heart failure','cardiomyo','aortic','pulmonary embolism','deep vein','저혈압','hypotension','뇌졸중','협심','심근경','부정맥','심부전','심혈'].some(k => dn.includes(k))) {
           hpBonus += hpSmokingMap[hp.smoking] * 0.2;
           hpBonus += hpWeightMap[hp.weight] * 0.15;
           hpBonus += hpAlcoholMap[hp.alcohol] * 0.1;
           hpBonus += hpAgeChronMap[hp.age] * 0.2;
         }
-        if (['utis','kidney stones','ckd','nephritis','prostatitis','prostate cancer','ovarian cancer','uterine cancer','endometriosis'].some(k => d.id.includes(k))) {
+        if (['utis','kidney stones','ckd','nephritis','prostatitis','prostate','ovarian','uterine','endometriosis','요로','방광','신장','전립선','혈관성치매'].some(k => dn.includes(k))) {
           hpBonus += hpAgeChronMap[hp.age] * 0.1;
         }
-        if (['breast cancer','uterine cancer','ovarian cancer','endometriosis','cervical cancer','pcos'].some(k => d.id.includes(k))) {
+        if (['breast','uterine','ovarian','endometriosis','cervical','pcos','유방암','자궁','난소','pcos'].some(k => dn.includes(k))) {
           if (hp.gender === 'female') hpBonus += 0.3;
           else hpBonus -= 0.5;
         }
-        if (['prostate cancer','prostatitis','bp'].some(k => d.id.includes(k))) {
+        if (['prostate','prostatitis'].some(k => dn.includes(k))) {
           if (hp.gender === 'male') hpBonus += 0.3;
           else hpBonus -= 0.5;
         }
-        if (['influenza','common cold','covid','pneumonia','bronchitis','pharyngitis','tonsillitis','sinusitis','otitis media','conjunctivitis','gastroenteritis','food poisoning'].some(k => d.id.includes(k))) {
+        if (['influenza','common cold','covid','pneumonia','bronchitis','pharyngitis','tonsillitis','sinusitis','otitis','conjunctivitis','gastroenteritis','food poisoning','감기','독감','폐렴','기관지','인두','편도','부비동','중이염','외이도','결막염','식중독','위장염'].some(k => dn.includes(k))) {
           hpBonus += hpAgeRespMap[hp.age] * 0.1;
         }
-        if (['allergic rhinitis','atopic dermatitis','contact dermatitis','urticaria'].some(k => d.id.includes(k))) {
+        if (['allergic rhinitis','atopic','contact dermatitis','urticaria','알레르기','아토피','접촉성','두드러기'].some(k => dn.includes(k))) {
           if (hp.age === '10s' || hp.age === '20s') hpBonus += 0.1;
         }
 
@@ -3037,6 +3090,11 @@ const App = {
             <p class="text-body-md font-body-md text-on-surface leading-relaxed mb-3">${d.desc}</p>
             <div class="border-l-4 ${d.actionType === 'danger' ? 'border-status-error' : d.actionType === 'warning' ? 'border-status-info' : 'border-primary'} ${actionBg[d.actionType] || actionBg.info} p-4 rounded-r-xl">
               <p class="font-label-sm font-label-sm"><strong>💡 권장 조치:</strong> ${d.action}</p>
+            </div>
+            <div class="mt-3 text-right">
+              <a href="https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoList.do?searchWord=${encodeURIComponent(d.name.replace(/\(.*\)/, '').trim())}" target="_blank" rel="noopener noreferrer" class="text-label-sm font-label-sm text-primary hover:underline inline-flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">open_in_new</span> 질병관리청 건강정보 보기
+              </a>
             </div>
           </div>
         </div>`;
