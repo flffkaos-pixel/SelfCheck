@@ -195,6 +195,18 @@
   .rotate-180 { transform: rotate(180deg); }
   [data-encyc].expanded { max-height: 3000px !important; }
   @keyframes pulse-warning { 0%,100%{opacity:1} 50%{opacity:.5} }
+  .sev-low { background: #1976D2; color:#fff; }
+  .sev-medium { background: #F9A825; color:#1a1a1a; }
+  .sev-high { background: #EF6C00; color:#fff; }
+  .sev-critical { background: #C62828; color:#fff; }
+  .bar-low { background: #1976D2; }
+  .bar-medium { background: #F9A825; }
+  .bar-high { background: #EF6C00; }
+  .bar-critical { background: #C62828; }
+  .border-left-low { border-left-color: #1976D2; }
+  .border-left-medium { border-left-color: #F9A825; }
+  .border-left-high { border-left-color: #EF6C00; }
+  .border-left-critical { border-left-color: #C62828; }
   ::-webkit-scrollbar { width: 8px; height: 8px; }
   ::-webkit-scrollbar-track { background: #f5f2ff; }
   ::-webkit-scrollbar-thumb { background: #adc7ff; border-radius: 8px; }
@@ -3069,18 +3081,19 @@ const App = {
       return;
     }
 
-    const sevColor = { low:'text-status-success', medium:'text-status-info', high:'text-status-error', critical:'text-tertiary' };
-    const sevBg = { low:'bg-status-success', medium:'bg-status-info', high:'bg-status-error', critical:'bg-tertiary' };
+    const sevText = { low:'text-[#1976D2]', medium:'text-[#F9A825]', high:'text-[#EF6C00]', critical:'text-[#C62828]' };
+    const sevBg = { low:'sev-low', medium:'sev-medium', high:'sev-high', critical:'sev-critical' };
+    const sevBar = { low:'bar-low', medium:'bar-medium', high:'bar-high', critical:'bar-critical' };
     const sevLabel = { low:'낮음', medium:'중간', high:'높음', critical:'매우 높음' };
     const sevDesc = { low:'비교적 가벼운 상태로 자연 회복이 가능할 수 있습니다.', medium:'전문의 진료가 권장되는 중등도 상태입니다.', high:'전문의 진단과 치료가 반드시 필요한 상태입니다.', critical:'즉시 응급실을 방문해야 하는 심각한 상태입니다.' };
     const actionBg = { info:'bg-primary/5 border-primary/20 text-primary', warning:'bg-status-info/5 border-status-info/20 text-status-info', danger:'bg-status-error/5 border-status-error/20 text-status-error' };
 
     area.innerHTML = results.map((d, i) => {
-      const color = sevColor[d.severity] || 'text-on-surface';
-      const barColor = sevBg[d.severity] || 'bg-outline';
+      const color = sevText[d.severity] || 'text-on-surface';
+      const barColor = sevBar[d.severity] || 'bg-outline';
       const matchPct = Math.round(d.score);
       return `
-        <div class="result-card bg-surface-container-lowest border-l-4 ${d.severity === 'critical' ? 'border-tertiary' : d.severity === 'high' ? 'border-status-error' : d.severity === 'medium' ? 'border-status-info' : 'border-status-success'} rounded-2xl border border-outline-variant overflow-hidden">
+        <div class="result-card bg-surface-container-lowest border-l-4 border-left-${d.severity} rounded-2xl border border-outline-variant overflow-hidden">
           <div class="p-5 md:p-6 cursor-pointer" data-action="toggle-result" data-result-id="${i}">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div class="flex-1">
@@ -3112,8 +3125,8 @@ const App = {
               <p class="font-label-sm font-label-sm"><strong>💡 권장 조치:</strong> ${d.action}</p>
             </div>
             <div class="mt-3 text-right">
-              <a href="https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoList.do?searchWord=${encodeURIComponent(d.name.replace(/\(.*\)/, '').trim())}" target="_blank" rel="noopener noreferrer" class="text-label-sm font-label-sm text-primary hover:underline inline-flex items-center gap-1">
-                <span class="material-symbols-outlined text-[14px]">open_in_new</span> 질병관리청 건강정보 보기
+              <a href="https://health.kdca.go.kr/healthinfo/" target="_blank" rel="noopener noreferrer" class="text-label-sm font-label-sm text-primary hover:underline inline-flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">open_in_new</span> 질병관리청 건강정보 검색하기
               </a>
             </div>
           </div>
