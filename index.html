@@ -20,16 +20,32 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HealSense">
 <meta property="og:title" content="HealSense - 건강 자가진단 | 증상으로 질환 확인">
-<meta property="og:description" content="증상을 선택하여 감기부터 암까지 170여 가지 질환을 매칭 알고리즘으로 분석합니다.">
+<meta property="og:description" content="증상을 선택하여 감기부터 암까지 170여 가지 질환을 매칭 알고리즘으로 분석합니다. 무료 자가진단, 14개 카테고리, 즉시 결과.">
 <meta property="og:url" content="https://symptomcheck.pages.dev/">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://symptomcheck.pages.dev/og-image.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="HealSense - 건강 자가진단 플랫폼, 감기부터 암까지 170여 가지 질환 분석">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="HealSense - 건강 자가진단">
 <meta name="twitter:description" content="감기부터 암까지 170여 가지 질환을 자가진단합니다.">
+<meta name="twitter:image" content="https://symptomcheck.pages.dev/og-image.png">
+<meta name="twitter:image:alt" content="HealSense - 건강 자가진단 플랫폼">
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1955893232253258"
      crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-51YQGE71JR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-51YQGE71JR');
+</script>
 <meta name="naver-site-verification" content="eaf646d7363a4c85a357647cd192f9d42e6fda76" />
 <meta name="google-site-verification" content="90ObN9YY1jH6ZHRfL3tGx5HvKoHC8boT6jdFhbSe80s" />
 <link rel="sitemap" type="application/xml" title="Sitemap" href="https://symptomcheck.pages.dev/sitemap.xml" />
@@ -325,6 +341,7 @@
 </nav>
 </div>
 <div class="flex items-center gap-4">
+<button id="langToggle" onclick="App.toggleLang()" class="text-label-sm font-label-sm px-3 py-1.5 border border-outline-variant rounded-full text-on-surface-variant hover:border-primary hover:text-primary transition-all">English</button>
 <button id="mobileMenuBtn" class="md:hidden material-symbols-outlined text-on-surface" aria-label="메뉴">menu</button>
 </div>
 </div>
@@ -347,15 +364,15 @@
 <h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-6 leading-tight">
   당신의 증상으로<br/><span class="text-primary">질환을 확인해 보세요</span>
 </h1>
-<p class="text-body-lg font-body-lg text-on-surface-variant mb-10 max-w-lg">
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-10 max-w-lg" data-i18n="hero_desc">
   HealSense의 증상 매칭 알고리즘이 당신의 증상과 가장 가능성 있는 질환을 연결하고 적절한 대처 방법을 안내해 드립니다.
 </p>
 <div class="flex flex-col sm:flex-row gap-4">
-<button onclick="App.goToStep(1)" class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md text-label-md shadow-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2 active:scale-95">
+<button onclick="App.goToStep(1)" class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md text-label-md shadow-lg hover:bg-primary-container transition-all flex items-center justify-center gap-2 active:scale-95" data-i18n="start_check">
   증상 체크 시작하기
   <span class="material-symbols-outlined">arrow_forward</span>
 </button>
-<button onclick="document.getElementById('encyclopedia').scrollIntoView({behavior:'smooth'})" class="bg-surface-container-lowest text-primary border border-primary px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-primary-fixed-dim transition-all active:scale-95">
+<button onclick="document.getElementById('encyclopedia').scrollIntoView({behavior:'smooth'})" class="bg-surface-container-lowest text-primary border border-primary px-8 py-4 rounded-lg font-label-md text-label-md hover:bg-primary-fixed-dim transition-all active:scale-95" data-i18n="view_encyc">
   건강 백과 보기
 </button>
 </div>
@@ -412,22 +429,22 @@
 <div class="flex items-center justify-center gap-2 mb-10 flex-wrap" id="stepIndicator">
   <div class="flex items-center gap-2 step-item active" data-step="1">
     <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-label-md step-circle bg-primary text-on-primary">1</div>
-    <span class="text-label-md font-label-md hidden sm:inline step-label text-primary">카테고리</span>
+    <span class="text-label-md font-label-md hidden sm:inline step-label text-primary" data-i18n="step1">카테고리</span>
   </div>
   <div class="w-8 md:w-16 h-0.5 step-line bg-outline-variant"></div>
   <div class="flex items-center gap-2 step-item" data-step="2">
     <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-label-md step-circle bg-outline-variant text-on-surface-variant">2</div>
-    <span class="text-label-md font-label-md hidden sm:inline step-label text-on-surface-variant">증상 선택</span>
+    <span class="text-label-md font-label-md hidden sm:inline step-label text-on-surface-variant" data-i18n="step2">증상 선택</span>
   </div>
   <div class="w-8 md:w-16 h-0.5 step-line bg-outline-variant"></div>
   <div class="flex items-center gap-2 step-item" data-step="3">
     <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-label-md step-circle bg-outline-variant text-on-surface-variant">3</div>
-    <span class="text-label-md font-label-md hidden sm:inline step-label text-on-surface-variant">건강 정보</span>
+    <span class="text-label-md font-label-md hidden sm:inline step-label text-on-surface-variant" data-i18n="step3">건강 정보</span>
   </div>
   <div class="w-8 md:w-16 h-0.5 step-line bg-outline-variant"></div>
   <div class="flex items-center gap-2 step-item" data-step="4">
     <div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-label-md step-circle bg-outline-variant text-on-surface-variant">4</div>
-    <span class="text-label-md font-label-md hidden sm:inline step-label text-on-surface-variant">결과</span>
+    <span class="text-label-md font-label-md hidden sm:inline step-label text-on-surface-variant" data-i18n="step4">결과</span>
   </div>
 </div>
 
@@ -435,32 +452,32 @@
 <div id="step0" class="checker-step active">
 <div class="bg-surface-container-lowest rounded-2xl p-8 md:p-12 border border-outline-variant text-center max-w-3xl mx-auto">
 <span class="material-symbols-outlined text-primary text-[80px] mb-4">health_and_safety</span>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-4">HealSense 자가진단에 오신 것을 환영합니다</h3>
-<p class="text-body-md font-body-md text-on-surface-variant mb-8">4단계로 간단하게 자가진단을 받아보세요. 약 3분 정도 소요됩니다.</p>
+  <h3 class="font-headline-md text-headline-md text-on-surface mb-4" data-i18n="step0_welcome">HealSense 자가진단에 오신 것을 환영합니다</h3>
+  <p class="text-body-md font-body-md text-on-surface-variant mb-8" data-i18n="step0_desc">4단계로 간단하게 자가진단을 받아보세요. 약 3분 정도 소요됩니다.</p>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
   <div class="text-center">
 <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
   <span class="material-symbols-outlined text-primary">category</span>
 </div>
-<p class="text-label-sm font-label-sm text-on-surface-variant">카테고리 선택</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant" data-i18n="step0_step1">카테고리 선택</p>
   </div>
   <div class="text-center">
 <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
   <span class="material-symbols-outlined text-primary">checklist</span>
 </div>
-<p class="text-label-sm font-label-sm text-on-surface-variant">증상 선택</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant" data-i18n="step0_step2">증상 선택</p>
   </div>
   <div class="text-center">
 <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
   <span class="material-symbols-outlined text-primary">schedule</span>
 </div>
-<p class="text-label-sm font-label-sm text-on-surface-variant">기간 입력</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant" data-i18n="step0_step3">기간 입력</p>
   </div>
   <div class="text-center">
 <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-2">
   <span class="material-symbols-outlined text-primary">analytics</span>
 </div>
-<p class="text-label-sm font-label-sm text-on-surface-variant">결과 확인</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant" data-i18n="step0_step4">결과 확인</p>
   </div>
 </div>
 <button onclick="App.goToStep(1)" class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label-md text-label-md shadow-lg hover:bg-primary-container transition-all inline-flex items-center gap-2 active:scale-95">
@@ -471,38 +488,38 @@
 
 <!-- Step 1: Category Selection -->
 <div id="step1" class="checker-step">
-<h3 class="font-headline-md text-headline-md text-on-surface mb-6 text-center">1. 증상 카테고리를 선택하세요</h3>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 text-center" data-i18n="category_title">1. 증상 카테고리를 선택하세요</h3>
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3" id="categoryGrid"></div>
 <div class="flex justify-between items-center mt-8 flex-wrap gap-3">
   <button onclick="App.goToStep(0)" class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline">
-    <span class="material-symbols-outlined text-[18px]">arrow_back</span> 이전
+    <span class="material-symbols-outlined text-[18px]">arrow_back</span> <span data-i18n="prev">이전</span>
   </button>
-  <span class="text-label-sm font-label-sm text-on-surface-variant"><span id="catCount">0</span>개 선택됨</span>
+  <span class="text-label-sm font-label-sm text-on-surface-variant" data-i18n="selected"><span id="catCount">0</span>개 선택됨</span>
   <button id="toStep2" disabled onclick="App.goToStep(2)" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95">
-    다음: 증상 선택 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    <span data-i18n="next_symptom">다음: 증상 선택</span> <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
   </button>
 </div>
 </div>
 
 <!-- Step 2: Symptom Selection -->
 <div id="step2" class="checker-step">
-<h3 class="font-headline-md text-headline-md text-on-surface mb-6 text-center">2. 해당하는 증상을 모두 선택하세요</h3>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 text-center" data-i18n="symptom_title">2. 해당하는 증상을 모두 선택하세요</h3>
 <div class="max-w-2xl mx-auto mb-6">
   <div class="flex items-center bg-surface-container-low px-4 py-3 rounded-full border border-outline-variant focus-within:border-primary">
     <span class="material-symbols-outlined text-outline">search</span>
-    <input id="symptomSearch" type="text" placeholder="증상 검색 (예: 두통, 발열, 기침...)" class="bg-transparent border-none focus:ring-0 text-label-md ml-2 w-full outline-none"/>
+    <input id="symptomSearch" type="text" placeholder="증상 검색 (예: 두통, 발열, 기침...)" class="bg-transparent border-none focus:ring-0 text-label-md ml-2 w-full outline-none" data-i18n="search_placeholder"/>
   </div>
 </div>
 <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-4 md:p-6">
   <div class="flex flex-wrap gap-2" id="symptomGrid" role="group" aria-label="증상 목록"></div>
   <div id="noSymptoms" class="hidden text-center py-12 text-on-surface-variant">
     <span class="material-symbols-outlined text-[48px]">search_off</span>
-    <p class="mt-2">검색 결과가 없습니다. 다른 키워드로 검색해보세요.</p>
+    <p class="mt-2" data-i18n="no_results">검색 결과가 없습니다. 다른 키워드로 검색해보세요.</p>
   </div>
 </div>
 <div class="mt-6">
   <div class="bg-surface-container-low rounded-xl p-4 border border-outline-variant">
-    <p class="text-label-sm font-label-sm text-on-surface-variant mb-2">선택한 증상 (<span id="selectedCount">0</span>개)</p>
+    <p class="text-label-sm font-label-sm text-on-surface-variant mb-2" data-i18n="selected_symptoms">선택한 증상 (<span id="selectedCount">0</span>개)</p>
     <div class="flex flex-wrap gap-2 min-h-[2rem]" id="selectedTags">
       <span class="text-on-surface-variant text-label-sm font-label-sm">선택된 증상이 여기에 표시됩니다</span>
     </div>
@@ -510,29 +527,29 @@
 </div>
 <div class="flex justify-between items-center mt-8 flex-wrap gap-3">
   <button onclick="App.goToStep(1)" class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline">
-    <span class="material-symbols-outlined text-[18px]">arrow_back</span> 이전
+    <span class="material-symbols-outlined text-[18px]">arrow_back</span> <span data-i18n="prev">이전</span>
   </button>
-  <span class="text-label-sm font-label-sm text-on-surface-variant">최소 1개 증상 선택 필요</span>
+  <span class="text-label-sm font-label-sm text-on-surface-variant" data-i18n="min_one_symptom">최소 1개 증상 선택 필요</span>
   <button id="toStep3" disabled onclick="App.goToStep(3)" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95">
-    다음: 건강 정보 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+    <span data-i18n="next_health">다음: 건강 정보</span> <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
   </button>
 </div>
 </div>
 
 <!-- Step 3: Health Info & Duration -->
 <div id="step3" class="checker-step">
-<h3 class="font-headline-md text-headline-md text-on-surface mb-6 text-center">3. 건강 정보 입력</h3>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 text-center" data-i18n="health_title">3. 건강 정보 입력</h3>
 
 <div class="max-w-3xl mx-auto space-y-6">
   <!-- 건강 프로필 -->
   <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-6 md:p-8">
     <h4 class="font-label-md text-label-md text-primary mb-4 flex items-center gap-2">
-      <span class="material-symbols-outlined text-[20px]">badge</span> 개인 건강 정보
+      <span class="material-symbols-outlined text-[20px]">badge</span> <span data-i18n="health_profile">개인 건강 정보</span>
     </h4>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
       <!-- 나이 -->
       <div>
-        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2">연령대</p>
+        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2" data-i18n="age">연령대</p>
         <div class="flex flex-wrap gap-2" id="hpAge">
           <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
             <input type="radio" name="hp_age" value="10s" class="hidden"> 10대
@@ -559,7 +576,7 @@
       </div>
       <!-- 성별 -->
       <div>
-        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2">성별</p>
+        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2" data-i18n="gender">성별</p>
         <div class="flex gap-2" id="hpGender">
           <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
             <input type="radio" name="hp_gender" value="male" class="hidden"> 남성
@@ -571,7 +588,7 @@
       </div>
       <!-- 흡연 -->
       <div>
-        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2">흡연</p>
+        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2" data-i18n="smoking">흡연</p>
         <div class="flex flex-wrap gap-2" id="hpSmoking">
           <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
             <input type="radio" name="hp_smoking" value="none" class="hidden"> 비흡연
@@ -589,7 +606,7 @@
       </div>
       <!-- 음주 -->
       <div>
-        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2">음주</p>
+        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2" data-i18n="alcohol">음주</p>
         <div class="flex flex-wrap gap-2" id="hpAlcohol">
           <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
             <input type="radio" name="hp_alcohol" value="none" class="hidden"> 거의 안함
@@ -607,7 +624,7 @@
       </div>
       <!-- 운동 -->
       <div>
-        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2">운동량</p>
+        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2" data-i18n="exercise">운동량</p>
         <div class="flex flex-wrap gap-2" id="hpExercise">
           <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
             <input type="radio" name="hp_exercise" value="none" class="hidden"> 거의 안함
@@ -625,7 +642,7 @@
       </div>
       <!-- 체형 -->
       <div>
-        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2">체형</p>
+        <p class="text-label-sm font-label-sm text-on-surface-variant mb-2" data-i18n="weight">체형</p>
         <div class="flex flex-wrap gap-2" id="hpWeight">
           <label class="hp-chip px-3 py-1.5 bg-surface-container-low border border-outline-variant rounded-full text-label-sm font-label-sm text-on-surface hover:border-primary cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5">
             <input type="radio" name="hp_weight" value="under" class="hidden"> 저체중
@@ -647,47 +664,47 @@
   <!-- 증상 기간 -->
   <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant p-6 md:p-8">
     <h4 class="font-label-md text-label-md text-primary mb-4 flex items-center gap-2">
-      <span class="material-symbols-outlined text-[20px]">schedule</span> 증상 지속 기간
+      <span class="material-symbols-outlined text-[20px]">schedule</span> <span data-i18n="duration_title">증상 지속 기간</span>
     </h4>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3" id="durationOptions">
       <label class="flex flex-col items-center gap-2 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
         <input type="radio" name="duration" value="1-3" class="hidden" checked>
         <span class="material-symbols-outlined text-outline text-[28px]">today</span>
         <div class="text-center">
-          <p class="font-label-sm text-label-sm text-on-surface">1~3일</p>
-          <p class="text-label-sm font-label-sm text-on-surface-variant">급성</p>
+          <p class="font-label-sm text-label-sm text-on-surface" data-i18n="dur_1_3">1~3일</p>
+          <p class="text-label-sm font-label-sm text-on-surface-variant" data-i18n="acute">급성</p>
         </div>
       </label>
       <label class="flex flex-col items-center gap-2 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
         <input type="radio" name="duration" value="4-7" class="hidden">
         <span class="material-symbols-outlined text-outline text-[28px]">date_range</span>
         <div class="text-center">
-          <p class="font-label-sm text-label-sm text-on-surface">4~7일</p>
-          <p class="text-label-sm font-label-sm text-on-surface-variant">1주 미만</p>
+          <p class="font-label-sm text-label-sm text-on-surface" data-i18n="dur_4_7">4~7일</p>
+          <p class="text-label-sm font-label-sm text-on-surface-variant" data-i18n="under_1w">1주 미만</p>
         </div>
       </label>
       <label class="flex flex-col items-center gap-2 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
         <input type="radio" name="duration" value="8-14" class="hidden">
         <span class="material-symbols-outlined text-outline text-[28px]">calendar_month</span>
         <div class="text-center">
-          <p class="font-label-sm text-label-sm text-on-surface">1~2주</p>
-          <p class="text-label-sm font-label-sm text-on-surface-variant">2주 미만</p>
+          <p class="font-label-sm text-label-sm text-on-surface" data-i18n="dur_1_2w">1~2주</p>
+          <p class="text-label-sm font-label-sm text-on-surface-variant" data-i18n="under_2w">2주 미만</p>
         </div>
       </label>
       <label class="flex flex-col items-center gap-2 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
         <input type="radio" name="duration" value="15-30" class="hidden">
         <span class="material-symbols-outlined text-outline text-[28px]">event</span>
         <div class="text-center">
-          <p class="font-label-sm text-label-sm text-on-surface">2주~1개월</p>
-          <p class="text-label-sm font-label-sm text-on-surface-variant">상당 기간</p>
+          <p class="font-label-sm text-label-sm text-on-surface" data-i18n="dur_2w_1m">2주~1개월</p>
+          <p class="text-label-sm font-label-sm text-on-surface-variant" data-i18n="significant">상당 기간</p>
         </div>
       </label>
       <label class="flex flex-col items-center gap-2 p-4 border-2 border-outline-variant rounded-xl cursor-pointer hover:border-primary transition-colors duration-option">
         <input type="radio" name="duration" value="31+" class="hidden">
         <span class="material-symbols-outlined text-outline text-[28px]">calendar_today</span>
         <div class="text-center">
-          <p class="font-label-sm text-label-sm text-on-surface">1개월↑</p>
-          <p class="text-label-sm font-label-sm text-on-surface-variant">만성</p>
+          <p class="font-label-sm text-label-sm text-on-surface" data-i18n="dur_1m">1개월↑</p>
+          <p class="text-label-sm font-label-sm text-on-surface-variant" data-i18n="chronic">만성</p>
         </div>
       </label>
     </div>
@@ -697,7 +714,7 @@
     <button onclick="App.goToStep(2)" class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline">
       <span class="material-symbols-outlined text-[18px]">arrow_back</span> 이전
     </button>
-    <button onclick="App.diagnose()" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-2 active:scale-95">
+    <button onclick="App.diagnose()" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-2 active:scale-95" data-i18n="diagnose_btn">
       진단 시작 <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
     </button>
   </div>
@@ -706,12 +723,12 @@
 
 <!-- Step 4: Results -->
 <div id="step4" class="checker-step">
-<h3 class="font-headline-md text-headline-md text-on-surface mb-2 text-center">진단 결과</h3>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 text-center" data-i18n="result_title">진단 결과</h3>
 <p class="text-body-md font-body-md text-on-surface-variant mb-6 text-center" id="resultSummary"></p>
 
 <div id="loadingArea" class="hidden text-center py-16">
   <div class="inline-block w-16 h-16 border-4 border-outline-variant border-t-primary rounded-full animate-spin"></div>
-  <p class="mt-4 text-body-md font-body-md text-on-surface-variant">증상을 매칭하고 있습니다...</p>
+  <p class="mt-4 text-body-md font-body-md text-on-surface-variant" data-i18n="matching">증상을 매칭하고 있습니다...</p>
 </div>
 
 <div id="resultsArea" class="space-y-4 max-w-4xl mx-auto"></div>
@@ -720,7 +737,7 @@
   <div class="bg-surface-container-lowest border border-outline-variant rounded-2xl p-5 md:p-6">
     <div class="flex items-center gap-2 mb-1">
       <span class="material-symbols-outlined text-primary text-[22px]">shopping_bag</span>
-      <h4 class="font-label-md text-label-md text-on-surface">건강보조식품 추천</h4>
+      <h4 class="font-label-md text-label-md text-on-surface" data-i18n="product_title">건강보조식품 추천</h4>
     </div>
     <p class="text-label-sm font-label-sm text-on-surface-variant mb-4">진단 결과와 관련된 건강기능식품을 참고용으로 안내합니다. (질병 치료 목적이 아님)</p>
     <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
@@ -732,10 +749,10 @@
 
 <div id="resultActions" class="hidden flex flex-col sm:flex-row justify-center gap-3 mt-10">
   <button onclick="App.goToStep(2)" class="bg-surface-container-lowest text-primary border border-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-fixed-dim transition-all flex items-center justify-center gap-2 active:scale-95">
-    <span class="material-symbols-outlined text-[18px]">edit</span> 증상 수정
+    <span class="material-symbols-outlined text-[18px]">edit</span> <span data-i18n="edit_symptoms">증상 수정</span>
   </button>
   <button onclick="App.reset()" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all flex items-center justify-center gap-2 active:scale-95">
-    <span class="material-symbols-outlined text-[18px]">refresh</span> 처음부터 다시
+    <span class="material-symbols-outlined text-[18px]">refresh</span> <span data-i18n="restart">처음부터 다시</span>
   </button>
 </div>
 
@@ -743,8 +760,8 @@
   <div class="flex items-start gap-3">
     <span class="material-symbols-outlined text-primary mt-1">info</span>
     <div>
-      <h4 class="font-label-md text-label-md text-on-surface mb-2">📌 중요 안내</h4>
-      <p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">이 결과는 증상 매칭 기반 참고용 진단입니다. 정확한 진단을 위해 반드시 의료기관을 방문하세요. 증상이 심각하거나 악화되는 경우 즉시 응급실(119)에 연락하십시오.</p>
+      <h4 class="font-label-md text-label-md text-on-surface mb-2" data-i18n="important_notice">📌 중요 안내</h4>
+      <p class="text-body-md font-body-md text-on-surface-variant leading-relaxed" data-i18n="notice_text">이 결과는 증상 매칭 기반 참고용 진단입니다. 정확한 진단을 위해 반드시 의료기관을 방문하세요. 증상이 심각하거나 악화되는 경우 즉시 응급실(119)에 연락하십시오.</p>
     </div>
   </div>
 </div>
@@ -755,14 +772,14 @@
 <div id="emergencyModal" class="hidden fixed inset-0 z-[100] bg-black/50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="emergencyTitle">
 <div class="bg-surface-container-lowest rounded-2xl max-w-lg w-full p-6 md:p-8 max-h-[90vh] overflow-y-auto">
   <div class="flex items-start justify-between mb-4">
-    <h3 id="emergencyTitle" class="font-headline-md text-headline-md text-status-error flex items-center gap-2">
+    <h3 id="emergencyTitle" class="font-headline-md text-headline-md text-status-error flex items-center gap-2" data-i18n="emergency_title">
       <span class="material-symbols-outlined">emergency</span> 응급 상황 대처 요령
     </h3>
     <button onclick="App.closeEmergency()" class="material-symbols-outlined text-on-surface-variant hover:text-on-surface">close</button>
   </div>
   <div class="space-y-4 text-body-md font-body-md text-on-surface">
     <div class="bg-error-container p-4 rounded-xl">
-      <p class="font-bold text-on-error-container mb-2">🚨 다음 증상이 나타나면 즉시 119에 전화하세요:</p>
+      <p class="font-bold text-on-error-container mb-2" data-i18n="emergency_desc">🚨 다음 증상이 나타나면 즉시 119에 전화하세요:</p>
       <ul class="list-disc pl-5 space-y-1 text-on-error-container">
         <li>심한 흉통 (5분 이상 지속, 쥐어짜는 통증)</li>
         <li>갑작스러운 호흡곤란</li>
@@ -775,7 +792,7 @@
       </ul>
     </div>
     <div>
-      <h4 class="font-label-md text-label-md text-primary mb-2">📞 주요 응급 연락처</h4>
+      <h4 class="font-label-md text-label-md text-primary mb-2" data-i18n="emergency_contact">📞 주요 응급 연락처</h4>
       <ul class="space-y-1">
         <li><strong>응급의료:</strong> <a href="tel:119" class="text-primary">119</a></li>
         <li><strong>자살예방:</strong> <a href="tel:1393" class="text-primary">1393</a></li>
@@ -783,7 +800,7 @@
       </ul>
     </div>
     <div class="bg-primary-fixed p-4 rounded-xl">
-      <h4 class="font-label-md text-label-md text-on-primary-fixed mb-2">💡 일반적인 응급 대처</h4>
+      <h4 class="font-label-md text-label-md text-on-primary-fixed mb-2" data-i18n="emergency_general">💡 일반적인 응급 대처</h4>
       <ul class="list-disc pl-5 space-y-1 text-on-primary-fixed">
         <li>환자를 편안한 자세로 눕히세요</li>
         <li>옷깃, 벨트 등 조이는 것을 풀어주세요</li>
@@ -811,9 +828,9 @@
 <div class="flex items-center justify-between mb-10 flex-wrap gap-4">
   <div>
     <span class="text-label-md font-label-md text-primary uppercase tracking-wider">Health Library</span>
-    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-2">분야별 빠른 진단</h2>
+    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-2" data-i18n="category_title_lib">분야별 빠른 진단</h2>
   </div>
-  <button onclick="App.goToStep(1)" class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline">
+  <button onclick="App.goToStep(1)" class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline" data-i18n="view_all_cat">
     전체 카테고리 보기
     <span class="material-symbols-outlined text-[18px]">chevron_right</span>
   </button>
@@ -905,8 +922,8 @@
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="mb-12 text-center">
   <span class="text-label-md font-label-md text-primary uppercase tracking-wider">Chronic Care</span>
-  <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-2">만성질환 관리 가이드</h2>
-  <p class="text-body-md font-body-md text-on-surface-variant mt-3 max-w-2xl mx-auto">고혈압, 당뇨병, 천식, COPD 등 만성질환의 자가 관리법을 안내합니다.</p>
+  <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-2" data-i18n="chronic_title">만성질환 관리 가이드</h2>
+  <p class="text-body-md font-body-md text-on-surface-variant mt-3 max-w-2xl mx-auto" data-i18n="chronic_desc">고혈압, 당뇨병, 천식, COPD 등 만성질환의 자가 관리법을 안내합니다.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
   <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:shadow-md transition-shadow">
@@ -966,8 +983,8 @@
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
   <div class="mb-12 text-center">
     <span class="text-label-md font-label-md text-primary uppercase tracking-wider">Health Encyclopedia</span>
-    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-2">건강 백과</h2>
-    <p class="text-body-md font-body-md text-on-surface-variant mt-3 max-w-2xl mx-auto">질환별 상세 정보, 증상, 위험 요인, 예방법 및 치료 옵션을 제공합니다.</p>
+    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mt-2" data-i18n="lib_title">건강 백과</h2>
+    <p class="text-body-md font-body-md text-on-surface-variant mt-3 max-w-2xl mx-auto" data-i18n="lib_desc">질환별 상세 정보, 증상, 위험 요인, 예방법 및 치료 옵션을 제공합니다.</p>
   </div>
 
   <div class="space-y-4" id="encyclopediaContent">
@@ -1821,7 +1838,13 @@ const DB = {
     { id:'s103', name:'피부열감/부기', category:'skin', kw:['cellulitis','열감','부기','발적'] },
     { id:'s104', name:'손발입물집', category:'infectious', kw:['hand foot mouth','물집','수포'] },
     { id:'s105', name:'발작적기침(킹킹)', category:'respiratory', kw:['whooping','발작','킹킹'] },
-    { id:'s106', name:'생리과다', category:'urinary', kw:['menorrhagia','생리과다','월경과다'] }
+    { id:'s106', name:'생리과다', category:'urinary', kw:['menorrhagia','생리과다','월경과다'] },
+    { id:'s107', name:'소변거품', category:'urinary', kw:['foamy urine','소변거품','거품뇨'] },
+    { id:'s108', name:'강박행동/반복확인', category:'mental', kw:['ocd','강박','반복','확인'] },
+    { id:'s109', name:'기분고양/과잉행동', category:'mental', kw:['mania','조증','기분고양','과잉'] },
+    { id:'s110', name:'척추뻣뻣함(조조강직)', category:'musculoskeletal', kw:['ankylosing','척추','강직','뻣뻣'] },
+    { id:'s111', name:'귀에서 물/고름', category:'ent', kw:['ear discharge','귀분비물','고름'] },
+    { id:'s112', name:'물집성 발진(수포)', category:'skin', kw:['vesicle','blister','물집','수포'] }
   ],
 
   diseases: [
@@ -2739,7 +2762,7 @@ const DB = {
       actionType:'info' },
     { id:'d183', name:'백일해(Whooping Cough)', category:'호흡기', severity:'medium',
       symptoms:['s105','s5','s6','s65','s10'],
-      desc:'보르데텔라 백일해균 감염. 발작적 기침 후 "킹"하는 흡기음. 2주 이상 기침 지속. 영아에서 중증(무호흡). 최근 청소년·성인에서도 증가(면역감소).',
+      desc:'보르데텔라 백일해균 감염. 발작적 기침 후 \'킹\'하는 흡기음. 2주 이상 기침 지속. 영아에서 중증(무호흡). 최근 청소년·성인에서도 증가(면역감소).',
       action:'항생제(azithromycin, 조기). 기침발작→산소·흡인. 예방접종(DTaP/Tdap). 가족·접촉자 예방적 항생제. 영아(1세 미만) 입원.',
       actionType:'warning' },
     { id:'d184', name:'자궁근종(Uterine Fibroids)', category:'비뇨/생식', severity:'low',
@@ -2751,12 +2774,461 @@ const DB = {
       symptoms:['s111','s21','s54','s48','s15'],
       desc:'3개월 이상 지속되는 콩팥 구조·기능 이상. 당뇨·고혈압이 주요 원인. 조기 무증상→말기 피로·부종·빈혈·요독증. 신대체요법(투석·이식) 필요 가능.',
       action:'신장내과 진료. 혈압조절(RAAS 차단제). 당뇨·지질 관리. 저단백·저염식이. 빈혈(EPO). 말기→혈액투석·복막투석·신장이식. 약물용량조절.',
-      actionType:'warning' }
+      actionType:'warning' },
+    // ---- KDCA 3차 보강 ----
+    { id:'d186', name:'강박장애(OCD)', category:'정신건강', severity:'medium',
+      symptoms:['s108','s76','s78','s80'],
+      desc:'반복적 강박사고와 강박행동(손씻기·정리·확인 등)이 1시간 이상 소요되고 일상 기능 저하. 불안·불면 동반. 자신의 행동이 과도함을 인지하나 멈추지 못함.',
+      action:'정신건강의학과. 인지행동치료(ERP). SSRI(고용량). 장기치료 필요. 가족교육·지지. 스트레스 관리. 수면위생.',
+      actionType:'info' },
+    { id:'d187', name:'양극성장애(조울증/Bipolar)', category:'정신건강', severity:'high',
+      symptoms:['s109','s79','s80','s78','s77'],
+      desc:'조증(기분고양·과잉활동·과대망상·충동성)과 우울증이 교차하는 만성 정신질환. 1형=조증+우울, 2형=경조증+우울. 약물치료 필수.',
+      action:'정신건강의학과. 기분안정제(리튬·발프로산). 항정신병약(조증). 항우울제(우울기, 주의). 규칙적 생활·수면. 기분일지. 재발방지 장기치료.',
+      actionType:'warning' },
+    { id:'d188', name:'수두(Chickenpox)', category:'감염성', severity:'low',
+      symptoms:['s112','s65','s41','s54','s84'],
+      desc:'수두대상포진바이러스(VZV) 초감염. 전신 가려운 물집성 발진(해열 후 나타남). 발열·피로. 소아는 경증, 성인·면역저하자는 중증 합병증(폐렴·수막염) 위험.',
+      action:'대증치료(해열). 항히스타민(가려움). 칼라민로션. 아시클로버(성인·면역저하). 전염기(발진 전~딱지) 격리. 예방접종(2회). 아스피린 금물(라이증후군).',
+      actionType:'info' },
+    { id:'d189', name:'만성췌장염(Chronic Pancreatitis)', category:'소화기', severity:'high',
+      symptoms:['s9','s10','s16','s18','s54'],
+      desc:'췌장의 지속적 염증으로 인한 비가역적 구조·기능 손상. 만성 심와부 통증(식후악화), 체중감소, 지방변, 당뇨 동반 가능. 주원인=만성 음주.',
+      action:'소화기내과. 절대금주. 진통제(통증). 췌장효소제(소화보조). 인슐린(당뇨). 저지방식. 합병증(가성낭종·담도협착) 감시. 내시경·수술(협착·결석).',
+      actionType:'warning' },
+    { id:'d190', name:'급성신우신염(Acute Pyelonephritis)', category:'비뇨/생식', severity:'high',
+      symptoms:['s46','s65','s66','s9','s10','s35'],
+      desc:'콩팥 깔때기와 실질의 급성 세균감염. 고열·오한, 옆구리통증, 배뇨통. 하부요로감염에서 상행. 여성에 흔함. 패혈증 위험.',
+      action:'응급실·비뇨기과. 소변검사·혈액배양. 정주 항생제(입원). 경구 항생제(경증). 수분충분히. 재발방지: 완전치료·위생관리. 요로폐쇄 확인.',
+      actionType:'danger' },
+    { id:'d191', name:'기관지확장증(Bronchiectasis)', category:'호흡기', severity:'medium',
+      symptoms:['s1','s2','s3','s7','s65'],
+      desc:'기관지가 비가역적으로 확장되는 만성 염증성 질환. 만성 기침·다량 객담·반복 감염. 객혈 동반 가능. 결핵 후유증·면역결핍·섬유증 등 원인.',
+      action:'호흡기내과. 고해상CT 진단. 기관지확장제·거담제. 객담배출(체위배액·호흡재활). 항생제(악화시). 객혈→기관지동맥색전술. 예방접종(독감·폐렴).',
+      actionType:'warning' },
+    { id:'d192', name:'강직척추염(Ankylosing Spondylitis)', category:'근골격계', severity:'medium',
+      symptoms:['s110','s35','s37','s54','s38'],
+      desc:'척추·천장관절의 만성 염증성 관절염. 아침에 심한 허리뻣뻣함(운동으로 호전). 진행시 척추 굳음(죽처럼). HLA-B27 연관. 포도막염·건염 동반.',
+      action:'류마티스내과. X-ray·MRI 진단. 소염진통제(NSAIDs). TNF-α 억제제(생물학적제제). 운동(관절가동·스트레칭). 금연(질환활성도악화). 수술(고관절·척추변형).',
+      actionType:'warning' },
+    { id:'d193', name:'난청(Hearing Loss)', category:'이비인후과', severity:'low',
+      symptoms:['s56','s57','s58','s59'],
+      desc:'선천성 또는 후천성 청력 저하. 전음성(외이·중이), 감각신경성(달팽이관·청신경), 혼합성. 소음·노화·약물·유전·감염 등 원인 다양. 조기 발견·재활 중요.',
+      action:'이비인후과. 청력검사(순음·어음). 원인치료(중이염·이경화증). 보청기. 인공와우(중증). 소음노출 회피. 이독성약물 주의. 수화·구화 재활.',
+      actionType:'info' }
   ]
 };
 
 /* ============================================
-   Products - 건강보조식품 추천 (제휴 링크)
+   Lang - 국제화(i18n) 지원 (한국어/영어)
+   - UI 텍스트는 label(키)로 조회
+   - DB 항목(증상·질환명)은 n(아이템, 필드)로 조회
+   - DB 항목(증상·질환명)은 n(아이템, 필드)로 조회, 없으면 DB 값 fallback
+   ============================================ */
+
+const Lang = {
+  current: 'ko',
+  set(l) {
+    this.current = l;
+    document.documentElement.lang = l;
+    try { localStorage.setItem('hs_lang', l); } catch(e) {}
+  },
+  init() {
+    try { const saved = localStorage.getItem('hs_lang'); if (saved) this.current = saved; } catch(e) {}
+    document.documentElement.lang = this.current;
+  },
+  // DB 아이템의 번역명/설명 조회 (d.name → Lang.en.d1_name)
+  n(item, field) {
+    const key = field + '_' + item.id;
+    return this[this.current][key] || (item[field] || '');
+  },
+  // UI 라벨 조회
+  l(key) {
+    return this[this.current][key] || this['ko'][key] || key;
+  },
+  ko: {
+    step1:'카테고리', step2:'증상 선택', step3:'건강 정보', step4:'결과',
+    step0_welcome:'HealSense 자가진단에 오신 것을 환영합니다',
+    step0_desc:'4단계로 간단하게 자가진단을 받아보세요. 약 3분 정도 소요됩니다.',
+    step0_step1:'카테고리 선택', step0_step2:'증상 선택', step0_step3:'기간 입력', step0_step4:'결과 확인',
+    start_check:'증상 체크 시작하기',
+    view_encyc:'건강 백과 보기',
+    free:'무료', privacy_icon:'개인정보 보호', diseases_170:'170여 질환 분석', instant:'즉시 결과',
+    hero_desc:'HealSense의 증상 매칭 알고리즘이 당신의 증상과 가장 가능성 있는 질환을 연결하고 적절한 대처 방법을 안내해 드립니다.',
+    category_title:'1. 증상 카테고리를 선택하세요',
+    selected:'개 선택됨',
+    next_symptom:'다음: 증상 선택',
+    prev:'이전',
+    symptom_title:'2. 해당하는 증상을 모두 선택하세요',
+    search_placeholder:'증상 검색 (예: 두통, 발열, 기침...)',
+    no_results:'검색 결과가 없습니다. 다른 키워드로 검색해보세요.',
+    selected_symptoms:'선택한 증상',
+    no_symptoms_selected:'선택된 증상이 여기에 표시됩니다',
+    min_one_symptom:'최소 1개 증상 선택 필요',
+    next_health:'다음: 건강 정보',
+    health_title:'3. 건강 정보 입력',
+    health_profile:'개인 건강 정보',
+    age:'연령대', gender:'성별', smoking:'흡연', alcohol:'음주', exercise:'운동량', weight:'체형',
+    duration_title:'증상 지속 기간',
+    acute:'급성', under_1w:'1주 미만', under_2w:'2주 미만', prolonged:'상당 기간', chronic:'만성',
+    diagnose_btn:'진단 시작',
+    result_title:'진단 결과',
+    matching:'증상을 매칭하고 있습니다...',
+    product_title:'건강보조식품 추천',
+    product_desc:'진단 결과와 관련된 건강기능식품을 참고용으로 안내합니다. (질병 치료 목적이 아님)',
+    product_disclaimer:'제휴 안내: 본 페이지는 네이버 쇼핑 커넥트 및 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받을 수 있습니다. 제공되는 상품 정보는 건강 참고용이며, 의학적 진단·치료를 대체하지 않습니다. 구매 전 의료 전문가와 상담하시기 바랍니다.',
+    edit_symptoms:'증상 수정', restart:'처음부터 다시',
+    important_notice:'중요 안내',
+    notice_text:'이 결과는 증상 매칭 기반 참고용 진단입니다. 정확한 진단을 위해 반드시 의료기관을 방문하세요. 증상이 심각하거나 악화되는 경우 즉시 응급실(119)에 연락하십시오.',
+    sev_low:'낮음', sev_medium:'중간', sev_high:'높음', sev_critical:'매우 높음',
+    sev_low_desc:'비교적 가벼운 상태로 자연 회복이 가능할 수 있습니다.',
+    sev_medium_desc:'전문의 진료가 권장되는 중등도 상태입니다.',
+    sev_high_desc:'전문의 진단과 치료가 반드시 필요한 상태입니다.',
+    sev_critical_desc:'즉시 응급실을 방문해야 하는 심각한 상태입니다.',
+    match_rate:'일치율', detail:'상세 정보',
+    symptoms_matched:'개 증상 일치',
+    no_results_title:'일치하는 질환을 찾을 수 없습니다',
+    no_results_desc:'더 많은 증상을 선택하거나 의사와 상담하세요',
+    found_results:'총 {0}개의 가능한 질환을 찾았습니다. (선택 증상: {1}개{2})',
+    kdca_link:'질병관리청 건강정보 검색하기',
+    emergency_title:'🚨 응급 상황 대처 요령',
+    emergency_desc:'다음 증상이 나타나면 즉시 119에 전화하세요:',
+    emergency_contact:'주요 응급 연락처',
+    emergency_general:'일반적인 응급 대처',
+    emergency_tips:['환자를 편안한 자세로 눕히세요','옷깃, 벨트 등 조이는 것을 풀어주세요','의식을 잃으면 회복자세로','구급대가 도착할 때까지 환자와 함께 있어 주세요'],
+    recommend:'진단 시작', view_product:'보러가기',
+    self_diagnosis:'자가진단', encyclopedia:'건강 백과', chronic_care:'만성질환 관리',
+    hp_age_10s:'10대', hp_age_20s:'20대', hp_age_30s:'30대', hp_age_40s:'40대', hp_age_50s:'50대', hp_age_60s:'60대', hp_age_70s:'70대↑',
+    hp_male:'남성', hp_female:'여성',
+    hp_smoke_none:'비흡연', hp_smoke_past:'과거 흡연', hp_smoke_light:'1갑 미만/일', hp_smoke_heavy:'1갑 이상/일',
+    hp_alcohol_none:'거의 안함', hp_alcohol_light:'주 1~2회', hp_alcohol_moderate:'주 3~4회', hp_alcohol_heavy:'거의 매일',
+    hp_exercise_none:'거의 안함', hp_exercise_light:'주 1~2회', hp_exercise_moderate:'주 3~4회', hp_exercise_daily:'거의 매일',
+    hp_weight_under:'저체중', hp_weight_normal:'정상', hp_weight_over:'과체중', hp_weight_obese:'비만',
+    category_title_lib:'분야별 빠른 진단',
+    view_all_cat:'전체 카테고리 보기',
+    chronic_title:'만성질환 관리 가이드',
+    chronic_desc:'고혈압, 당뇨병, 천식, COPD 등 만성질환의 자가 관리법을 안내합니다.',
+    lib_title:'건강 백과',
+    lib_desc:'질환별 상세 정보, 증상, 위험 요인, 예방법 및 치료 옵션을 제공합니다.',
+    lang_switch:'English',
+    fab_label:'자가진단 시작',
+    go_top:'맨 위로',
+    action_label:'💡 권장 조치:',
+    dur_1_3:'1~3일', dur_4_7:'4~7일', dur_1_2w:'1~2주', dur_2w_1m:'2주~1개월', dur_1m:'1개월↑',
+    significant:'상당 기간'
+  },
+
+  en: {
+    step1:'Category', step2:'Symptoms', step3:'Health Info', step4:'Results',
+    step0_welcome:'Welcome to HealSense Self-Diagnosis',
+    step0_desc:'Get a quick self-assessment in 4 simple steps. Takes about 3 minutes.',
+    step0_step1:'Select Category', step0_step2:'Choose Symptoms', step0_step3:'Enter Duration', step0_step4:'See Results',
+    start_check:'Start Symptom Check',
+    view_encyc:'View Health Encyclopedia',
+    free:'Free', privacy_icon:'Privacy Protected', diseases_170:'170+ Conditions', instant:'Instant Results',
+    hero_desc:'HealSense\'s symptom matching algorithm connects your symptoms with the most likely conditions and provides appropriate guidance.',
+    category_title:'1. Select a symptom category',
+    selected:' selected',
+    next_symptom:'Next: Select Symptoms',
+    prev:'Back',
+    symptom_title:'2. Select all symptoms that apply',
+    search_placeholder:'Search symptoms (e.g., headache, fever, cough...)',
+    no_results:'No results found. Try different keywords.',
+    selected_symptoms:'Selected symptoms',
+    no_symptoms_selected:'Selected symptoms will appear here',
+    min_one_symptom:'Select at least 1 symptom',
+    next_health:'Next: Health Info',
+    health_title:'3. Enter health information',
+    health_profile:'Personal Health Profile',
+    age:'Age', gender:'Gender', smoking:'Smoking', alcohol:'Alcohol', exercise:'Exercise', weight:'Body Type',
+    duration_title:'Symptom Duration',
+    acute:'Acute', under_1w:'<1 week', under_2w:'<2 weeks', prolonged:'Prolonged', chronic:'Chronic',
+    diagnose_btn:'Start Diagnosis',
+    result_title:'Diagnosis Results',
+    matching:'Matching your symptoms...',
+    product_title:'Recommended Supplements',
+    product_desc:'Health supplements related to your results for reference only (not for disease treatment).',
+    product_disclaimer:'Affiliate disclosure: This page contains affiliate links to Coupang and Naver Shopping. We may earn a commission at no extra cost to you. Product information is for reference only and does not replace medical advice. Consult a healthcare professional before purchase.',
+    edit_symptoms:'Edit Symptoms', restart:'Start Over',
+    important_notice:'Important Notice',
+    notice_text:'These results are based on symptom matching for reference only. Please visit a medical facility for an accurate diagnosis. If symptoms are severe or worsen, contact emergency services immediately.',
+    sev_low:'Low', sev_medium:'Medium', sev_high:'High', sev_critical:'Critical',
+    sev_low_desc:'Relatively mild condition that may resolve on its own.',
+    sev_medium_desc:'Moderate severity; professional medical evaluation recommended.',
+    sev_high_desc:'Requires professional diagnosis and treatment.',
+    sev_critical_desc:'Severe condition requiring immediate emergency attention.',
+    match_rate:'Match Rate', detail:'Details',
+    symptoms_matched:' symptoms matched',
+    no_results_title:'No matching conditions found',
+    no_results_desc:'Try selecting more symptoms or consult a doctor',
+    found_results:'Found {0} possible condition(s). (Symptoms: {1}{2})',
+    kdca_link:'Search KDCA Health Information',
+    emergency_title:'🚨 Emergency Response Guide',
+    emergency_desc:'Call 119 immediately if you experience:',
+    emergency_contact:'Emergency Contacts',
+    emergency_general:'General First Aid',
+    emergency_tips:['Keep the patient in a comfortable position','Loosen tight clothing, belts, etc.','Place in recovery position if unconscious','Stay with the patient until help arrives'],
+    recommend:'Diagnose', view_product:'View Product',
+    self_diagnosis:'Self Diagnosis', encyclopedia:'Encyclopedia', chronic_care:'Chronic Care',
+    hp_age_10s:'10s', hp_age_20s:'20s', hp_age_30s:'30s', hp_age_40s:'40s', hp_age_50s:'50s', hp_age_60s:'60s', hp_age_70s:'70s+',
+    hp_male:'Male', hp_female:'Female',
+    hp_smoke_none:'Non-smoker', hp_smoke_past:'Past smoker', hp_smoke_light:'<1 pack/day', hp_smoke_heavy:'1+ pack/day',
+    hp_alcohol_none:'Rarely', hp_alcohol_light:'1-2x/week', hp_alcohol_moderate:'3-4x/week', hp_alcohol_heavy:'Daily',
+    hp_exercise_none:'Sedentary', hp_exercise_light:'1-2x/week', hp_exercise_moderate:'3-4x/week', hp_exercise_daily:'Daily',
+    hp_weight_under:'Underweight', hp_weight_normal:'Normal', hp_weight_over:'Overweight', hp_weight_obese:'Obese',
+    category_title_lib:'Quick Diagnosis by Category',
+    view_all_cat:'View All Categories',
+    chronic_title:'Chronic Disease Management Guide',
+    chronic_desc:'Self-management tips for hypertension, diabetes, asthma, COPD, and more.',
+    lib_title:'Health Encyclopedia',
+    lib_desc:'Detailed information on diseases, symptoms, risk factors, prevention, and treatment options.',
+    lang_switch:'한국어',
+    fab_label:'Start Check',
+    go_top:'Go to top',
+    action_label:'💡 Recommended Action:',
+    dur_1_3:'1-3 days', dur_4_7:'4-7 days', dur_1_2w:'1-2 weeks', dur_2w_1m:'2 weeks~1 month', dur_1m:'1+ month',
+    significant:'Prolonged',
+    // ---- Category names ----
+    name_respiratory:'Respiratory', name_digestive:'Digestive', name_cardiovascular:'Cardiovascular',
+    name_neurological:'Neurological', name_musculoskeletal:'Musculoskeletal', name_skin:'Skin',
+    name_urinary:'Urinary/Reproductive', name_endocrine:'Endocrine/Metabolic', name_ent:'ENT',
+    name_ophthalmic:'Ophthalmic', name_infectious:'Infectious', name_cancer:'Cancer/Tumor',
+    name_mental:'Mental Health', name_general:'General',
+    // ---- Symptom names ----
+    name_s1:'Cough', name_s2:'Sputum', name_s3:'Shortness of breath', name_s4:'Wheezing',
+    name_s5:'Nasal congestion/runny nose', name_s6:'Sore throat', name_s7:'Coughing up blood', name_s8:'Rapid breathing',
+    name_s9:'Abdominal pain', name_s10:'Nausea/vomiting', name_s11:'Diarrhea', name_s12:'Constipation',
+    name_s13:'Heartburn/reflux', name_s14:'Blood in stool', name_s15:'Jaundice', name_s16:'Weight loss',
+    name_s17:'Difficulty swallowing', name_s18:'Bloating',
+    name_s19:'Chest pain', name_s20:'Palpitations', name_s21:'Edema (swelling)', name_s22:'Dizziness/fainting',
+    name_s23:'Breathless when lying down', name_s24:'Numbness in limbs',
+    name_s25:'Headache', name_s26:'Migraine', name_s27:'Seizures/convulsions', name_s28:'Paresthesia',
+    name_s29:'Tremor', name_s30:'Gait disturbance', name_s31:'Memory loss', name_s32:'Visual disturbance',
+    name_s33:'Joint pain', name_s34:'Muscle pain', name_s35:'Back pain', name_s36:'Neck pain',
+    name_s37:'Joint stiffness (morning)', name_s38:'Muscle weakness', name_s39:'Fracture',
+    name_s40:'Rash', name_s41:'Itching', name_s42:'Skin ulcer', name_s43:'Mole changes',
+    name_s44:'Dry/flaky skin', name_s45:'Hives (urticaria)',
+    name_s46:'Painful urination', name_s47:'Blood in urine', name_s48:'Frequent urination',
+    name_s49:'Urinary incontinence', name_s50:'Genital discharge',
+    name_s51:'Excessive thirst', name_s52:'Excessive urination', name_s53:'Weight changes',
+    name_s54:'Fatigue/lethargy', name_s55:'Heat/cold intolerance',
+    name_s56:'Hearing loss', name_s57:'Tinnitus', name_s58:'Ear pain', name_s59:'Vertigo', name_s60:'Loss of smell',
+    name_s61:'Blurred vision', name_s62:'Eye pain', name_s63:'Red eyes', name_s64:'Floaters',
+    name_s65:'Fever', name_s66:'Chills', name_s67:'Night sweats', name_s68:'Swollen lymph nodes',
+    name_s69:'Palpable lump/mass', name_s70:'Unexplained bleeding', name_s71:'Anemia',
+    name_s72:'Dysphagia', name_s73:'Bowel habit changes', name_s74:'Oral ulcers', name_s75:'Hoarseness',
+    name_s76:'Anxiety/restlessness', name_s77:'Depressed mood', name_s78:'Insomnia',
+    name_s79:'Hallucinations/delusions', name_s80:'Poor concentration',
+    name_s81:'General weakness', name_s82:'Shivering', name_s83:'Chronic fatigue',
+    name_s84:'Loss of appetite', name_s85:'Unintentional weight loss', name_s86:'Night sweats',
+    name_s87:'Generalized pain',
+    name_s88:'Snoring', name_s89:'Sleep apnea', name_s90:'Daytime sleepiness',
+    name_s91:'Gum bleeding', name_s92:'Loose teeth', name_s93:'Halitosis',
+    name_s94:'Ear itching', name_s95:'Ear discharge',
+    name_s96:'Abdominal obesity', name_s97:'Personality changes', name_s98:'Speech difficulty',
+    name_s99:'Orthostatic dizziness', name_s100:'Sudden fear/panic',
+    name_s101:'Facial palsy', name_s102:'Stabbing chest pain', name_s103:'Skin heat/swelling',
+    name_s104:'Hand-foot-mouth blisters', name_s105:'Paroxysmal whooping cough',
+    name_s106:'Menorrhagia', name_s107:'Foamy urine',
+    name_s108:'Compulsive behavior/checking', name_s109:'Elevated mood/hyperactivity',
+    name_s110:'Spinal stiffness (morning)', name_s111:'Ear discharge/pus', name_s112:'Vesicular rash (blisters)',
+    // ---- Disease names + descriptions + actions ----
+    name_d1:'Common Cold',desc_d1:'Most common viral infection. Main symptoms: nasal congestion, runny nose, sore throat, cough, mild fever. Self-limiting, resolves in 5-7 days.',action_d1:'Rest, hydration, OTC cold medications. Antipyretics for fever. Consult if symptoms persist >10 days or worsen.',
+    name_d2:'Influenza (Flu)',desc_d2:'Viral infection causing high fever, severe muscle aches, chills, headache, fatigue. Complications: pneumonia (especially elderly, chronic disease patients).',action_d2:'Antiviral (within 48h). Antipyretics, rest, hydration. Annual vaccine. Emergency if dyspnea, chest pain, confusion.',
+    name_d3:'Pneumonia',desc_d3:'Lung inflammation from bacteria/virus/fungi. Fever, cough (productive), dyspnea, chest pain. Can be fatal in elderly/immunocompromised.',action_d3:'Antibiotics (bacterial). Antipyretics, O2 therapy. Hospitalization if severe. Vaccine (pneumococcal, flu).',
+    name_d4:'Asthma',desc_d4:'Chronic airway inflammation with reversible obstruction. Recurrent wheezing, dyspnea, cough (night/early morning). Triggers: allergens, cold air, exercise.',action_d4:'Inhaled corticosteroids (controller). Short-acting β2-agonists (rescue). Avoid triggers. Allergy testing. Action plan.',
+    name_d5:'Acute Bronchitis',desc_d5:'Inflammation of bronchial mucosa, usually viral. Productive cough, mild fever, chest discomfort. Most self-limiting in 1-3 weeks.',action_d5:'Rest, hydration, cough suppressants. Antibiotics not routinely needed. Watch for pneumonia signs.',
+    name_d6:'COPD',desc_d6:'Progressive lung disease (emphysema/chronic bronchitis). Chronic dyspnea, cough, sputum. Main cause: smoking. Irreversible airflow limitation.',action_d6:'Smoking cessation (critical). Inhaled bronchodilators, steroids. Pulmonary rehab. O2 therapy. Flu/pneumococcal vaccines.',
+    name_d7:'Lung Cancer',desc_d7:'Malignant lung tumor. Persistent cough, hemoptysis, dyspnea, chest pain, unexplained weight loss. Leading cause of cancer death.',action_d7:'CT screening (high-risk). Smoking cessation. Surgery, chemo, radiation, immunotherapy. Palliative care. Multidisciplinary approach.',
+    name_d8:'Allergic Rhinitis',desc_d8:'Allergen-triggered nasal inflammation. Sneezing, runny/blocked nose, itchy eyes, postnasal drip. Seasonal or perennial.',action_d8:'Antihistamines, nasal steroids. Allergen avoidance. Immunotherapy (allergy shots). Saline nasal rinse.',
+    name_d9:'Sinusitis',desc_d9:'Sinus inflammation from infection or allergy. Facial pain/pressure, nasal congestion, purulent discharge, headache, fever.',action_d9:'Nasal saline irrigation, decongestants. Antibiotics if bacterial (10-14 days). Analgesics. Surgery if chronic.',
+    name_d10:'Pharyngitis',desc_d10:'Pharynx inflammation, mostly viral. Sore throat, pain on swallowing, fever. Group A strep requires antibiotics.',action_d10:'Rest, warm fluids, lozenges. Antibiotics only if strep confirmed. Analgesics. Gargle with warm salt water.',
+    name_d11:'Laryngitis',desc_d11:'Larynx inflammation → hoarseness/voice loss. Usually viral. Dry cough, sore throat. Self-limiting in 1-2 weeks.',action_d11:'Voice rest, hydration, humidifier. Avoid whispering. Steroids if severe (rare).',
+    name_d12:'Tonsillitis',desc_d12:'Tonsil infection (viral or bacterial). Severe sore throat, fever, difficulty swallowing, enlarged tonsils with exudate.',action_d12:'Analgesics, cool fluids. Antibiotics if bacterial. Recurrent → tonsillectomy considered.',
+    name_d13:'Tuberculosis',desc_d13:'Mycobacterium tuberculosis infection. Chronic cough (>3wks), hemoptysis, night sweats, weight loss, fever. Latent or active.',action_d13:'Anti-TB drugs (4-drug regimen, 6+ months). Directly observed therapy. Isolation (initial). Contact screening.',
+    name_d14:'Sleep Apnea',desc_d14:'Repeated airway collapse during sleep. Loud snoring, witnessed apnea, daytime sleepiness, morning headache. Risk: obesity.',action_d14:'CPAP (gold standard). Weight loss, positional therapy. Oral appliance. Surgery (UPPP) if refractory. Avoid alcohol/sedatives.',
+    name_d15:'Pneumothorax',desc_d15:'Air in pleural cavity causing lung collapse. Sudden sharp chest pain, dyspnea. Can be spontaneous or traumatic.',action_d15:'Small: observation. Large: chest tube insertion. Recurrent → pleurodesis. Emergency if tension pneumothorax.',
+    name_d16:'Whooping Cough',desc_d16:'Bordetella pertussis infection. Paroxysmal cough with inspiratory whoop, post-tussive vomiting. Highly contagious.',action_d16:'Macrolide antibiotics (erythromycin, azithromycin). Post-exposure prophylaxis. DTaP/Tdap vaccine. Supportive care.',
+    name_d17:'Gastroenteritis',desc_d17:'Stomach/intestine inflammation, mainly viral. Diarrhea, vomiting, abdominal cramps, mild fever. Risk: dehydration (children, elderly).',action_d17:'Oral rehydration (ORS). Antiemetics, antidiarrheals. Avoid dairy/caffeine. IV fluids if severe dehydration.',
+    name_d18:'GERD',desc_d18:'Chronic acid reflux → esophageal inflammation. Heartburn, regurgitation, chest pain, chronic cough, laryngitis.',action_d18:'PPI or H2 blocker. Lifestyle: weight loss, elevate head, avoid triggers (spicy, fatty, caffeine). Surgery (Nissen) if refractory.',
+    name_d19:'Gastric Ulcer',desc_d19:'Stomach mucosal defect. Epigastric pain (meal-related), nausea, bloating. Causes: H. pylori, NSAIDs.',action_d19:'PPI. H. pylori eradication (triple therapy). Avoid NSAIDs, alcohol, smoking. Endoscopic surveillance. Surgery if bleeding/perforation.',
+    name_d20:'Stomach Cancer',desc_d20:'Malignant gastric tumor. Early: often asymptomatic. Late: epigastric pain, weight loss, anorexia, anemia, melena.',action_d20:'Gastroscopy with biopsy. Surgery (gastrectomy). Chemo, targeted therapy. H. pylori eradication. Screening high-risk groups.',
+    name_d21:'Colorectal Cancer',desc_d21:'Colon/rectal malignancy. Blood in stool, bowel habit changes, abdominal pain, weight loss, anemia. Slow growth from polyps.',action_d21:'Colonoscopy + biopsy. Surgery, chemo, radiation. FOBT screening (age ≥50). Polyp removal. Genetic testing if family history.',
+    name_d22:'Appendicitis',desc_d22:'Appendix inflammation. Periumbilical pain → RLQ, nausea, fever, anorexia. Rupture → peritonitis (emergency).',action_d22:'Emergency appendectomy. IV antibiotics, NPO. CT/US for diagnosis. Early surgery before perforation.',
+    name_d23:'Hepatitis',desc_d23:'Liver inflammation. Types A-E. Jaundice, fatigue, nausea, RUQ pain, dark urine. B/C → chronic → cirrhosis/HCC.',action_d23:'Supportive (A). Antivirals (B, C). Avoid alcohol. Vaccination (A, B). Liver transplant if end-stage.',
+    name_d24:'Liver Cancer',desc_d24:'Primary liver malignancy (HCC). Abdominal mass, RUQ pain, ascites, jaundice, weight loss. Often with cirrhosis.',action_d24:'Surgery/resection. TACE, ablation, radioembolization. Targeted therapy (sorafenib). Liver transplant. Hepatitis management.',
+    name_d25:'Pancreatic Cancer',desc_d25:'Pancreatic malignancy, poor prognosis. Epigastric pain (radiating to back), jaundice, weight loss, new-onset diabetes.',action_d25:'Surgery (Whipple) if resectable. Chemo (gemcitabine, FOLFIRINOX). Palliative stenting. Pain management.',
+    name_d26:'Food Poisoning',desc_d26:'Ingestion of contaminated food. Nausea, vomiting, diarrhea, abdominal cramps, fever. Usually self-limiting.',action_d26:'Oral rehydration, rest. Antibiotics only if severe bacterial. Seek help if bloody diarrhea, high fever, dehydration.',
+    name_d27:'Dyspepsia',desc_d27:'Chronic/recurrent epigastric discomfort, fullness, bloating, early satiety. No organic cause (functional) or due to gastritis/GERD.',action_d27:'PPI trial, H. pylori test & treat. Prokinetics. Diet modification (small, frequent meals). Stress reduction.',
+    name_d28:'IBS',desc_d28:'Chronic functional bowel disorder. Abdominal pain with defecation, altered stool frequency/form (diarrhea/constipation/mixed).',action_d28:'FODMAP diet, fiber (soluble). Antispasmodics, laxatives (constipation), loperamide (diarrhea). Low-dose antidepressants. Stress management.',
+    name_d29:'Gallstones',desc_d29:'Gallbladder stone formation. RUQ pain (postprandial, fatty food), nausea. Complications: cholecystitis, pancreatitis, cholangitis.',action_d29:'Cholecystectomy (symptomatic). ERCP (CBD stones). Low-fat diet. Observation if asymptomatic.',
+    name_d30:'Hemorrhoids',desc_d30:'Swollen anal/rectal veins. Painless rectal bleeding (bright red), anal discomfort, pruritus. Internal/external.',action_d30:'High-fiber diet, hydration. Sitz baths, topical creams. Banding (internal). Surgery (severe). Avoid prolonged sitting/straining.',
+    name_d31:'Stomatitis',desc_d31:'Oral mucosal inflammation/ulceration. Painful mouth sores, difficulty eating. Causes: aphthous, viral (HSV), trauma, nutritional deficiency.',action_d31:'Topical steroids/analgesics. Mouthwash (lidocaine). Avoid spicy/acidic foods. Vitamin B, C, iron if deficient. Antivirals if HSV.',
+    name_d32:'Alcoholic Liver Disease',desc_d32:'Liver damage from chronic heavy drinking. Spectrum: fatty liver → alcoholic hepatitis → cirrhosis. Jaundice, ascites, GI bleeding.',action_d32:'Absolute abstinence. Nutritional support (thiamine, folate). Steroids (severe hepatitis). Liver transplant (end-stage). Monitor for withdrawal.',
+    name_d33:'Metabolic Syndrome',desc_d33:'Cluster: abdominal obesity, high BP, high glucose, high TG, low HDL. Increases CVD, diabetes risk.',action_d33:'Weight loss (5-10%), exercise (150min/wk). Diet (low-carb, Mediterranean). Treat components: antihypertensives, statins, metformin.',
+    name_d34:'Chronic Pancreatitis',desc_d34:'Irreversible pancreatic damage from chronic inflammation. Epigastric pain (postprandial), steatorrhea, diabetes. Main cause: chronic alcohol.',action_d34:'Absolute abstinence. Analgesics. Pancreatic enzymes. Insulin if diabetic. Low-fat diet. Monitor for pseudocysts/strictures.',
+    name_d35:'Hypertension',desc_d35:'Persistently elevated BP (≥140/90). Asymptomatic early → headache, dizziness. Long-term → stroke, MI, kidney disease, heart failure.',action_d35:'Lifestyle: DASH diet, low salt, exercise, weight loss. Antihypertensives (thiazide, ACEi, ARB, CCB). Home BP monitoring. Regular follow-up.',
+    name_d36:'Angina Pectoris',desc_d36:'Chest pain from reduced coronary blood flow. Pressure/squeezing ± radiation to left arm/jaw. Triggered by exertion, relieved by rest/nitrates.',action_d36:'Aspirin, statin, β-blocker, nitrates (sublingual). Angiography. PCI/stent or CABG. Risk factor control. Cardiac rehab.',
+    name_d37:'Myocardial Infarction',desc_d37:'Complete coronary artery occlusion → heart muscle necrosis. Crushing chest pain >20min, dyspnea, nausea, diaphoresis, sense of doom.',action_d37:'Emergency: 119. Aspirin, nitrates, O2, morphine. Primary PCI (within 90min). Thrombolysis if PCI unavailable. Dual antiplatelets, anticoagulation.',
+    name_d38:'Arrhythmia',desc_d38:'Abnormal heart rhythm. Palpitations, dizziness, syncope, dyspnea, chest discomfort. Types: AF, VT, SVT, bradyarrhythmias.',action_d38:'ECG, Holter monitor. Antiarrhythmics (β-blocker, amiodarone). Anticoagulation (AF). Ablation. Pacemaker/ICD. Avoid triggers (caffeine, alcohol).',
+    name_d39:'Heart Failure',desc_d39:'Heart cannot pump adequately. Dyspnea (exertion/lying flat), fatigue, edema, orthopnea, PND. Systolic/diastolic.',action_d39:'Diuretics, ACEi/ARB, β-blocker, MRA, SGLT2i. Salt/fluid restriction. Daily weight monitoring. CRT/ICD. Heart transplant (end-stage).',
+    name_d40:'Stroke',desc_d40:'Brain infarction or hemorrhage. Sudden hemiparesis, facial droop, speech difficulty, visual loss, severe headache. Ischemic vs hemorrhagic.',action_d40:'Emergency: 119. FAST assessment. Thrombolysis (within 4.5h). Thrombectomy. Antiplatelets (ischemic). BP management. Rehab. Secondary prevention.',
+    name_d41:'Brain Aneurysm',desc_d41:'Cerebral artery wall weakness. Often asymptomatic until rupture → subarachnoid hemorrhage. Severe thunderclap headache, nausea, photophobia.',action_d41:'Emergency: 119. CT/LP. Surgical clipping or endovascular coiling. BP control. Nimodipine (vasospasm prevention). Screen relatives.',
+    name_d42:'Hypotension',desc_d42:'Abnormally low BP. Dizziness, fainting, blurred vision, fatigue, nausea (especially on standing). Orthostatic hypotension common.',action_d42:'Increase fluid/salt intake. Compression stockings. Review medications. Fludrocortisone or midodrine if severe. Treat underlying cause.',
+    name_d43:'Tension Headache',desc_d43:'Most common headache type. Bilateral pressing/tightening pain (band-like), mild-moderate. No nausea/photophobia. Triggered by stress, poor posture.',action_d43:'OTC analgesics (acetaminophen, ibuprofen). Stress reduction, massage, posture correction. Avoid medication overuse headache.',
+    name_d44:'Migraine',desc_d44:'Recurrent throbbing unilateral headache (moderate-severe). Nausea/vomiting, photophobia, phonophobia, aura (visual/sensory).',action_d44:'Acute: triptans, NSAIDs, antiemetics. Prevention: β-blockers, topiramate, CGRP mAbs. Avoid triggers. Lifestyle regularity.',
+    name_d45:'Brain Tumor',desc_d45:'Intracranial mass (primary/metastatic). Headache (worse morning/cough), seizures, focal deficits, personality changes, ICP symptoms.',action_d45:'MRI + biopsy. Surgery (resection). Radiation, chemo (temozolomide). Steroids (edema). Seizure control. Palliative care.',
+    name_d46:'Parkinson\'s Disease',desc_d46:'Progressive neurodegenerative disorder. Resting tremor, rigidity, bradykinesia, postural instability. Non-motor: anosmia, depression, sleep disorders.',action_d46:'Levodopa/carbidopa, dopamine agonists, MAO-B inhibitors. Physical therapy, speech therapy. DBS (advanced). Multidisciplinary care.',
+    name_d47:'Alzheimer\'s Disease',desc_d47:'Progressive dementia. Memory loss (recent > remote), language decline, disorientation, behavioral changes. Most common dementia type.',action_d47:'Cholinesterase inhibitors, memantine. Behavioral management. Environmental safety. Caregiver support. Advance care planning.',
+    name_d48:'Epilepsy',desc_d48:'Recurrent unprovoked seizures. Types: generalized (tonic-clonic, absence) and focal. Causes: genetic, structural, metabolic.',action_d48:'AEDs (monotherapy first). EEG, MRI. Seizure first aid. Avoid triggers (sleep deprivation, alcohol). Surgery if refractory. Driving restrictions.',
+    name_d49:'Meningitis',desc_d49:'Meningeal inflammation (bacterial/viral/fungal). Severe headache, fever, neck stiffness, photophobia, altered consciousness. Bacterial = emergency.',action_d49:'Emergency: LP + empiric antibiotics (ceftriaxone + vancomycin). Dexamethasone. Isolation (bacterial). Vaccination. Supportive care.',
+    name_d50:'Vascular Dementia',desc_d50:'Cognitive decline from cerebrovascular disease. Stepwise deterioration, focal neurological signs, executive dysfunction. Post-stroke common.',action_d50:'Control vascular risk (BP, DM, lipids). Antiplatelets. Cholinesterase inhibitors (benefit limited). Fall prevention. Lifestyle modification.',
+    name_d51:'Panic Disorder',desc_d51:'Recurrent unexpected panic attacks. Palpitations, sweating, trembling, chest pain, fear of dying/losing control. Avoidance behavior.',action_d51:'CBT (gold standard). SSRIs (escitalopram, sertraline). Benzodiazepines (short-term). Breathing techniques. Regular exercise.',
+    name_d52:'Facial Palsy (Bell\'s Palsy)',desc_d52:'Acute peripheral facial nerve paralysis. Sudden unilateral face weakness, difficulty closing eye, drooping mouth. Often post-viral.',action_d52:'Oral steroids (within 72h). Eye protection (lubrication, patch). Antivirals if viral. Physical therapy. 85% recover spontaneously.',
+    name_d53:'Lower Back Pain',desc_d53:'Common MSK condition. Acute (<6wks) or chronic. Mechanical (muscle/ligament strain) or radicular (disc herniation). Most self-limiting.',action_d53:'Stay active, NSAIDs, heat/cold therapy. Avoid bed rest. Physical therapy. Red flags: fever, weight loss, saddle anesthesia → urgent MRI.',
+    name_d54:'Herniated Disc',desc_d54:'Nucleus pulposus protrusion → nerve root compression. Radicular pain, numbness, weakness. Lumbar (sciatica) > cervical.',action_d54:'Conservative: NSAIDs, PT, epidural steroid injection. Surgery (discectomy) if severe/progressive weakness. Red flags for cauda equina.',
+    name_d55:'Osteoarthritis',desc_d55:'Degenerative joint disease. Joint pain (use-related), stiffness (morning <30min), crepitus, bony enlargement, limited ROM. Weight-bearing joints.',action_d55:'Weight loss, exercise (low-impact). NSAIDs (topical/oral). Acetaminophen. Joint replacement (advanced). TENS, assistive devices.',
+    name_d56:'Rheumatoid Arthritis',desc_d56:'Autoimmune inflammatory arthritis. Symmetric small joint swelling, morning stiffness >1hr. Extra-articular: fatigue, nodules, lung/skin involvement.',action_d56:'DMARDs (methotrexate ± sulfasalazine/hcq). Biologics (anti-TNF). NSAIDs, steroids (bridge). Physical therapy. Early aggressive treatment.',
+    name_d57:'Osteoporosis',desc_d57:'Reduced bone density → fracture risk (hip, spine, wrist). Asymptomatic until fracture. Risk: age, menopause, steroids, low Ca/vitD.',action_d57:'DEXA scan (screening). Bisphosphonates (alendronate). Ca 1200mg + vitD 800IU daily. Weight-bearing exercise. Fall prevention. Teriparatide (severe).',
+    name_d58:'Frozen Shoulder',desc_d58:'Adhesive capsulitis. Progressive shoulder pain and stiffness. Three phases: freezing (painful), frozen (stiff), thawing (recovery).',action_d58:'PT (stretching, mobilization). NSAIDs, intra-articular steroid injection. Hydrodilatation. Manipulation under anesthesia (rare).',
+    name_d59:'Sprain/Strain',desc_d59:'Ligament (sprain) or muscle/tendon (strain) injury. Pain, swelling, bruising, limited function. Grades 1-3.',action_d59:'RICE (rest, ice, compression, elevation). NSAIDs. Immobilization (moderate). Surgery (complete tear). Gradual rehab.',
+    name_d60:'Muscle Cramp/Spasm',desc_d60:'Sudden involuntary muscle contraction. Painful, palpable tightness. Causes: dehydration, electrolyte imbalance, overuse, cold.',action_d60:'Stretch, massage, heat. Hydration, electrolyte replacement. Quinine (limited). Prevent: adequate hydration, stretching, magnesium.',
+    name_d61:'Atopic Dermatitis',desc_d61:'Chronic inflammatory skin disease. Intense itching, dry skin, erythematous patches (flexures). Onset in childhood, often with asthma/allergy.',action_d61:'Emollients (frequent). Topical steroids/calcineurin inhibitors. Avoid triggers (soap, wool, dust mites). Antihistamines (pruritus). Wet-wrap therapy.',
+    name_d62:'Urticaria (Hives)',desc_d62:'Pruritic wheals (raised, red, transient <24h). Acute (<6wks) or chronic. Triggers: food, drugs, infection, physical stimuli, stress.',action_d62:'Antihistamines (non-sedating 2nd gen). Avoid triggers. Steroids (severe). Epinephrine (anaphylaxis). Leukotriene antagonists (chronic).',
+    name_d63:'Skin Cancer (General)',desc_d63:'Malignant skin tumors. BCC (most common, locally invasive), SCC, melanoma (most dangerous). UV exposure main risk.',action_d63:'Excision with margins. Mohs surgery (BCC/SCC face). Sentinel LN biopsy (melanoma). Immunotherapy (advanced melanoma). Sun protection.',
+    name_d64:'Melanoma',desc_d64:'Most dangerous skin cancer from melanocytes. ABCDE: Asymmetry, Border irregular, Color variegated, Diameter >6mm, Evolution. Metastatic potential.',action_d64:'Wide excision + sentinel LN biopsy. Immunotherapy (pembrolizumab, nivolumab). Targeted therapy (BRAF/MEK-i). Surveillance. Sun protection.',
+    name_d65:'Contact Dermatitis',desc_d65:'Skin inflammation from contact with irritant or allergen. Erythema, vesicles, scaling, itching. Location = exposure site.',action_d65:'Identify/avoid trigger. Topical steroids. Emollients. Antihistamines. Patch testing (allergic type). Wet compresses (acute).',
+    name_d66:'Seborrheic Dermatitis',desc_d66:'Chronic scalp/face inflammation. Greasy yellowish scales, erythema. Dandruff. Associated with Malassezia yeast.',action_d66:'Antifungal shampoos (ketoconazole, zinc pyrithione). Topical steroids (short-term). Coal tar, salicylic acid. Avoid triggers (stress, cold).',
+    name_d67:'Acne',desc_d67:'Hair follicle inflammation. Comedones, papules, pustules, nodules, cysts. Face, chest, back. Androgen-induced sebum production.',action_d67:'Benzoyl peroxide, topical retinoids. Antibiotics (topical/oral). Isotretinoin (severe). Hormonal therapy (females). Avoid picking.',
+    name_d68:'Psoriasis',desc_d68:'Immune-mediated chronic skin disease. Well-defined erythematous plaques with silvery scale. Extensor surfaces, scalp, nails.',action_d68:'Topical steroids, vitD analogs. Phototherapy (UVB). Systemic: methotrexate, cyclosporine, biologics (anti-TNF, anti-IL17/23).',
+    name_d69:'Athlete\'s Foot',desc_d69:'Dermatophyte fungal infection. Interdigital scaling, maceration, itching, odor. Spread to sole/nail.',action_d69:'Topical antifungals (terbinafine, clotrimazole). Oral terbinafine (if widespread). Keep feet dry, change socks, avoid shared footwear.',
+    name_d70:'Shingles (Herpes Zoster)',desc_d70:'VZV reactivation. Unilateral painful vesicular rash (dermatomal). Preceded by burning pain. Post-herpetic neuralgia complication.',action_d70:'Antivirals (acyclovir, valacyclovir) within 72h. Analgesics. Topical lidocaine. Shingles vaccine (≥60). PHN: gabapentin, TCAs.',
+    name_d71:'Herpes Simplex',desc_d71:'HSV-1/2 infection. Oral (cold sores) or genital recurrent vesicular lesions. Asymptomatic shedding common.',action_d71:'Antivirals (acyclovir, valacyclovir) ± suppressive therapy. Analgesics. Avoid direct contact during outbreaks. Condoms (reduce genital transmission).',
+    name_d72:'Cellulitis',desc_d72:'Bacterial skin/subcutaneous infection (strep, staph). Erythema, swelling, warmth, tenderness, fever. Can progress to sepsis.',action_d72:'Oral/IV antibiotics (cephalexin, clindamycin). Elevation, immobilization. Mark border for progression. Hospitalize if systemic signs.',
+    name_d73:'UTI',desc_d73:'Bacterial urinary infection. Dysuria, frequency, urgency, suprapubic pain. More common in women. Cystitis vs pyelonephritis.',action_d73:'Antibiotics (TMP-SMX, nitrofurantoin). Increased fluid. Phenazopyridine (symptom relief). Avoid irritants (caffeine, alcohol). Recurrent → prophylaxis.',
+    name_d74:'Kidney Stones',desc_d74:'Crystalline mineral deposits in urinary tract. Severe colicky flank pain (waves), hematuria, nausea. Causes: dehydration, diet, metabolic.',action_d74:'Analgesics (NSAIDs). Hydration (2-3L/day). Tamsulosin (ureter relaxation). ESWL or ureteroscopy (large stones). Stone analysis. Diet modification.',
+    name_d75:'Kidney Cancer',desc_d75:'Renal cell carcinoma (most common). Hematuria, flank pain, palpable mass (classic triad, late). Incidental finding on imaging increasing.',action_d75:'Partial/total nephrectomy. Targeted therapy (sunitinib, pazopanib). Immunotherapy (nivolumab). Ablation (small tumors). Surveillance.',
+    name_d76:'Bladder Cancer',desc_d76:'Urothelial carcinoma. Painless hematuria (most common). Frequency, urgency, dysuria. Risk: smoking, chemical exposure.',action_d76:'TURBT + intravesical therapy (BCG/mitomycin). Cystectomy (invasive). Chemo, immunotherapy. Smoking cessation. Cystoscopy surveillance.',
+    name_d77:'BPH',desc_d77:'Non-malignant prostate enlargement. Frequency, urgency, nocturia, weak stream, hesitancy, incomplete emptying. Age-related.',action_d77:'α-blockers (tamsulosin), 5α-reductase inhibitors (finasteride). TURP (surgery). Lifestyle: limit fluids before bed. Watchful waiting (mild).',
+    name_d78:'Prostate Cancer',desc_d78:'Prostatic adenocarcinoma. Often slow-growing. Early: asymptomatic. Advanced: urinary symptoms, hematuria, bone pain (metastasis).',action_d78:'PSA screening. Active surveillance (low-risk). Radical prostatectomy, radiation. Androgen deprivation therapy. Chemo (advanced).',
+    name_d79:'Urinary Incontinence',desc_d79:'Involuntary urine leakage. Types: stress (cough/laugh), urge (overactive bladder), overflow, functional. Affects QoL significantly.',action_d79:'Kegel exercises (stress). Bladder training (urge). Anticholinergics (oxybutynin). Pessary (women). Surgery (sling, TVT). Absorbent products.',
+    name_d80:'Uterine Fibroids',desc_d80:'Benign uterine smooth muscle tumors. Menorrhagia, pelvic pressure/pain, frequent urination, infertility. Estrogen-dependent.',action_d80:'Observation (asymptomatic). Iron (anemia). NSAIDs (pain). Hormonal therapy (GnRH agonist, IUD). Myomectomy, UAE, hysterectomy.',
+    name_d81:'CKD',desc_d81:'Progressive kidney function loss >3 months. Early: asymptomatic. Late: fatigue, edema, anemia, uremic symptoms. DM/HTN main causes.',action_d81:'Nephrology referral. BP control (ACEi/ARB). DM management. Low-protein, low-salt diet. EPO (anemia). Dialysis/transplant (ESRD).',
+    name_d82:'Diabetes',desc_d82:'Chronic hyperglycemia type 1 (insulin deficiency) or type 2 (insulin resistance). Polydipsia, polyuria, weight loss, fatigue. Long-term complications.',action_d82:'T2: metformin, lifestyle, other agents. T1: insulin. SMBG. HbA1c target. Complication screening (eyes, kidneys, feet). Diet + exercise.',
+    name_d83:'Hyperthyroidism',desc_d83:'Excess thyroid hormone. Weight loss, heat intolerance, palpitations, sweating, tremor, anxiety. Graves\' disease most common.',action_d83:'Antithyroid drugs (methimazole). Radioactive iodine (RAI). β-blockers (symptom relief). Thyroidectomy. Graves\' ophthalmopathy management.',
+    name_d84:'Hypothyroidism',desc_d84:'Thyroid hormone deficiency. Fatigue, weight gain, cold intolerance, constipation, dry skin, hair loss, depression. Hashimoto\'s common.',action_d84:'Levothyroxine replacement. Start low, titrate. Morning dose, empty stomach. Monitor TSH q6-8wks initially, then annually.',
+    name_d85:'Thyroid Cancer',desc_d85:'Thyroid malignancy (papillary > follicular > medullary > anaplastic). Painless neck mass/lump. Hoarseness, dysphagia (advanced).',action_d85:'Thyroidectomy ± LN dissection. Radioactive iodine (RAI) ablation. TSH suppression therapy. Surveillance (Tg, US).',
+    name_d86:'Anemia',desc_d86:'Reduced RBC mass/hemoglobin. Fatigue, pallor, dyspnea, dizziness, palpitations. Types: iron deficiency, B12/folate, hemolytic, ACD.',action_d86:'Treat underlying cause. Iron supplementation (IDA). B12/folate (deficiency). Erythropoietin (CKD). Transfusion (severe).',
+    name_d87:'Metabolic Syndrome (Internal)',desc_d87:'Cluster: abdominal obesity, high BP/glucose/TG, low HDL. Major CVD/DM risk factor. Often asymptomatic.',action_d87:'Weight loss, exercise. DASH/Mediterranean diet. Statins, antihypertensives, metformin if indicated. Regular monitoring.',
+    name_d88:'Otitis Media',desc_d88:'Middle ear infection (viral/bacterial). Ear pain, fever, hearing loss. Children most common. May perforate with discharge.',action_d88:'Analgesics, watchful waiting (mild). Antibiotics (amoxicillin) if severe/persistent. Myringotomy if recurrent. Tympanostomy tubes.',
+    name_d89:'Meniere\'s Disease',desc_d89:'Inner ear disorder. Episodic vertigo (hours), fluctuating hearing loss, tinnitus, aural fullness. Endolymphatic hydrops.',action_d89:'Low-salt diet, diuretics. Betahistine, antiemetics (acute). Intratympanic steroids/gentamicin. Vestibular rehab. Hearing aids.',
+    name_d90:'Laryngeal Cancer',desc_d90:'Larynx malignancy. Hoarseness (>3wks), dysphagia, chronic cough, stridor, neck mass. Heavy smoking/alcohol risk.',action_d90:'Laryngoscopy + biopsy. Radiation (early), surgery (total/partial laryngectomy). Chemo (advanced). Voice rehab. Smoking cessation.',
+    name_d91:'Otitis Externa',desc_d91:'External ear canal inflammation (often bacterial/fungal). Ear pain (worse with manipulation), itching, discharge, hearing loss.',action_d91:'Topical antibiotic/antifungal drops. Analgesics. Keep ear dry. Wick if canal swollen. Avoid Q-tips/swimming during treatment.',
+    name_d92:'Glaucoma',desc_d92:'Optic neuropathy with visual field loss. Open-angle (chronic, ↑IOP) and closed-angle (acute, emergency). Leading cause of irreversible blindness.',action_d92:'Prostaglandin analogs (latanoprost). Other IOP-lowering drops. Laser trabeculoplasty. Trabeculectomy. Acute angle-closure → laser iridotomy.',
+    name_d93:'Cataract',desc_d93:'Lens opacification. Progressive blurred vision, glare, decreased color contrast, frequent Rx change. Age-related most common.',action_d93:'Cataract surgery (phacoemulsification + IOL). Well-timed surgery. UV protection sunglasses. No medical therapy.',
+    name_d94:'Retinal Detachment',desc_d94:'Retina separation from RPE. Flashes, floaters shower, curtain-like visual field loss. Emergency for vision.',action_d94:'Emergency ophthalmology. Vitrectomy + gas/SO tamponade. Scleral buckle. Laser/ cryopexy (small tears). Position post-op.',
+    name_d95:'Conjunctivitis',desc_d95:'Conjunctival inflammation (viral, bacterial, allergic). Red eye, discharge, itching, tearing. Highly contagious (infectious types).',action_d95:'Viral: supportive, cold compresses. Bacterial: antibiotic drops. Allergic: antihistamine drops. Good hygiene. Discard makeup.',
+    name_d96:'Stye',desc_d96:'Eyelid gland infection (hordeolum). Painful red nodule at lid margin. Most common staph aureus.',action_d96:'Warm compresses (10min, 4x/day). Gentle massage. Topical antibiotic ointment. I&D if abscess forms. Good eyelid hygiene.',
+    name_d97:'Dry Eye',desc_d97:'Reduced tear quality/quantity. Dryness, burning, foreign body sensation, blurred vision, photophobia. Evaporative (MGD) most common.',action_d97:'Artificial tears (preservative-free). Warm compresses (MGD). Omega-3 supplements. Cyclosporine/tacrolimus drops. Punctal plugs.',
+    name_d98:'Uveitis',desc_d98:'Intraocular inflammation. Red eye, pain, photophobia, blurred vision, floaters. Anterior (iritis) most common. Associated with autoimmune disease.',action_d98:'Topical steroids + cycloplegics. Systemic steroids/immunosuppressants (refractory). Work-up for underlying cause. Ophthalmology follow-up.',
+    name_d99:'Tuberculosis (Infectious)',desc_d99:'TB infection. Chronic cough, hemoptysis, night sweats, fever, weight loss. Pulmonary > extrapulmonary. Latent (no symptoms) vs active.',action_d99:'Isoniazid, rifampin, ethambutol, pyrazinamide (2mo), then INH+RIF (4mo). DOT. Isolation (active). LTBI treatment. Contact investigation.',
+    name_d100:'HIV/AIDS',desc_d100:'HIV infection → immune deficiency. Acute: flu-like. Chronic: asymptomatic. AIDS: opportunistic infections, CD4<200. Antiretroviral therapy.',action_d100:'ART (all patients). Prophylaxis (PCP, TB). CD4/viral load monitoring. PrEP (high-risk). Safe sex. PEP (post-exposure).',
+    name_d101:'Sepsis',desc_d101:'Life-threatening organ dysfunction from infection. Fever/hypothermia, altered mental status, tachycardia, tachypnea, hypotension. Emergency.',action_d101:'Emergency: ICU. Broad-spectrum IV antibiotics (within 1hr). Fluid resuscitation. Vasopressors. Source control. Organ support.',
+    name_d102:'Hand-Foot-Mouth Disease',desc_d102:'Viral illness (coxsackie). Fever, sore throat, vesicular rash on hands/feet/mouth. Common in children <5. Self-limiting.',action_d102:'Supportive: hydration, antipyretics. Oral care (cool fluids). Avoid acidic/spicy. Monitor for dehydration. Good hygiene. No specific antiviral.',
+    name_d103:'Breast Cancer',desc_d103:'Malignant breast tumor. Palpable lump, skin dimpling, nipple discharge/retraction, axillary lymphadenopathy. Screening: mammography.',action_d103:'Surgery (lumpectomy/mastectomy). Radiation, chemo, hormonal therapy (tamoxifen, AI). Targeted therapy (HER2). Breast self-exam. Screening.',
+    name_d104:'Cervical Cancer',desc_d104:'Cervical HPV-related malignancy. Postcoital bleeding, abnormal vaginal discharge, pelvic pain. Pap smear + HPV test screening.',action_d104:'Surgery (early), chemoradiation (advanced). HPV vaccine (prevention). Regular Pap screening. Conization (pre-invasive).',
+    name_d105:'Ovarian Cancer',desc_d105:'Ovarian malignancy, often late diagnosis. Abdominal bloating, early satiety, pelvic pain, urinary symptoms. No effective screening.',action_d105:'Cytoreductive surgery + chemo (carboplatin + paclitaxel). PARP inhibitors (BRCA). Genetic testing. Palliative care.',
+    name_d106:'Esophageal Cancer',desc_d106:'Esophageal malignancy. Progressive dysphagia, weight loss, odynophagia, chest pain. Risk: GERD, smoking, alcohol, obesity.',action_d106:'Endoscopy + biopsy. Surgery (esophagectomy). Chemo, radiation. Stenting (palliative). Nutritional support. Barrett\'s surveillance.',
+    name_d107:'Oral Cancer',desc_d107:'Oral cavity malignancy. Non-healing ulcer/sore, oral mass, bleeding, pain, dysphagia, loosening teeth. Risk: tobacco, alcohol, HPV.',action_d107:'Surgery (wide excision). Radiation, chemo. Dental evaluation before treatment. Speech/swallow rehab. Tobacco/alcohol cessation.',
+    name_d108:'Anxiety Disorder',desc_d108:'Excessive worry/fear disrupting daily life. Restlessness, fatigue, muscle tension, sleep disturbance, difficulty concentrating. GAD, phobias, etc.',action_d108:'CBT, SSRIs/SNRIs. Buspirone. Relaxation techniques, mindfulness. Regular exercise, sleep hygiene. Avoid caffeine/alcohol.',
+    name_d109:'Depressive Disorder',desc_d109:'Persistent low mood, loss of interest, changes in appetite/sleep, fatigue, worthlessness, suicidal thoughts. Major depressive disorder.',action_d109:'CBT, SSRIs/SNRIs, NDRI (bupropion). Exercise, sleep hygiene. Crisis resources. ECT (severe/refractory). Hospitalization if suicidal.',
+    name_d110:'Schizophrenia',desc_d110:'Chronic psychotic disorder. Hallucinations, delusions, disorganized speech/behavior, negative symptoms (avolition, flat affect).',action_d110:'Antipsychotics (first/second generation). CBT. Family therapy. Social skills training. Long-term maintenance. Substance avoidance.',
+    name_d111:'Insomnia',desc_d111:'Difficulty falling/staying asleep ≥3 nights/week for ≥3 months. Daytime fatigue, mood disturbance, cognitive impairment.',action_d111:'Sleep hygiene, CBT-I (CBT for insomnia). Stimulus control, sleep restriction. Short-term hypnotics (zolpidem). Avoid caffeine/alcohol.',
+    name_d112:'Panic Disorder (Mental)',desc_d112:'Recurrent unexpected panic attacks + fear of future attacks. Palpitations, chest pain, dizziness, depersonalization, fear of dying.',action_d112:'CBT, SSRIs (escitalopram, sertraline). Benzodiazepines (short-term only). Breathing retraining. Regular exercise, avoid stimulants.',
+    name_d113:'OCD',desc_d113:'Recurrent obsessions (intrusive thoughts) and compulsions (repetitive behaviors) ≥1hr/day. Significant distress, functional impairment.',action_d113:'CBT with ERP (gold standard). High-dose SSRIs. Long-term therapy. Family education. Stress management. Sleep hygiene.',
+    name_d114:'Bipolar Disorder',desc_d114:'Alternating manic (elevated mood, hyperactivity, grandiosity, impulsivity) and depressive episodes. Type 1 (mania+depression), Type 2 (hypomania+depression).',action_d114:'Mood stabilizers (lithium, valproate). Antipsychotics (mania). Antidepressants (depression, with caution). Regular sleep schedule. Mood diary.',
+    name_d115:'Chickenpox',desc_d115:'Primary VZV infection. Itchy vesicular rash (crops), fever, fatigue. Mild in children, severe in adults/immunocompromised.',action_d115:'Antipyretics, antihistamines (itching). Calamine lotion. Acyclovir (adults, immunocompromised). Isolate (contagious until crusted). Vaccine.',
+    name_d116:'Chronic Fatigue Syndrome',desc_d116:'Severe fatigue ≥6 months, not relieved by rest. Post-exertional malaise, sleep disturbance, cognitive issues, orthostatic intolerance.',action_d116:'Graded exercise therapy, CBT. Sleep management. Symptom-based treatment. Avoid overexertion. Pacing activities. Multidisciplinary care.',
+    name_d117:'Fibromyalgia',desc_d117:'Chronic widespread pain with tender points. Fatigue, sleep disturbance, cognitive fog, mood issues. Central sensitization syndrome.',action_d117:'Exercise (aerobic, stretching). CBT. Pregabalin, gabapentin, duloxetine, milnacipran. Sleep hygiene. Stress reduction.',
+    name_d118:'Lupus',desc_d118:'Autoimmune disease affecting multiple organs. Malar rash, arthritis, nephritis, serositis, cytopenia, ANA positive. Flares and remissions.',action_d118:'NSAIDs, antimalarials (hcq). Steroids (flares). Immunosuppressants (MMF, azathioprine, cyclophosphamide). Biologics (belimumab). Sun protection.',
+    name_d119:'Lymphoma',desc_d119:'Lymphatic system malignancy. Painless lymphadenopathy, fever, night sweats, weight loss (B symptoms). Hodgkin vs NHL.',action_d119:'Chemo (ABVD, R-CHOP). Radiation. Targeted therapy (rituximab). Stem cell transplant. PET/CT staging. LDH, ESR monitoring.',
+    name_d120:'Leukemia',desc_d120:'Bone marrow malignancy. Fatigue, pallor, fever, easy bruising/bleeding, lymphadenopathy. Acute (ALL, AML) vs chronic (CLL, CML).',action_d120:'Chemotherapy. Targeted therapy (imatinib-CML, TKIs). Stem cell transplant. Supportive (transfusion, antibiotics). Molecular monitoring.',
+    name_d121:'Pancreatic Cancer (Advanced)',desc_d121:'Pancreatic ductal adenocarcinoma. Poor prognosis. Jaundice, epigastric pain (back radiation), weight loss, new DM, anorexia.',action_d121:'Surgery (Whipple, resectable). Chemo (FOLFIRINOX, gemcitabine + nab-paclitaxel). Palliative stenting. Pain management. Hospice.',
+    name_d122:'Heat Stroke',desc_d122:'Life-threatening heat-related illness. Core temp >40°C, altered consciousness, hot dry skin, tachycardia, hypotension. Emergency.',action_d122:'Emergency: cool immediately (ice packs, cold IV fluids). Remove clothing. Monitor temp, vitals. Antipyretics ineffective. Organ support.',
+    name_d123:'Motion Sickness',desc_d123:'Autonomic response to motion. Nausea, vomiting, dizziness, pallor, cold sweat. Conflicting vestibular/visual/kinesthetic input.',action_d123:'Scopolamine patch, antihistamines (dimenhydrinate, meclizine). Ginger. Focus on horizon, avoid reading. Ventilation.',
+    name_d124:'Hangover',desc_d124:'Post-alcohol intoxication symptoms. Headache, nausea, fatigue, dizziness, thirst, sensitivity to light/sound. Alcohol withdrawal + dehydration.',action_d124:'Hydration (water + electrolytes). Rest. NSAIDs (headache). Antacids. Avoid acetaminophen (liver). Time (self-limiting). Prevention: moderate.',
+    name_d125:'Periodontal Disease',desc_d125:'Gum/bone infection. Gingivitis (reversible) → periodontitis (irreversible bone loss). Bleeding gums, loose teeth, halitosis, gum recession.',action_d125:'Professional scaling/root planing. Oral hygiene (floss, brush). Chlorhexidine mouthwash. Surgery (flap, graft). Regular dental visits.',
+    name_d126:'Endometriosis',desc_d126:'Endometrial tissue outside uterus. Severe dysmenorrhea, chronic pelvic pain, dyspareunia, infertility. Cyclical symptoms.',action_d126:'NSAIDs, OCP (continuous). GnRH agonists, progestins. Laparoscopic excision. IVF (infertility). Hysterectomy (refractory).',
+    name_d127:'Uterine Cancer (Endometrial)',desc_d127:'Endometrial malignancy. Postmenopausal bleeding most common sign. Obesity, HTN, DM risk factors. Good prognosis if early.',action_d127:'Total hysterectomy + BSO. Radiation ± chemo (advanced). Progestins (early, desire fertility). Regular follow-up.',
+    name_d128:'Cervical Cancer (Screening)',desc_d128:'Cervical cancer screening via Pap/HPV. Abnormal screening → colposcopy. Preventable with HPV vaccine + regular screening.',action_d128:'HPV vaccine (age 11-12, catch-up). Pap q3y (21-29), co-test q5y (30-65). Treatment of precancerous lesions (LEEP, cone).',
+    name_d129:'Ovarian Cancer (Advanced)',desc_d129:'Ovarian CA, late presentation. Peritoneal spread common. Ascites, omental cake, bowel obstruction. CA-125 monitoring.',action_d129:'Debulking surgery + chemo. PARP inhibitors (BRCA). Bevacizumab. Genetic counseling. Symptom management. Palliative care.',
+    name_d130:'Gout',desc_d130:'Inflammatory arthritis from urate crystal deposition. Acute monoarticular (podagra: 1st MTP). Tophi, urate nephrolithiasis.',action_d130:'Acute: NSAIDs, colchicine, steroids (short-term). Chronic: urate-lowering (allopurinol, febuxostat). Diet (low purine). Hydration.',
+    name_d131:'Hyperlipidemia',desc_d131:'Elevated cholesterol/TG. Asymptomatic until complications (ASCVD, pancreatitis). Genetic or lifestyle-related.',action_d131:'Statins (primary therapy). Diet (low saturated fat, high fiber). Exercise. Ezetimibe, PCSK9i (refractory). ASCVD risk assessment.',
+    name_d132:'Fatty Liver',desc_d132:'Hepatic steatosis ± inflammation. NAFLD → NASH → cirrhosis. Associated with obesity, DM, dyslipidemia. Usually asymptomatic.',action_d132:'Weight loss (7-10%). Diet (low carb, Mediterranean). Exercise. Manage DM, dyslipidemia. Avoid alcohol. UDCA (limited benefit).',
+    name_d133:'Cirrhosis',desc_d133:'Advanced liver fibrosis with nodules. Compensated (asymptomatic) → decompensated (ascites, varices, jaundice, encephalopathy, HCC).',action_d133:'Treat cause (abstinence, antivirals, weight loss). Manage complications: diuretics (ascites), β-blockers/banding (varices), lactulose (encephalopathy). HCC screening. Liver transplant.',
+    name_d134:'Liver Cancer (Advanced)',desc_d134:'Advanced HCC. Portal vein invasion, extrahepatic spread. Poor prognosis. Underlying cirrhosis common.',action_d134:'Sorafenib, lenvatinib (1st line). Atezolizumab + bevacizumab. TACE (palliative). Supportive care. Pain/symptom management.',
+    name_d135:'Cholecystitis',desc_d135:'Gallbladder inflammation (usually stones). RUQ pain (Murphy sign), fever, nausea, leukocytosis. Can progress to gangrene/perforation.',action_d135:'Cholecystectomy (early laparoscopic). IV antibiotics. NPO, IV fluids. ERCP if CBD stone. Percutaneous cholecystostomy (high surgical risk).',
+    name_d136:'Acute Pancreatitis',desc_d136:'Pancreatic inflammation. Severe epigastric pain (radiating to back), nausea/vomiting, fever, elevated amylase/lipase. Causes: gallstones, alcohol.',action_d136:'NPO, IVF, analgesics. Treat underlying cause. ICU if severe (organ failure). ERCP (gallstone). Nutrition support (enteral).',
+    name_d137:'Crohn\'s Disease',desc_d137:'Chronic transmural IBD. Abdominal pain, diarrhea, weight loss, fistulas, strictures. Skip lesions. Any GI tract.',action_d137:'5-ASA, steroids, immunomodulators (azathioprine). Anti-TNF (infliximab, adalimumab). Surgery (stricture/fistula). Nutrition. Smoking cessation.',
+    name_d138:'Ulcerative Colitis',desc_d138:'Chronic mucosal IBD, continuous from rectum. Bloody diarrhea, urgency, tenesmus, abdominal pain. Extraintestinal manifestations.',action_d138:'5-ASA (mesalamine), steroids, immunomodulators. Anti-TNF. J-pouch surgery (refractory). Colorectal cancer surveillance.',
+    name_d139:'Diverticulitis',desc_d139:'Diverticula inflammation (sigmoid most common). LLQ pain, fever, altered bowel habits, nausea. Complications: abscess, perforation.',action_d139:'Oral/IV antibiotics. Bowel rest. Liquid diet. Abscess → drainage. Surgery (perforation, recurrent). High-fiber diet (prevention).',
+    name_d140:'Appendiceal Cancer',desc_d140:'Rare appendiceal tumor. Often incidental on appendectomy. Types: neuroendocrine, mucinous, adenocarcinoma.',action_d140:'Appendectomy (incidental). Right hemicolectomy (if invasive). Pseudomyxoma peritonei → CRS + HIPEC. Surveillance.',
+    name_d141:'Carcinoid Syndrome',desc_d141:'Neuroendocrine tumor with serotonin secretion. Flushing, diarrhea, wheezing, valvular heart disease. Usually metastatic.',action_d141:'Octreotide/lanreotide. Surgery (localized). Hepatic artery embolization (liver mets). Telotristat (diarrhea). Valvular surgery.',
+    name_d142:'Adrenal Insufficiency',desc_d142:'Adrenal cortisol deficiency. Fatigue, weight loss, hyperpigmentation (primary), hypotension, hyponatremia. Addisonian crisis (emergency).',action_d142:'Hydrocortisone replacement (± fludrocortisone). Stress dosing. Medical alert bracelet. Avoid sudden steroid withdrawal.',
+    name_d143:'Cushing\'s Syndrome',desc_d143:'Cortisol excess. Central obesity, moon face, striae, easy bruising, HTN, DM, osteoporosis. Pituitary (Cushing disease) vs adrenal.',action_d143:'Surgery (pituitary/adrenal). Steroidogenesis inhibitors (ketoconazole). Radiation. Manage comorbidities. Gradual steroid taper.',
+    name_d144:'Growth Hormone Deficiency',desc_d144:'GH deficiency (childhood → short stature, adult → decreased muscle, fatigue, obesity, low bone density).',action_d144:'GH replacement therapy. Monitor IGF-1. Dose adjust. Screen for other pituitary deficiencies.',
+    name_d145:'Prostate Cancer (Metastatic)',desc_d145:'Metastatic prostate cancer. Bone pain (common), pathological fractures, spinal cord compression, anemia, weight loss.',action_d145:'ADT (GnRH agonist/antagonist). Abiraterone, enzalutamide. Chemo (docetaxel). Bone-targeted therapy (denosumab, zoledronic acid). Palliative RT.',
+    name_d146:'Rectal Cancer',desc_d146:'Rectal adenocarcinoma. Bleeding, tenesmus, change in stool caliber. MRI staging important.',action_d146:'Neoadjuvant chemoradiation (T3+). TME surgery. Watch-and-wait (cCR). Adjuvant chemo. Stoma if low tumor. Follow-up (CEA, colonoscopy).',
+    name_d147:'Esophageal Cancer (SCC)',desc_d147:'Squamous cell esophageal CA. Upper/mid esophagus. Dysphagia (progressive). Risk: smoking, alcohol, hot beverages.',action_d147:'Endoscopic resection (early). Chemoradiation (definitive or neoadjuvant). Esophagectomy. Palliative stenting. Nutrition (PEG/NG tube).',
+    name_d148:'Thyroiditis',desc_d148:'Thyroid inflammation. Subacute (viral): painful. Silent (autoimmune): painless. Postpartum: transient hyper then hypo.',action_d148:'NSAIDs/steroids (painful). β-blockers (hyper phase). Levothyroxine (hypo phase). Monitor TSH. Surgery (rare, compression).',
+    name_d149:'Hypoglycemia',desc_d149:'Low blood glucose (<70). Autonomic: sweating, tremor, tachycardia, hunger. Neuroglycopenic: confusion, seizure, coma. Common in DM.',action_d149:'Immediate: 15g fast-acting carb (glucose tablets, juice). Recheck in 15min. Glucagon (severe). Review medication. Identify cause.',
+    name_d150:'Diabetic Ketoacidosis',desc_d150:'Hyperglycemic emergency (T1DM more common). Hyperglycemia, ketosis, metabolic acidosis. Nausea/vomiting, abdo pain, Kussmaul breathing, fruity odor.',action_d150:'Emergency: IV fluids, insulin infusion, potassium replacement. Monitor glucose, ketones, bicarb, K. Treat precipitating cause.',
+    name_d151:'HHS',desc_d151:'Hyperglycemic hyperosmolar state (T2DM). Extreme hyperglycemia, severe dehydration, altered consciousness. No significant ketosis.',action_d151:'IV fluids (aggressive). Insulin (low dose). K replacement. Monitor glucose, Na, osmolality. Treat infection (common trigger).',
+    name_d152:'Pituitary Tumor',desc_d152:'Pituitary adenoma (functional or non-functional). Hormonal syndromes, visual field defects, headache. Hypopituitarism.',action_d152:'Transsphenoidal surgery. Medical (cabergoline-prolactinoma). Radiation. Hormone replacement. Visual field monitoring.',
+    name_d153:'Multiple Myeloma',desc_d153:'Plasma cell malignancy. Bone pain, lytic lesions, hypercalcemia, anemia, renal failure, recurrent infections, M-spike.',action_d153:'Chemo (lenalidomide, bortezomib, dex). Stem cell transplant. Bisphosphonates. Supportive: transfusion, hydration, antibiotics.',
+    name_d154:'Myelodysplastic Syndrome',desc_d154:'Bone marrow failure disorder. Cytopenias, dysplasia. Risk of AML transformation. Often elderly.',action_d154:'Supportive: transfusion, growth factors. Lenalidomide (5q-). Hypomethylating agents (azacitidine, decitabine). Transplant (younger).',
+    name_d155:'Aplastic Anemia',desc_d155:'Bone marrow aplasia. Pancytopenia: anemia, leukopenia, thrombocytopenia. Fatigue, infection, bleeding. Causes: idiopathic, drugs, viral.',action_d155:'Immunosuppression (ATG, cyclosporine). Stem cell transplant (young, matched donor). Supportive (transfusion, G-CSF). Avoid marrow toxins.',
+    name_d156:'Hemophilia',desc_d156:'Congenital clotting factor deficiency (VIII: hemophilia A, IX: hemophilia B). Hemarthrosis, easy bruising, prolonged bleeding, spontaneous bleeding.',action_d156:'Factor replacement (on-demand or prophylaxis). Desmopressin (mild A). Emicizumab (A). Avoid NSAIDs, IM injections. Genetic counseling.',
+    name_d157:'DVT/PE',desc_d157:'Deep vein thrombosis ± pulmonary embolism. DVT: unilateral limb swelling/pain. PE: sudden dyspnea, chest pain, hemoptysis, hypoxia.',action_d157:'Anticoagulation (heparin, DOACs). Thrombolysis (massive PE). IVC filter. Compression stockings. Ambulation. Risk factor management.',
+    name_d158:'Pericarditis',desc_d158:'Pericardial inflammation. Sharp chest pain (worse inspiration, lying flat, relieved sitting forward). Fever, pericardial rub, diffuse ST elevation.',action_d158:'NSAIDs (high dose) + colchicine. Steroids (refractory). Antipyretics. Rest. Treat underlying cause. Pericardiocentesis (tamponade).',
+    name_d159:'Myocarditis',desc_d159:'Heart muscle inflammation (viral common). Chest pain, dyspnea, fatigue, arrhythmia, heart failure symptoms. Post-viral.',action_d159:'Supportive: HF therapy (ACEi, β-blocker, diuretics). Antiarrhythmics. Avoid exercise. Immunosuppression (giant cell). ECMO (severe).',
+    name_d160:'Aortic Stenosis',desc_d160:'Aortic valve narrowing. Dyspnea, angina, syncope on exertion. Once symptomatic, poor prognosis. Classic: late-peaking systolic murmur.',action_d160:'Valve replacement (SAVR or TAVR). Medical: optimize before surgery. Avoid vasodilators. Endocarditis prophylaxis.',
+    name_d161:'Aortic Dissection',desc_d161:'Aortic wall tear. Sudden severe tearing chest/back pain, BP differential, pulse deficit. Life-threatening emergency.',action_d161:'Emergency: strict BP control (β-blocker, nitroprusside). Emergency surgery (type A). Medical (type B uncomplicated). TEVAR.',
+    name_d162:'PAD',desc_d162:'Peripheral artery atherosclerosis. Claudication (calf pain walking), rest pain, non-healing ulcers, gangrene. ABI <0.9.',action_d162:'Smoking cessation, exercise (walking program). Antiplatelet, statin, cilostazol. Angioplasty/stent/bypass. Foot care (prevent amputation).',
+    name_d163:'Pulmonary Embolism',desc_d163:'Pulmonary artery blockage (usually DVT). Dyspnea, pleuritic chest pain, hemoptysis, hypoxia, tachycardia. ECG: S1Q3T3.',action_d163:'Anticoagulation (heparin → warfarin/DOACs). Thrombolysis (massive, unstable). Embolectomy (rare). IVC filter. Prevent recurrence.',
+    name_d164:'Pulmonary Hypertension',desc_d164:'Elevated pulmonary artery pressure. Dyspnea, fatigue, syncope, peripheral edema. Types: arterial (PAH), venous, hypoxic, thromboembolic.',action_d164:'Vasodilators (PAH: sildenafil, bosentan, prostacyclin). O2 therapy. Diuretics (RV failure). Anticoagulation (CTEPH). Lung transplant.',
+    name_d165:'Sarcoidosis',desc_d165:'Systemic granulomatous disease. Bilateral hilar lymphadenopathy, pulmonary infiltrates, skin/eye involvement. Often asymptomatic.',action_d165:'Observation (asymptomatic). Corticosteroids (symptomatic). Immunosuppressants (MTX, azathioprine). Hydroxychloroquine (skin). Screening.',
+    name_d166:'Cystic Fibrosis',desc_d166:'CFTR mutation → thick secretions. Chronic lung infection, pancreatic insufficiency, male infertility, elevated sweat chloride.',action_d166:'Chest PT, inhaled DNase, antibiotics. CFTR modulators (ivacaftor, lumacaftor). Pancreatic enzymes, fat-soluble vitamins. Lung transplant.',
+    name_d167:'Interstitial Lung Disease',desc_d167:'Diffuse lung parenchymal disease. Dyspnea, dry cough, restrictive pattern, hypoxia. Types: IPF, HP, CTD-ILD.',action_d167:'Treat underlying cause. Antifibrotics (pirfenidone, nintedanib - IPF). Immunosuppression (CTD-ILD, HP). O2. Pulmonary rehab. Transplant.',
+    name_d168:'Pleural Effusion',desc_d168:'Fluid in pleural space. Dyspnea, pleuritic chest pain, dull percussion. Transudate vs exudate (Light criteria). Causes: HF, infection, malignancy.',action_d168:'Thoracentesis (diagnostic/therapeutic). Treat cause. Tube thoracostomy (empyema, hemothorax). Pleurodesis (recurrent).',
+    name_d169:'Empyema',desc_d169:'Infected pleural fluid (pus). Fever, dyspnea, chest pain. Complication of pneumonia. Needs drainage.',action_d169:'Antibiotics. Chest tube drainage. Intrapleural fibrinolytics. VATS/surgery (loculated). Nutritional support.',
+    name_d170:'Lung Abscess',desc_d170:'Necrotic pulmonary cavity with pus. High fever, productive cough (foul sputum), hemoptysis. Aspiration common cause.',action_d170:'IV antibiotics (long course, 4-8wks). Postural drainage. Percutaneous drainage (large). Surgery (failure, complication).',
+    name_d171:'Sleep Apnea (Neurological)',desc_d171:'Repeated upper airway obstruction (obstructive) or CNS drive loss (central). Loud snoring, gasping, daytime sleepiness, nocturnal hypertension.',action_d171:'Polysomnography. CPAP (first-line). Weight loss. Oral appliance. Avoid alcohol. Positional therapy. Inspire therapy (severe).',
+    name_d172:'Alcoholic Hepatitis',desc_d172:'Acute liver inflammation in heavy drinkers. Jaundice, fever, tender hepatomegaly, ascites. Severe forms have high mortality.',action_d172:'Absolute abstinence. Nutritional support (high-protein). Steroids (Maddrey DF ≥32). Pentoxifylline (alternative). Liver transplant.',
+    name_d173:'Metabolic Syndrome (Diagnosis)',desc_d173:'≥3 of: abdominal obesity (waist), high TG, low HDL, high BP, high fasting glucose. Major CVD/DM risk.',action_d173:'Weight loss (≥7%). Exercise (≥150min/week). DASH diet. Statin, antihypertensives, metformin. Smoking cessation. Regular monitoring.',
+    name_d174:'Otitis Externa (External)',desc_d174:'External ear canal infection. Ear pain (trauma exacerbated), itching, hearing loss, discharge. Swimmer\'s ear.',action_d174:'Topical antibiotic/steroid drops. Analgesics. Wick if swollen. Keep ear dry. Avoid swimming. CT/MRI if malignant (diabetic).',
+    name_d175:'Periodontitis',desc_d175:'Advanced gum disease with bone loss. Bleeding gums, deep pockets (>4mm), loose teeth, halitosis, gum recession. Leading cause of tooth loss.',action_d175:'Scaling and root planing. Periodontal surgery. Regular maintenance (3-4mo). Oral hygiene excellence. Smoking cessation. Systemic antibiotics (aggressive).',
+    name_d176:'Vascular Dementia (Advanced)',desc_d176:'Cognitive decline from cerebrovascular disease. Stepwise deterioration, focal deficits, pseudobulbar affect. Post-stroke.',action_d176:'Vascular risk control (BP, glucose, lipids). Antiplatelets (if ischemic). Cholinesterase inhibitors (modest benefit). Multidisciplinary care.',
+    name_d177:'Hypotension (Orthostatic)',desc_d177:'BP drop ≥20/10 within 3min of standing. Dizziness, visual blurring, weakness, syncope. Causes: dehydration, meds, neurogenic.',action_d177:'Hydration, salt increase. Compression stockings. Review/stop offending meds. Fludrocortisone, midodrine (refractory). Fall prevention.',
+    name_d178:'Panic Disorder (Anxiety)',desc_d178:'Recurrent unexpected panic attacks. Palpitations, chest pain, trembling, dyspnea, depersonalization, fear of dying. Avoidance behavior.',action_d178:'CBT (Cognitive Behavioral Therapy). SSRIs, SNRIs. Benzodiazepines (short-term only). Relaxation techniques. Lifestyle modification.',
+    name_d179:'Facial Palsy (Neuro)',desc_d179:'Acute peripheral facial paralysis. Sudden unilateral facial weakness, inability to close eye, drooping mouth corner. Post-viral inflammation.',action_d179:'Prednisolone (within 72h of onset). Eye lubrication + patch. Acyclovir (if severe, with steroids). Facial exercises. 85% recover.',
+    name_d180:'Pneumothorax (Spontaneous)',desc_d180:'Air in pleural space without trauma. Tall thin males, smokers. Sudden pleuritic chest pain, dyspnea, hyperresonance, decreased breath sounds.',action_d180:'Observation (small). Needle aspiration. Chest tube (large). Pleurodesis (recurrent). Smoking cessation. Avoid flying/scuba.',
+    name_d181:'Cellulitis (Skin)',desc_d181:'Bacterial dermis/subcutis infection. Erythema, swelling, warmth, tenderness. Fever, chills, leukocytosis. Strep, staph most common.',action_d181:'Antibiotics (cephalexin, clindamycin). Elevation, rest. Mark erythema border. Hospitalize if systemic signs, immunocompromised, or facial.',
+    name_d182:'HFMD (Pediatric)',desc_d182:'Coxsackievirus A16, enterovirus 71. Fever, sore throat, vesicular enanthem/oral ulcers, papulovesicular rash on hands/feet. Self-limiting.',action_d182:'Hydration, antipyretics. Oral pain relief (lidocaine gel). Avoid acidic/spicy foods. Isolate (contagious). Monitor for dehydration.',
+    name_d183:'Pertussis (Respiratory)',desc_d183:'Bordetella pertussis. Paroxysmal cough with inspiratory whoop, post-tussive vomiting, cyanosis. Most severe in infants.',action_d183:'Macrolide antibiotics (azithromycin, clarithromycin). Post-exposure prophylaxis. DTaP/Tdap vaccination. Supportive care. Hospitalize infants.',
+    name_d184:'Uterine Leiomyoma',desc_d184:'Benign uterine smooth muscle tumor (fibroid). Menorrhagia, pelvic pressure/pain, urinary frequency, constipation, reproductive dysfunction.',action_d184:'Observation (asymptomatic). Hormonal (GnRH agonist, LNG-IUS). Myomectomy. UAE. MRI-guided focused US. Hysterectomy (definitive).',
+    name_d185:'CKD (Renal)',desc_d185:'Progressive kidney disease >3mo. Etiology: DM, HTN, glomerulonephritis. Early: asymptomatic. Late: uremia, edema, anemia, acidosis.',action_d185:'Nephrology referral. BP target <130/80 (ACEi/ARB). DM management. Low-protein diet. Avoid nephrotoxins. RRT preparation at eGFR <20.',
+    name_d186:'OCD (Mental Health)',desc_d186:'Recurrent obsessions (intrusive thoughts) and compulsions (repetitive behaviors) taking ≥1hr/day. Patient recognizes irrationality but cannot stop.',action_d186:'CBT with ERP (gold standard). High-dose SSRIs. Long-term therapy needed. Family education and support. Stress management. Sleep hygiene.',
+    name_d187:'Bipolar Disorder (Mood)',desc_d187:'Recurrent manic (elevated mood, hyperactivity, grandiosity) and depressive episodes. Type 1: mania. Type 2: hypomania. Requires medication.',action_d187:'Mood stabilizers (lithium, valproate). Atypicals (mania). Antidepressants cautiously. Regular lifestyle/sleep. Mood tracking. Relapse prevention.',
+    name_d188:'Varicella (Chickenpox)',desc_d188:'Primary VZV infection. Generalized pruritic vesicular rash after fever. Mild in children, severe in adults/immunocompromised.',action_d188:'Symptomatic (antipyretics, antihistamines). Acyclovir (adults, severe). Calamine lotion. Isolate. Vaccine (2 doses). Avoid aspirin (Reye).',
+    name_d189:'Chronic Pancreatitis (GI)',desc_d189:'Irreversible pancreatic damage from chronic inflammation. Chronic epigastric pain (postprandial worse), weight loss, steatorrhea, DM.',action_d189:'Absolute abstinence. Analgesics. Pancreatic enzymes. Insulin (DM). Low-fat diet. Monitor pseudocyst/stricture. Endoscopy/surgery PRN.',
+    name_d190:'Acute Pyelonephritis (Renal)',desc_d190:'Acute kidney infection. High fever, chills, flank pain, dysuria. Ascending from lower UTI. Sepsis risk.',action_d190:'Emergency/uro. Urinalysis, blood culture. IV antibiotics (inpatient). Oral (mild). Hydrate well. Complete treatment. Check obstruction.',
+    name_d191:'Bronchiectasis (Pulmonary)',desc_d191:'Permanent bronchial dilation from chronic inflammation. Chronic cough, copious sputum, recurrent infections, hemoptysis.',action_d191:'Chest CT diagnosis. Bronchodilators, mucolytics. Airway clearance (PEP, postural drainage). Antibiotics (exacerbations). Bronchial artery embolization (hemoptysis). Vaccines.',
+    name_d192:'Ankylosing Spondylitis (Rheum)',desc_d192:'Chronic inflammatory spine/SI joint arthritis. Morning spinal stiffness (exercise improves). Progressive fusion (bamboo spine). HLA-B27+.',action_d192:'NSAIDs, TNF inhibitors, IL-17i. PT (spinal mobility, stretching). Smoking cessation. Surgery (hip, severe kyphosis). Eye screen.',
+    name_d193:'Hearing Loss (ENT)',desc_d193:'Reduced hearing acuity. Conductive (outer/middle ear) vs sensorineural (cochlea/nerve). Causes: noise, aging, drugs, infection, genetics.',action_d193:'Audiometry. Treat cause (infection, otosclerosis). Hearing aids. Cochlear implant (severe/sensorineural). Noise protection. Avoid ototoxics.'
+  }
+};
+/* ============================================
    - 네이버 쇼핑 커넥트 / 쿠팡 파트너스
    - categories 배열: 질환의 category 필드와 매칭됨
    ============================================ */
@@ -2780,11 +3252,16 @@ const Products = {
     { id:'p12', name:'레시틴(인지질) 두뇌 영양',  platform:'coupang', url:'https://www.coupang.com/np/search?q=%EB%A0%88%EC%8B%9C%ED%8B%B0+%EC%9D%B8%EC%A7%80%EC%A7%88+%EB%91%90%EB%87%8C+%EC%98%81%EC%96%91', categories:['신경계','정신'],                 tags:['기억력','치매','ADHD','학생'] },
 
     // 네이버 쇼핑 추가 (5개)
-    { id:'p13', name:'멀티비타민 미네랄 종합',     platform:'naver',  url:'https://search.shopping.naver.com/search/all?query=%EB%A9%80%ED%8B%B0%EB%B9%84%ED%83%80%EB%AF%BC+%EB%AF%B8%EB%84%A4%EB%9E%84',  categories:['내분비/대사','감염','정신'],           tags:['피로','만성피로','면역','스트레스'] },
-    { id:'p14', name:'철분 빈혈 보충',    platform:'naver',  url:'https://search.shopping.naver.com/search/all?query=%EC%B2%A0%EB%B6%84+%EB%B9%88%ED%98%88+%EC%98%81%EC%96%91%EC%A0%9C',  categories:['내분비/대사','여성/생식'],             tags:['빈혈','어지러움','생리통','피로'] },
-    { id:'p15', name:'소화효소 + 유산균',          platform:'naver',  url:'https://search.shopping.naver.com/search/all?query=%EC%86%8C%ED%99%94%ED%9A%A8%EC%86%8C+%EC%9C%A0%EC%82%B0%EA%B7%A0',  categories:['소화기','감염'],                      tags:['과민성대장','소화불량','변비','면역'] },
-    { id:'p16', name:'울금(강황) 커큐민 관절',      platform:'naver',  url:'https://search.shopping.naver.com/search/all?query=%EA%B0%95%ED%99%A9+%EC%BB%A4%ED%81%90%EB%AF%BC+%EA%B4%80%EC%A0%88',  categories:['근골격계','소화기'],                  tags:['관절염','통풍','소화불량','염증'] },
-    { id:'p17', name:'프로폴리스 구강 면역',        platform:'naver',  url:'https://search.shopping.naver.com/search/all?query=%ED%94%84%EB%A1%9C%ED%8F%B4%EB%A6%AC%EC%8A%A4+%EA%B5%AC%EA%B0%95+%EB%A9%B4%EC%97%AD',  categories:['호흡기','감염','이비인후'],            tags:['감기','인후통','편도염','구내염'] }
+    { id:'p13', name:'멀티비타민 미네랄 종합',     platform:'naver',  url:'https://naver.me/GVVDUjVY',  categories:['내분비/대사','감염','정신'],           tags:['피로','만성피로','면역','스트레스'] },
+    { id:'p14', name:'철분(헤마토코) 빈혈 보충',    platform:'naver',  url:'https://naver.me/F2LNJdCZ',  categories:['내분비/대사','여성/생식'],             tags:['빈혈','어지러움','생리통','피로'] },
+    { id:'p15', name:'소화효소 + 유산균',          platform:'naver',  url:'https://naver.me/5MvhRFeI',  categories:['소화기','감염'],                      tags:['과민성대장','소화불량','변비','면역'] },
+    { id:'p16', name:'울금(강황) 커큐민 관절',      platform:'naver',  url:'https://naver.me/xPYLferk',  categories:['근골격계','소화기'],                  tags:['관절염','통풍','소화불량','염증'] },
+    { id:'p17', name:'프로폴리스 구강 면역',        platform:'naver',  url:'https://naver.me/FCZxD0p1',  categories:['호흡기','감염','이비인후'],            tags:['감기','인후통','편도염','구내염'] },
+
+    // 쿠팡 파트너스 추가 (3개)
+    { id:'p18', name:'닥터루템 수용성 리포좀 커큐민',  platform:'coupang', url:'https://link.coupang.com/a/ezfvJW7obc', categories:['근골격계','소화기','심혈관'], tags:['관절염','염증','항산화','면역'] },
+    { id:'p19', name:'종근당 침향환 골드',            platform:'coupang', url:'https://link.coupang.com/a/ezfxqgBDOu', categories:['내분비/대사','정신','호흡기'],  tags:['피로','면역','기력','스트레스','만성피로'] },
+    { id:'p20', name:'아나파랙틴 관절엔 UP',          platform:'coupang', url:'https://link.coupang.com/a/ezfCrp5MXc', categories:['근골격계'],                    tags:['관절염','연골','퇴행성관절염','관절통'] }
   ],
 
   // 진단 결과 질환 배열 → 관련 제품 3개 추출
@@ -2839,7 +3316,7 @@ const Products = {
    App - 자가진단 애플리케이션
    ============================================ */
 
-const App = {
+var App = {
   state: {
     selectedCategories: new Set(),
     selectedSymptoms: new Set(),
@@ -2847,7 +3324,31 @@ const App = {
     searchTerm: ''
   },
 
+  toggleLang() {
+    const newLang = Lang.current === 'ko' ? 'en' : 'ko';
+    Lang.set(newLang);
+    document.getElementById('langToggle').textContent = Lang.l('lang_switch');
+    this.renderCategories();
+    this.renderSymptoms();
+    this.updateSelectedTags();
+    this.applyStaticTranslation();
+  },
+
+  applyStaticTranslation() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (el.hasAttribute('placeholder')) {
+        el.setAttribute('placeholder', Lang.l(key));
+      } else {
+        el.textContent = Lang.l(key);
+      }
+    });
+  },
+
   init() {
+    Lang.init();
+    document.getElementById('langToggle').textContent = Lang.l('lang_switch');
+    this.applyStaticTranslation();
     this.renderCategories();
     this.bindEvents();
     this.bindStepButtons();
@@ -2861,7 +3362,7 @@ const App = {
     grid.innerHTML = DB.categories.map(c => `
       <button type="button" data-category-id="${c.id}" data-action="toggle-category" class="category-card group bg-surface-container-low p-4 rounded-xl border-2 border-outline-variant hover:border-primary transition-all text-center cursor-pointer relative">
         <span class="material-symbols-outlined text-primary text-[32px] block mb-2">${c.icon}</span>
-        <span class="text-label-md font-label-md text-on-surface">${c.name}</span>
+        <span class="text-label-md font-label-md text-on-surface">${Lang.n(c, 'name')}</span>
       </button>
     `).join('');
   },
@@ -2895,7 +3396,7 @@ const App = {
       const selected = this.state.selectedSymptoms.has(s.id);
       return `<button type="button" data-symptom-id="${s.id}" data-action="toggle-symptom"
         class="symptom-chip px-4 py-2 bg-surface-container-low border-2 border-outline-variant rounded-full text-label-md font-label-md text-on-surface hover:border-primary ${selected ? 'selected' : ''}">
-        ${s.name}
+        ${Lang.n(s, 'name')}
       </button>`;
     }).join('');
   },
@@ -2906,7 +3407,7 @@ const App = {
     count.textContent = this.state.selectedSymptoms.size;
 
     if (this.state.selectedSymptoms.size === 0) {
-      container.innerHTML = '<span class="text-on-surface-variant text-label-sm font-label-sm">선택된 증상이 여기에 표시됩니다</span>';
+      container.innerHTML = '<span class="text-on-surface-variant text-label-sm font-label-sm">' + Lang.l('no_symptoms_selected') + '</span>';
       document.getElementById('toStep3').disabled = true;
       return;
     }
@@ -2915,7 +3416,7 @@ const App = {
     container.innerHTML = Array.from(this.state.selectedSymptoms).map(sId => {
       const s = DB.symptoms.find(s => s.id === sId);
       return `<span class="inline-flex items-center gap-1 px-3 py-1 bg-primary text-on-primary rounded-full text-label-sm font-label-sm">
-        ${s.name}
+        ${Lang.n(s, 'name')}
         <span data-action="toggle-symptom" data-symptom-id="${sId}" class="tag-remove material-symbols-outlined text-[16px]">close</span>
       </span>`;
     }).join('');
@@ -3100,14 +3601,15 @@ const App = {
 
       loading.classList.add('hidden');
       const hpParts = [];
-      if (hp.age) hpParts.push({ '10s':'10대','20s':'20대','30s':'30대','40s':'40대','50s':'50대','60s':'60대','70s+':'70대↑' }[hp.age]);
-      if (hp.gender) hpParts.push({ male:'남성','female':'여성' }[hp.gender]);
-      if (hp.smoking !== 'none') hpParts.push({ past:'과거흡연','light':'흡연(1갑미만)','heavy':'흡연(1갑↑)' }[hp.smoking]);
-      if (hp.alcohol !== 'none') hpParts.push({ light:'주1~2회','moderate':'주3~4회','heavy':'매일음주' }[hp.alcohol]);
-      if (hp.exercise === 'none') hpParts.push('운동부족');
-      if (hp.weight !== 'normal') hpParts.push({ under:'저체중','over':'과체중','obese':'비만' }[hp.weight]);
+      if (hp.age) hpParts.push({ '10s':Lang.l('hp_age_10s'),'20s':Lang.l('hp_age_20s'),'30s':Lang.l('hp_age_30s'),'40s':Lang.l('hp_age_40s'),'50s':Lang.l('hp_age_50s'),'60s':Lang.l('hp_age_60s'),'70s+':Lang.l('hp_age_70s') }[hp.age]);
+      if (hp.gender) hpParts.push({ male:Lang.l('hp_male'),'female':Lang.l('hp_female') }[hp.gender]);
+      if (hp.smoking !== 'none') hpParts.push({ past:Lang.l('hp_smoke_past'),'light':Lang.l('hp_smoke_light'),'heavy':Lang.l('hp_smoke_heavy') }[hp.smoking]);
+      if (hp.alcohol !== 'none') hpParts.push({ light:Lang.l('hp_alcohol_light'),'moderate':Lang.l('hp_alcohol_moderate'),'heavy':Lang.l('hp_alcohol_heavy') }[hp.alcohol]);
+      if (hp.exercise === 'none') hpParts.push(Lang.l('hp_exercise_none'));
+      if (hp.weight !== 'normal') hpParts.push({ under:Lang.l('hp_weight_under'),'over':Lang.l('hp_weight_over'),'obese':Lang.l('hp_weight_obese') }[hp.weight]);
       const hpStr = hpParts.length ? ` (${hpParts.join(', ')})` : '';
-      summary.textContent = `총 ${filtered.length}개의 가능한 질환을 찾았습니다. (선택 증상: ${selected.length}개, 기간: ${duration}${hpStr})`;
+      const durLabels = { '1-3':'1~3일','4-7':'4~7일','8-14':'1~2주','15-30':'2주~1개월','31+':'1개월↑' };
+      summary.textContent = Lang.l('found_results').replace('{0}', filtered.length).replace('{1}', selected.length).replace('{2}', hpStr);
       this.renderResults(filtered);
       Products.render(Products.match(filtered));
       actions.classList.remove('hidden');
@@ -3120,8 +3622,8 @@ const App = {
       area.innerHTML = `
         <div class="text-center py-12 bg-surface-container-lowest rounded-2xl border border-outline-variant">
           <span class="material-symbols-outlined text-outline text-[64px]">search_off</span>
-          <p class="mt-3 text-body-md font-body-md text-on-surface">일치하는 질환을 찾을 수 없습니다</p>
-          <p class="text-label-sm font-label-sm text-on-surface-variant mt-1">더 많은 증상을 선택하거나 의사와 상담하세요</p>
+          <p class="mt-3 text-body-md font-body-md text-on-surface">${Lang.l('no_results_title')}</p>
+          <p class="text-label-sm font-label-sm text-on-surface-variant mt-1">${Lang.l('no_results_desc')}</p>
         </div>`;
       return;
     }
@@ -3130,8 +3632,6 @@ const App = {
     const sevBg = { low:'sev-low', medium:'sev-medium', high:'sev-high', critical:'sev-critical' };
     const sevBar = { low:'bar-low', medium:'bar-medium', high:'bar-high', critical:'bar-critical' };
     const sevBorder = { low:'#1976D2', medium:'#F9A825', high:'#EF6C00', critical:'#C62828' };
-    const sevLabel = { low:'낮음', medium:'중간', high:'높음', critical:'매우 높음' };
-    const sevDesc = { low:'비교적 가벼운 상태로 자연 회복이 가능할 수 있습니다.', medium:'전문의 진료가 권장되는 중등도 상태입니다.', high:'전문의 진단과 치료가 반드시 필요한 상태입니다.', critical:'즉시 응급실을 방문해야 하는 심각한 상태입니다.' };
     const actionBg = { info:'bg-primary/5 border-primary/20 text-primary', warning:'bg-status-info/5 border-status-info/20 text-status-info', danger:'bg-status-error/5 border-status-error/20 text-status-error' };
 
     area.innerHTML = results.map((d, i) => {
@@ -3144,35 +3644,35 @@ const App = {
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div class="flex-1">
                 <div class="flex items-center gap-2 mb-1 flex-wrap">
-                  <h3 class="font-label-md text-label-md md:text-headline-md font-headline-md text-on-surface">${d.name}</h3>
+                  <h3 class="font-label-md text-label-md md:text-headline-md font-headline-md text-on-surface">${Lang.n(d, 'name')}</h3>
                 </div>
-                <p class="text-label-sm font-label-sm text-on-surface-variant">${d.category} · ${d.matchCount}개 증상 일치</p>
+                <p class="text-label-sm font-label-sm text-on-surface-variant">${d.category} · ${d.matchCount}${Lang.l('symptoms_matched')}</p>
               </div>
               <div class="text-right md:min-w-[120px]">
                 <p class="text-headline-md font-headline-md ${color}">${matchPct}%</p>
-                <p class="text-label-sm font-label-sm text-on-surface-variant">일치율</p>
+                <p class="text-label-sm font-label-sm text-on-surface-variant">${Lang.l('match_rate')}</p>
                 <div class="h-1.5 bg-outline-variant rounded-full mt-1 overflow-hidden">
                   <div class="h-full ${barColor} rounded-full transition-all" style="width:${matchPct}%"></div>
                 </div>
               </div>
             </div>
             <div class="flex items-center gap-1 mt-3 text-primary text-label-sm font-label-sm">
-              <span>상세 정보</span>
+              <span>${Lang.l('detail')}</span>
               <span class="material-symbols-outlined text-[18px]">expand_more</span>
             </div>
           </div>
           <div class="result-body px-5 md:px-6 pb-5 md:pb-6">
             <div class="flex items-center gap-2 mb-3">
-              <span class="${sevBg[d.severity]} text-on-primary text-label-sm font-label-sm px-2 py-0.5 rounded-full">${sevLabel[d.severity]}</span>
-              <span class="text-label-sm font-label-sm text-on-surface-variant">${sevDesc[d.severity]}</span>
+              <span class="${sevBg[d.severity]} text-on-primary text-label-sm font-label-sm px-2 py-0.5 rounded-full">${Lang.l('sev_' + d.severity)}</span>
+              <span class="text-label-sm font-label-sm text-on-surface-variant">${Lang.l('sev_' + d.severity + '_desc')}</span>
             </div>
-            <p class="text-body-md font-body-md text-on-surface leading-relaxed mb-3">${d.desc}</p>
+            <p class="text-body-md font-body-md text-on-surface leading-relaxed mb-3">${Lang.n(d, 'desc')}</p>
             <div class="border-l-4 ${d.actionType === 'danger' ? 'border-status-error' : d.actionType === 'warning' ? 'border-status-info' : 'border-primary'} ${actionBg[d.actionType] || actionBg.info} p-4 rounded-r-xl">
-              <p class="font-label-sm font-label-sm"><strong>💡 권장 조치:</strong> ${d.action}</p>
+              <p class="font-label-sm font-label-sm"><strong>${Lang.l('action_label')}</strong> ${Lang.n(d, 'action')}</p>
             </div>
             <div class="mt-3 text-right">
               <a href="https://health.kdca.go.kr/healthinfo/" target="_blank" rel="noopener noreferrer" class="text-label-sm font-label-sm text-primary hover:underline inline-flex items-center gap-1">
-                <span class="material-symbols-outlined text-[14px]">open_in_new</span> 질병관리청 건강정보 검색하기
+                <span class="material-symbols-outlined text-[14px]">open_in_new</span> ${Lang.l('kdca_link')}
               </a>
             </div>
           </div>
