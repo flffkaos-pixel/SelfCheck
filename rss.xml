@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>SelfCheck</title>
+    <link>https://symptomcheck.pages.dev</link>
+    <description>SelfCheck updates</description>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jun 2026 16:12:07 GMT</lastBuildDate>
+  <item>
+    <title>HealSense - 건강 자가진단 | 증상으로 질환 확인 | 증상 기반 질환 분석</title>
+    <link>https://symptomcheck.pages.dev//</link>
+    <description>HealSense의 증상 매칭 알고리즘이 가능한 질환을 확인해드립니다. 감기부터 암까지 170여 가지 질환 자가진단, 14개 카테고리, 87개 증상, 무료 제공. 응급 상황 시 119로 즉시 연락하세요.</description>
+    <guid>https://symptomcheck.pages.dev//</guid>
+  </item>
+  </channel>
+</rss>
