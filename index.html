@@ -3423,15 +3423,13 @@ var App = {
   },
 
   updateCategoryUI() {
-    document.getElementById('catCount').textContent = this.state.selectedCategories.size;
-    document.getElementById('toStep2').disabled = this.state.selectedCategories.size === 0;
-    document.querySelectorAll('[data-category-id]').forEach(el => {
-      const id = el.getAttribute('data-category-id');
-      if (this.state.selectedCategories.has(id)) {
-        el.classList.add('selected');
-      } else {
-        el.classList.remove('selected');
-      }
+    const el = document.getElementById('catCount');
+    if (el) el.textContent = this.state.selectedCategories.size;
+    const btn = document.getElementById('toStep2');
+    if (btn) btn.disabled = this.state.selectedCategories.size === 0;
+    document.querySelectorAll('[data-category-id]').forEach(c => {
+      const id = c.getAttribute('data-category-id');
+      c.classList.toggle('selected', this.state.selectedCategories.has(id));
     });
   },
 
