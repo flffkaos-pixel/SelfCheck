@@ -494,7 +494,7 @@
   <button onclick="App.goToStep(0)" class="text-primary font-label-md text-label-md flex items-center gap-1 hover:underline">
     <span class="material-symbols-outlined text-[18px]">arrow_back</span> <span data-i18n="prev">이전</span>
   </button>
-  <span class="text-label-sm font-label-sm text-on-surface-variant" data-i18n="selected"><span id="catCount">0</span>개 선택됨</span>
+  <span class="text-label-sm font-label-sm text-on-surface-variant"><span id="catCount">0</span><span data-i18n="selected"></span></span>
   <button id="toStep2" disabled onclick="App.goToStep(2)" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95">
     <span data-i18n="next_symptom">다음: 증상 선택</span> <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
   </button>
@@ -519,7 +519,7 @@
 </div>
 <div class="mt-6">
   <div class="bg-surface-container-low rounded-xl p-4 border border-outline-variant">
-    <p class="text-label-sm font-label-sm text-on-surface-variant mb-2" data-i18n="selected_symptoms">선택한 증상 (<span id="selectedCount">0</span>개)</p>
+    <p class="text-label-sm font-label-sm text-on-surface-variant mb-2"><span data-i18n="selected_symptoms"></span> (<span id="selectedCount">0</span><span data-i18n="count_unit"></span>)</p>
     <div class="flex flex-wrap gap-2 min-h-[2rem]" id="selectedTags">
       <span class="text-on-surface-variant text-label-sm font-label-sm">선택된 증상이 여기에 표시됩니다</span>
     </div>
@@ -2863,6 +2863,7 @@ const Lang = {
     search_placeholder:'증상 검색 (예: 두통, 발열, 기침...)',
     no_results:'검색 결과가 없습니다. 다른 키워드로 검색해보세요.',
     selected_symptoms:'선택한 증상',
+    count_unit:'개',
     no_symptoms_selected:'선택된 증상이 여기에 표시됩니다',
     min_one_symptom:'최소 1개 증상 선택 필요',
     next_health:'다음: 건강 정보',
@@ -2935,6 +2936,7 @@ const Lang = {
     search_placeholder:'Search symptoms (e.g., headache, fever, cough...)',
     no_results:'No results found. Try different keywords.',
     selected_symptoms:'Selected symptoms',
+    count_unit:'',
     no_symptoms_selected:'Selected symptoms will appear here',
     min_one_symptom:'Select at least 1 symptom',
     next_health:'Next: Health Info',
@@ -3339,7 +3341,7 @@ var App = {
       const key = el.getAttribute('data-i18n');
       if (el.hasAttribute('placeholder')) {
         el.setAttribute('placeholder', Lang.l(key));
-      } else {
+      } else if (!el.children.length) {
         el.textContent = Lang.l(key);
       }
     });
@@ -3412,17 +3414,17 @@ var App = {
   },
 
   updateSelectedTags() {
-    const con = document.getElementById('selectedTags');
-    const cnt = document.getElementById('selectedCount');
+    const con = document.getElementById('selectedTags') || document.querySelector('#step2 #selectedTags');
+    const cnt = document.getElementById('selectedCount') || document.querySelector('#step2 #selectedCount');
     if (cnt) cnt.textContent = this.state.selectedSymptoms.size;
-    if (!cnt || !con) return;
+    if (!con) return;
     if (this.state.selectedSymptoms.size === 0) {
       con.innerHTML = '<span class="text-on-surface-variant text-label-sm font-label-sm">' + Lang.l('no_symptoms_selected') + '</span>';
-      const t3 = document.getElementById('toStep3');
+      const t3 = document.getElementById('toStep3') || document.querySelector('#step2 #toStep3');
       if (t3) t3.disabled = true;
       return;
     }
-    const t3 = document.getElementById('toStep3');
+    const t3 = document.getElementById('toStep3') || document.querySelector('#step2 #toStep3');
     if (t3) t3.disabled = false;
     con.innerHTML = Array.from(this.state.selectedSymptoms).map(sId => {
       const s = DB.symptoms.find(s => s.id === sId);
