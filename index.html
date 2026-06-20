@@ -3401,36 +3401,36 @@ var App = {
     }).join('');
   },
 
-  updateSelectedTags() {
-    const container = document.getElementById('selectedTags');
-    const count = document.getElementById('selectedCount');
-    count.textContent = this.state.selectedSymptoms.size;
+  updateCategoryUI() {
+    const cat = document.getElementById('catCount') || document.querySelector('#step1 #catCount');
+    if (cat) cat.textContent = this.state.selectedCategories.size;
+    const to2 = document.getElementById('toStep2') || document.querySelector('#step1 #toStep2');
+    if (to2) to2.disabled = this.state.selectedCategories.size === 0;
+    document.querySelectorAll('[data-category-id]').forEach(c => {
+      c.classList.toggle('selected', this.state.selectedCategories.has(c.getAttribute('data-category-id')));
+    });
+  },
 
+  updateSelectedTags() {
+    const con = document.getElementById('selectedTags');
+    const cnt = document.getElementById('selectedCount');
+    if (cnt) cnt.textContent = this.state.selectedSymptoms.size;
+    if (!cnt || !con) return;
     if (this.state.selectedSymptoms.size === 0) {
-      container.innerHTML = '<span class="text-on-surface-variant text-label-sm font-label-sm">' + Lang.l('no_symptoms_selected') + '</span>';
-      document.getElementById('toStep3').disabled = true;
+      con.innerHTML = '<span class="text-on-surface-variant text-label-sm font-label-sm">' + Lang.l('no_symptoms_selected') + '</span>';
+      const t3 = document.getElementById('toStep3');
+      if (t3) t3.disabled = true;
       return;
     }
-    document.getElementById('toStep3').disabled = false;
-
-    container.innerHTML = Array.from(this.state.selectedSymptoms).map(sId => {
+    const t3 = document.getElementById('toStep3');
+    if (t3) t3.disabled = false;
+    con.innerHTML = Array.from(this.state.selectedSymptoms).map(sId => {
       const s = DB.symptoms.find(s => s.id === sId);
       return `<span class="inline-flex items-center gap-1 px-3 py-1 bg-primary text-on-primary rounded-full text-label-sm font-label-sm">
         ${Lang.n(s, 'name')}
         <span data-action="toggle-symptom" data-symptom-id="${sId}" class="tag-remove material-symbols-outlined text-[16px]">close</span>
       </span>`;
     }).join('');
-  },
-
-  updateCategoryUI() {
-    const el = document.getElementById('catCount');
-    if (el) el.textContent = this.state.selectedCategories.size;
-    const btn = document.getElementById('toStep2');
-    if (btn) btn.disabled = this.state.selectedCategories.size === 0;
-    document.querySelectorAll('[data-category-id]').forEach(c => {
-      const id = c.getAttribute('data-category-id');
-      c.classList.toggle('selected', this.state.selectedCategories.has(id));
-    });
   },
 
   updateStepIndicator(step) {
